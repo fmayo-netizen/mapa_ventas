@@ -1,0 +1,3247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d9d58c16562a57cd0170ae5d5508c8e8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; right: 10px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; font-family: Arial, sans-serif;">
+    <div style="background-color: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-left: 4px solid #34a853; min-width: 200px;">
+        <span style="font-size: 10px; color: #666; font-weight: bold; text-transform: uppercase;">Preventa Total</span><br>
+        <span style="font-size: 18px; color: #2d8643; font-weight: bold;">📦 4,118 Cajas</span>
+        <hr style="margin:6px 0;">
+        <span style="font-size: 11px; color: #d93025;">🔴 <b>Supermercados:</b> 2,694 cajas</span><br>
+        <span style="font-size: 11px; color: #1a73e8;">🔵 <b>Ruta:</b> 1,424 cajas</span>
+    </div>
+
+    <div style="background-color: white; padding: 8px 12px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-left: 4px solid #1a73e8; font-size: 11px; color: #333; min-width: 200px;">
+        <b style="font-size:11px; color:#1a73e8;">📍 Última actualización:</b><br>
+        📅 20/07/2026 15:04:26
+    </div>
+</div>
+    
+            <div class="folium-map" id="map_d9d58c16562a57cd0170ae5d5508c8e8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d9d58c16562a57cd0170ae5d5508c8e8 = L.map(
+                "map_d9d58c16562a57cd0170ae5d5508c8e8",
+                {
+                    center: [-30.625254686274513, -71.1848415882353],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f5a74411d7b8c84c41755c357f4ed95c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f5a74411d7b8c84c41755c357f4ed95c.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            var feature_group_6ce151dcc28f022fedbda9f8fbfa6af6 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_e8d385adaccf7317ba6da3a9079947b2 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_9082194a7eaf1e85467c903f46939a34 = L.marker(
+                [-30.601499, -71.196692],
+                {
+}
+            ).addTo(marker_cluster_e8d385adaccf7317ba6da3a9079947b2);
+        
+    
+            var icon_49d5529239b0bd3be4e23ea5b3754ae6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1491899c2e236186a84d2b07083cee7 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_98b42fc189cb9c82f59ad26e3cf35915 = $(`<div id="html_98b42fc189cb9c82f59ad26e3cf35915" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">SUPER 10 S.A.</h4>         <b>ID Cliente:</b> 2471541<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> BENAVENTE 427<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 12<br>         <b>Total Cajas:</b> 235<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871543, 871545, 871549, 871551, 871630, 871183, 871392, 871393, 870278, 870353, 870402, 870656, 870693, 870698, 870779, 870851, 870903, 450851, 700571, 870196, 870203, 870204, 870216, 870235, 870253, 1840, 4714, 4715, 4976, 445294, 445755, 445761, 450328, 1602, 1603, 1604, 1743, 1756, 1822, 817, 829, 859, 1014, 1016, 1124, 1188, 1258, 1267, 1448, 1600</span>     </div>     </div>`)[0];
+                popup_c1491899c2e236186a84d2b07083cee7.setContent(html_98b42fc189cb9c82f59ad26e3cf35915);
+            
+        
+
+        marker_9082194a7eaf1e85467c903f46939a34.bindPopup(popup_c1491899c2e236186a84d2b07083cee7)
+        ;
+
+        
+    
+    
+            marker_9082194a7eaf1e85467c903f46939a34.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 2471541 - SUPER 10 S.A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9082194a7eaf1e85467c903f46939a34.setIcon(icon_49d5529239b0bd3be4e23ea5b3754ae6);
+            
+    
+            var marker_bc08777605744dc007ebe6a495cd77c7 = L.marker(
+                [-30.605286, -71.202645],
+                {
+}
+            ).addTo(marker_cluster_e8d385adaccf7317ba6da3a9079947b2);
+        
+    
+            var icon_1f92af2b980577f51a6fda24c715aeea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af9ae072ea5d1a1d9f7348a4beccff22 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_32976fc72f16415189dead628c37d5c3 = $(`<div id="html_32976fc72f16415189dead628c37d5c3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ALVI SUPERMERCADO MAYORISTA S.A.</h4>         <b>ID Cliente:</b> 2497856<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> VICTORIA 435<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 6<br>         <b>Total Cajas:</b> 226<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871441, 871443, 871444, 870656, 870687, 870693, 870698, 870706, 450737, 450831, 451299, 451300, 451429, 451433, 700155, 700564, 700571, 700572, 700809, 870195, 870196, 870205, 870235, 4714, 4715, 7493, 7795, 445226, 445294, 447010, 450189, 450237, 450602, 1602, 1603, 1714, 1717, 1743, 1744, 1745, 1822, 871439, 871434, 871432, 871272, 871271, 871185, 871633, 871628, 871624, 871547, 1267, 871543</span>     </div>     </div>`)[0];
+                popup_af9ae072ea5d1a1d9f7348a4beccff22.setContent(html_32976fc72f16415189dead628c37d5c3);
+            
+        
+
+        marker_bc08777605744dc007ebe6a495cd77c7.bindPopup(popup_af9ae072ea5d1a1d9f7348a4beccff22)
+        ;
+
+        
+    
+    
+            marker_bc08777605744dc007ebe6a495cd77c7.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 2497856 - ALVI SUPERMERCADO MAYORISTA S.A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc08777605744dc007ebe6a495cd77c7.setIcon(icon_1f92af2b980577f51a6fda24c715aeea);
+            
+    
+            var marker_283a4a635f90d8288a36ebf0ee704ed8 = L.marker(
+                [-30.604174, -71.196552],
+                {
+}
+            ).addTo(marker_cluster_e8d385adaccf7317ba6da3a9079947b2);
+        
+    
+            var icon_bb59d13e27d62c7c780d5c821138fb1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2761c7d4b15402f57677cfd465e9c3f5 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_ef4099e16e213039f7750397023e0ff1 = $(`<div id="html_ef4099e16e213039f7750397023e0ff1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 525931<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> TANGUE 36<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 19<br>         <b>Total Cajas:</b> 1,069<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871547, 871548, 871567, 871594, 871717, 871718, 870912, 870913, 871037, 871078, 871095, 871144, 871175, 871180, 871181, 871183, 871185, 871186, 871242, 871271, 871275, 871327, 871329, 871342, 871347, 871392, 871393, 871470, 871498, 871524, 871525, 871528, 871532, 871534, 871537, 871539, 871540, 870277, 870278, 870334, 870335, 870337, 870338, 870339, 870353, 870400, 870401, 870402, 870405, 870420, 870424, 870432, 870653, 870655, 870656, 870661, 870662, 870687, 870689, 870693, 870698, 870704, 870717, 870851, 870854, 870901, 870903, 700533, 700555, 700556, 700558, 700564, 700565, 700575, 700576, 700688, 700809, 701004, 701009, 701018, 701109, 701110, 870180, 870181, 870189, 870195, 870196, 870202, 870203, 870205, 870206, 870215, 870216, 870235, 447107, 447111, 450112, 450133, 450189, 450237, 450329, 450356, 450403, 450404, 450472, 450536, 450554, 450590, 450602, 450704, 450746, 450851, 450855, 450859, 450933, 451290, 451370, 451381, 451395, 451404, 451422, 451429, 451451, 451453, 451523, 451549, 451551, 700039, 700041, 700042, 700271, 700387, 700398, 700399, 1743, 1744, 1745, 1756, 1776, 1822, 1840, 1850, 4714, 4715, 4976, 7266, 7280, 7794, 7799, 7801, 7802, 445227, 445294, 445407, 445455, 445520, 445696, 445761, 445811, 445928, 447010, 447076, 447077, 447086, 817, 829, 859, 909, 919, 929, 953, 1007, 1014, 1016, 1018, 1124, 1237, 1258, 1267, 1283, 1448, 1473, 1600, 1602, 1603, 1604, 1710, 1712, 1714, 1716</span>     </div>     </div>`)[0];
+                popup_2761c7d4b15402f57677cfd465e9c3f5.setContent(html_ef4099e16e213039f7750397023e0ff1);
+            
+        
+
+        marker_283a4a635f90d8288a36ebf0ee704ed8.bindPopup(popup_2761c7d4b15402f57677cfd465e9c3f5)
+        ;
+
+        
+    
+    
+            marker_283a4a635f90d8288a36ebf0ee704ed8.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 525931 - RENDIC HERMANOS S. A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_283a4a635f90d8288a36ebf0ee704ed8.setIcon(icon_bb59d13e27d62c7c780d5c821138fb1d);
+            
+    
+            var marker_bdf8d2a88d0680b89d842e57ca0d9af9 = L.marker(
+                [-30.600433, -71.193856],
+                {
+}
+            ).addTo(marker_cluster_e8d385adaccf7317ba6da3a9079947b2);
+        
+    
+            var icon_65fbcc48684963fa21a3994492e484cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_02f7617b6f31d0e6b7c803648d50b17a = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_9c166f1ab135ba1ffa445645d01b1ce1 = $(`<div id="html_9c166f1ab135ba1ffa445645d01b1ce1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 525932<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> BENAVENTE 221<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 7<br>         <b>Total Cajas:</b> 108<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871547, 1603, 871189, 871191, 871393, 871470, 871499, 871525, 871537, 870698, 870851, 870854, 700564, 700572, 701110, 870180, 870189, 870196, 870205, 870206, 870216, 450859, 451290, 451422, 1744, 1822, 4714, 4976, 1014, 1124, 1267, 1600, 1602, 871095</span>     </div>     </div>`)[0];
+                popup_02f7617b6f31d0e6b7c803648d50b17a.setContent(html_9c166f1ab135ba1ffa445645d01b1ce1);
+            
+        
+
+        marker_bdf8d2a88d0680b89d842e57ca0d9af9.bindPopup(popup_02f7617b6f31d0e6b7c803648d50b17a)
+        ;
+
+        
+    
+    
+            marker_bdf8d2a88d0680b89d842e57ca0d9af9.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 525932 - RENDIC HERMANOS S. A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bdf8d2a88d0680b89d842e57ca0d9af9.setIcon(icon_65fbcc48684963fa21a3994492e484cb);
+            
+    
+            var marker_d9e2419d11b00a6928e39aca47d0a835 = L.marker(
+                [-30.598207, -71.198053],
+                {
+}
+            ).addTo(marker_cluster_e8d385adaccf7317ba6da3a9079947b2);
+        
+    
+            var icon_0dad13d7771a21194fef14ab00fae431 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05f48d64374001b0f6e294a66de919c0 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_aa2057261829c863781e7599fb564076 = $(`<div id="html_aa2057261829c863781e7599fb564076" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">WALMART CHILE S.A.</h4>         <b>ID Cliente:</b> 526280<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> RECINTO INTERIOR ESTACION 48<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 7<br>         <b>Total Cajas:</b> 166<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">7795, 445877, 445882, 447010, 447042, 447088, 447093, 1007, 1016, 1018, 1258, 1307, 1448, 1510, 1604, 871579, 871580, 871581, 871667, 871191, 871272, 871273, 871275, 871327, 871342, 871415, 871449, 871470, 871524, 871525, 870653, 870655, 870662, 870693, 870698, 870717, 870837, 870854, 700556, 700564, 700571, 700576, 700679, 700701, 700705, 700809, 701009, 701107, 701109, 701110, 701111, 870205, 870206, 447104, 450320, 450336, 450403, 450426, 450536, 450684, 450691, 450692, 450737, 450746, 450874, 451108, 451122, 451200, 451224, 451519, 700041, 700271, 700525, 700533, 1743, 1744, 1745, 1848, 1968</span>     </div>     </div>`)[0];
+                popup_05f48d64374001b0f6e294a66de919c0.setContent(html_aa2057261829c863781e7599fb564076);
+            
+        
+
+        marker_d9e2419d11b00a6928e39aca47d0a835.bindPopup(popup_05f48d64374001b0f6e294a66de919c0)
+        ;
+
+        
+    
+    
+            marker_d9e2419d11b00a6928e39aca47d0a835.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 526280 - WALMART CHILE S.A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d9e2419d11b00a6928e39aca47d0a835.setIcon(icon_0dad13d7771a21194fef14ab00fae431);
+            
+    
+            var marker_dd1981a7e72fbe0662798d5f6824cf83 = L.marker(
+                [-30.597231, -71.18517],
+                {
+}
+            ).addTo(marker_cluster_e8d385adaccf7317ba6da3a9079947b2);
+        
+    
+            var icon_c073e4edb2bae179fb6bd1898dc090d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c4af57f00a4854e6943e044ac1d0e04 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_d2a75000fabb04ad140736dd09cce584 = $(`<div id="html_d2a75000fabb04ad140736dd09cce584" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">HIPERMERCADOS TOTTUS S.A.</h4>         <b>ID Cliente:</b> 791375<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> AVDA. LOS PEÑONES S/N<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 6<br>         <b>Total Cajas:</b> 890<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">905, 915, 929, 957, 1005, 1016, 1057, 1124, 1258, 1267, 1473, 1600, 1601, 1602, 1603, 1604, 1745, 1756, 4714, 4715, 4976, 7245, 7280, 7493, 7686, 7788, 7792, 7794, 7799, 7801, 7803, 7845, 7996, 445225, 445227, 445696, 445767, 445879, 445982, 447010, 447089, 447092, 447111, 450237, 450302, 450328, 450329, 450336, 450352, 450356, 450363, 450403, 450404, 450415, 450426, 450472, 450531, 450536, 450554, 450557, 450603, 450660, 450684, 450691, 450692, 450774, 450831, 450850, 450851, 450855, 450859, 450916, 450933, 451122, 451200, 451224, 451243, 451247, 451370, 451374, 451381, 451395, 451423, 451429, 451431, 451432, 451433, 451488, 451491, 451496, 451502, 451512, 451519, 451533, 451554, 604581, 700039, 700041, 700042, 700271, 700517, 700533, 700561, 700564, 700565, 700572, 700574, 700576, 700638, 700679, 700702, 700705, 700809, 701009, 701010, 701012, 701018, 701106, 701109, 701110, 701111, 870072, 870195, 870196, 870202, 870203, 870205, 870206, 870215, 870216, 870223, 870235, 870263, 870277, 870278, 870327, 870334, 870336, 870337, 870338, 870339, 870353, 870402, 870409, 870583, 870653, 870655, 870656, 870661, 870662, 870687, 870693, 870704, 870717, 870831, 870837, 870849, 870851, 870854, 870901, 870903, 870912, 871095, 871097, 871176, 871181, 871183, 871185, 871192, 871207, 871208, 871209, 871210, 871213, 871214, 871215, 871240, 871241, 871242, 871272, 871275, 871329, 871335, 871346, 871347, 871388, 871389, 871392, 871393, 871470, 871473, 871484, 871486, 871498, 871499, 871528, 871531, 871532, 871534, 871537, 871543, 871545, 871547, 871548, 871549, 871551, 871567, 871580, 871581, 871589, 871594</span>     </div>     </div>`)[0];
+                popup_2c4af57f00a4854e6943e044ac1d0e04.setContent(html_d2a75000fabb04ad140736dd09cce584);
+            
+        
+
+        marker_dd1981a7e72fbe0662798d5f6824cf83.bindPopup(popup_2c4af57f00a4854e6943e044ac1d0e04)
+        ;
+
+        
+    
+    
+            marker_dd1981a7e72fbe0662798d5f6824cf83.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 791375 - HIPERMERCADOS TOTTUS S.A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd1981a7e72fbe0662798d5f6824cf83.setIcon(icon_c073e4edb2bae179fb6bd1898dc090d8);
+            
+    
+            marker_cluster_e8d385adaccf7317ba6da3a9079947b2.addTo(feature_group_6ce151dcc28f022fedbda9f8fbfa6af6);
+        
+    
+            feature_group_6ce151dcc28f022fedbda9f8fbfa6af6.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            var feature_group_ac3ab7e55c20ac04897d445c706b0cb8 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_54a8af00973d6c5e984c3cc89453c489 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_0b22b04659063544c337f14d451e3036 = L.marker(
+                [-30.593341, -71.193179],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_7d68fc168639db300045e9157f5e673c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11fc854a92d14d40e157164079a5800b = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_7d3ae02a695d975d4bbe62c5e0bc0311 = $(`<div id="html_7d3ae02a695d975d4bbe62c5e0bc0311" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ANA ESTRELLA VEGA VEGA</h4>         <b>ID Cliente:</b> 1379259<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> FUERTE TOLTEN 711 VISTA HERMOSA 711<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 3<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1840, 1325, 1307</span>     </div>     </div>`)[0];
+                popup_11fc854a92d14d40e157164079a5800b.setContent(html_7d3ae02a695d975d4bbe62c5e0bc0311);
+            
+        
+
+        marker_0b22b04659063544c337f14d451e3036.bindPopup(popup_11fc854a92d14d40e157164079a5800b)
+        ;
+
+        
+    
+    
+            marker_0b22b04659063544c337f14d451e3036.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1379259 - ANA ESTRELLA VEGA VEGA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b22b04659063544c337f14d451e3036.setIcon(icon_7d68fc168639db300045e9157f5e673c);
+            
+    
+            var marker_00a04ce2c074979a26fb358b377b415e = L.marker(
+                [-30.8296, -71.248218],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_4a9f4c3ed0be1a8140d82c06fec278ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_122f6062a92a06c7f39b06ae034b049b = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_73850717971cdb598566b0b83c36bc6a = $(`<div id="html_73850717971cdb598566b0b83c36bc6a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CARLA ANDREA CONTRERAS VICENCIO</h4>         <b>ID Cliente:</b> 1427221<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PUEBLO NUEVO CALLE 4 CASA 2 CASA 4<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 3<br>         <b>Total Cajas:</b> 59<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870203, 870855, 870235, 870277, 1823, 1602, 1603, 1727, 1728, 1743, 1744, 1745, 1756, 1776, 1822, 1325, 1448, 1600, 871543, 871545, 871547, 871549, 871551, 871173, 871180, 871184, 871186, 871189, 871240, 871242, 871275, 871416, 871418, 871421, 870278, 870657, 870690, 870693, 870206</span>     </div>     </div>`)[0];
+                popup_122f6062a92a06c7f39b06ae034b049b.setContent(html_73850717971cdb598566b0b83c36bc6a);
+            
+        
+
+        marker_00a04ce2c074979a26fb358b377b415e.bindPopup(popup_122f6062a92a06c7f39b06ae034b049b)
+        ;
+
+        
+    
+    
+            marker_00a04ce2c074979a26fb358b377b415e.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1427221 - CARLA ANDREA CONTRERAS VICENCIO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_00a04ce2c074979a26fb358b377b415e.setIcon(icon_4a9f4c3ed0be1a8140d82c06fec278ec);
+            
+    
+            var marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6 = L.marker(
+                [-30.564884, -71.179028],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_1fb7d3e2d3636bc296fe7fe2896da638 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_464476fdb2988f6f1abb7e17d40ca931 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_158533cabe4344306d05306b25340133 = $(`<div id="html_158533cabe4344306d05306b25340133" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JUAN ADAN PIZARRO PIZARRO</h4>         <b>ID Cliente:</b> 1446268<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> OLGA RIVERA MILLA 1167 1167<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 17<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1840, 870072, 1602, 1603, 1743, 1744, 1267, 1307, 1325, 1448, 1600, 871499, 871498, 870690, 870779, 870831, 4976</span>     </div>     </div>`)[0];
+                popup_464476fdb2988f6f1abb7e17d40ca931.setContent(html_158533cabe4344306d05306b25340133);
+            
+        
+
+        marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6.bindPopup(popup_464476fdb2988f6f1abb7e17d40ca931)
+        ;
+
+        
+    
+    
+            marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1446268 - JUAN ADAN PIZARRO PIZARRO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6.setIcon(icon_1fb7d3e2d3636bc296fe7fe2896da638);
+            
+    
+            var marker_7cc9015cbde26b0d7864728f0eb85ab4 = L.marker(
+                [-30.584791, -71.180893],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_51919bb18bddd348b9efb868622309ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22035e20ba8570aabfcdbb7cd99a3822 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_cd9def61a9339678ce4e27d8fe4fa472 = $(`<div id="html_cd9def61a9339678ce4e27d8fe4fa472" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JENNY ROJAS</h4>         <b>ID Cliente:</b> 1624161<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PSJE PUCADI 519 519<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 11<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1823, 1840, 1727, 870855, 870278, 870375, 870690, 1325</span>     </div>     </div>`)[0];
+                popup_22035e20ba8570aabfcdbb7cd99a3822.setContent(html_cd9def61a9339678ce4e27d8fe4fa472);
+            
+        
+
+        marker_7cc9015cbde26b0d7864728f0eb85ab4.bindPopup(popup_22035e20ba8570aabfcdbb7cd99a3822)
+        ;
+
+        
+    
+    
+            marker_7cc9015cbde26b0d7864728f0eb85ab4.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1624161 - JENNY ROJAS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7cc9015cbde26b0d7864728f0eb85ab4.setIcon(icon_51919bb18bddd348b9efb868622309ac);
+            
+    
+            var marker_3c35f465ec65a38ec71167d2b2bc5821 = L.marker(
+                [-30.583639, -71.18428],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_f4f9eff9563e6100f8efc8b82e2d97ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a894237d71571f3ac18815f694f9368 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_f5fc4a0b8692ff15c9a55d20fdcc31a4 = $(`<div id="html_f5fc4a0b8692ff15c9a55d20fdcc31a4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ROSA GALLEGUILLOS ANGEL</h4>         <b>ID Cliente:</b> 1645697<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> AV LAS TORRES 768 768<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 13<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">4714, 4715, 870690, 870278, 871473</span>     </div>     </div>`)[0];
+                popup_3a894237d71571f3ac18815f694f9368.setContent(html_f5fc4a0b8692ff15c9a55d20fdcc31a4);
+            
+        
+
+        marker_3c35f465ec65a38ec71167d2b2bc5821.bindPopup(popup_3a894237d71571f3ac18815f694f9368)
+        ;
+
+        
+    
+    
+            marker_3c35f465ec65a38ec71167d2b2bc5821.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1645697 - ROSA GALLEGUILLOS ANGEL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3c35f465ec65a38ec71167d2b2bc5821.setIcon(icon_f4f9eff9563e6100f8efc8b82e2d97ba);
+            
+    
+            var marker_c7ea96211d131d1ee767f5aa948d7886 = L.marker(
+                [-30.574894, -71.186362],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_863ad26df9381a7a2234dfe383164066 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62d8d07da2aee056675785c4fc111e71 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_31611b173feab8febdf64f25e3ad1b29 = $(`<div id="html_31611b173feab8febdf64f25e3ad1b29" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">VERONICA CEA CEA</h4>         <b>ID Cliente:</b> 1767449<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> AVDA MANUEL PEÑAFIEL.         ALTO DE TUQUI 1550<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 48<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870223, 305750, 305751, 305752, 305754, 871525, 871569, 871588, 871173, 871180, 871184, 871186, 871189, 871207, 871208, 871209, 871214, 871240, 871242, 871346, 870334, 870336, 870408, 870002, 870008, 870203</span>     </div>     </div>`)[0];
+                popup_62d8d07da2aee056675785c4fc111e71.setContent(html_31611b173feab8febdf64f25e3ad1b29);
+            
+        
+
+        marker_c7ea96211d131d1ee767f5aa948d7886.bindPopup(popup_62d8d07da2aee056675785c4fc111e71)
+        ;
+
+        
+    
+    
+            marker_c7ea96211d131d1ee767f5aa948d7886.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1767449 - VERONICA CEA CEA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7ea96211d131d1ee767f5aa948d7886.setIcon(icon_863ad26df9381a7a2234dfe383164066);
+            
+    
+            var marker_45502a36e416e17c3f65ff1d5ff3c7a4 = L.marker(
+                [-30.8296, -71.248241],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_26ebfd262d40bad536ac7e581b6a7873 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a5dab0ee0b58460a3d6250d22e197b5 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_d0e160f72099232aa6c6d6cf9c02ab4a = $(`<div id="html_d0e160f72099232aa6c6d6cf9c02ab4a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">VLADIMIR CORTES GUERRERO</h4>         <b>ID Cliente:</b> 1869187<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PASAJE 2 CASA 5 PUEBLO NUEVO CASA 5<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 15<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">700576, 451548, 450417, 450555, 592, 450851, 701109, 4714, 4715, 450605, 871498</span>     </div>     </div>`)[0];
+                popup_0a5dab0ee0b58460a3d6250d22e197b5.setContent(html_d0e160f72099232aa6c6d6cf9c02ab4a);
+            
+        
+
+        marker_45502a36e416e17c3f65ff1d5ff3c7a4.bindPopup(popup_0a5dab0ee0b58460a3d6250d22e197b5)
+        ;
+
+        
+    
+    
+            marker_45502a36e416e17c3f65ff1d5ff3c7a4.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1869187 - VLADIMIR CORTES GUERRERO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_45502a36e416e17c3f65ff1d5ff3c7a4.setIcon(icon_26ebfd262d40bad536ac7e581b6a7873);
+            
+    
+            var marker_67761f3159933e7606fc6283f2407ef5 = L.marker(
+                [-30.589442, -71.187842],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_1f3b96c64b068e81af8f10d6f35be93d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_431ed0e3d5318a52b60c6e2624077871 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_738da038c93efab1c203073eb1e8afee = $(`<div id="html_738da038c93efab1c203073eb1e8afee" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">SOLANGE TORO MADRID</h4>         <b>ID Cliente:</b> 1937870<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Roberto Matta 1001, Ovalle 981<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 4<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870856, 870692, 870690</span>     </div>     </div>`)[0];
+                popup_431ed0e3d5318a52b60c6e2624077871.setContent(html_738da038c93efab1c203073eb1e8afee);
+            
+        
+
+        marker_67761f3159933e7606fc6283f2407ef5.bindPopup(popup_431ed0e3d5318a52b60c6e2624077871)
+        ;
+
+        
+    
+    
+            marker_67761f3159933e7606fc6283f2407ef5.bindTooltip(
+                `<div>
+                     [RUTA] ID: 1937870 - SOLANGE TORO MADRID
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_67761f3159933e7606fc6283f2407ef5.setIcon(icon_1f3b96c64b068e81af8f10d6f35be93d);
+            
+    
+            var marker_ebd28df56264eb337b13ffcf0a6bc5e8 = L.marker(
+                [-30.584855, -71.199562],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_a13b4bdec660840f67bb2c191eb229d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76a78c807d96b2a35c7ebbd8d1da5849 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_c92b99cbbe26a3b4a4c1c248bf652ec3 = $(`<div id="html_c92b99cbbe26a3b4a4c1c248bf652ec3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">FRESIA COSS ALCAPAN</h4>         <b>ID Cliente:</b> 2197764<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Las Torcazas832, Ovalle 828<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 9<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870690, 1307, 1728, 1325, 871242</span>     </div>     </div>`)[0];
+                popup_76a78c807d96b2a35c7ebbd8d1da5849.setContent(html_c92b99cbbe26a3b4a4c1c248bf652ec3);
+            
+        
+
+        marker_ebd28df56264eb337b13ffcf0a6bc5e8.bindPopup(popup_76a78c807d96b2a35c7ebbd8d1da5849)
+        ;
+
+        
+    
+    
+            marker_ebd28df56264eb337b13ffcf0a6bc5e8.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2197764 - FRESIA COSS ALCAPAN
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ebd28df56264eb337b13ffcf0a6bc5e8.setIcon(icon_a13b4bdec660840f67bb2c191eb229d8);
+            
+    
+            var marker_31da1ef3382d721f4f2a2f981e9c3c62 = L.marker(
+                [-30.585585, -71.194042],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_375826a1bebee3e89cb539b7af18725a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_74ab935f90e1d2103aba62d966c02e8b = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_891c651931906ba86a334cf85ecf9902 = $(`<div id="html_891c651931906ba86a334cf85ecf9902" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CECILIA HIDALGO ALVAREZ</h4>         <b>ID Cliente:</b> 2207704<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PUCADI 460<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 31<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1840, 1822, 1858, 1745, 870690, 1602, 870779, 870656, 870655, 1603, 1600, 1448, 1743, 1325, 1728, 1267</span>     </div>     </div>`)[0];
+                popup_74ab935f90e1d2103aba62d966c02e8b.setContent(html_891c651931906ba86a334cf85ecf9902);
+            
+        
+
+        marker_31da1ef3382d721f4f2a2f981e9c3c62.bindPopup(popup_74ab935f90e1d2103aba62d966c02e8b)
+        ;
+
+        
+    
+    
+            marker_31da1ef3382d721f4f2a2f981e9c3c62.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2207704 - CECILIA HIDALGO ALVAREZ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31da1ef3382d721f4f2a2f981e9c3c62.setIcon(icon_375826a1bebee3e89cb539b7af18725a);
+            
+    
+            var marker_5a2819a6afa976d072bf14901e4c2021 = L.marker(
+                [-30.825998, -71.261036],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_b6f340629bfc8541de4265e01d468ba4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc98701a3caad095aea6bb7b485ee60a = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_0cc1640c86c8ed05d48f68809a912ef1 = $(`<div id="html_0cc1640c86c8ed05d48f68809a912ef1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JUAN ANTONIO ZARRICUETA ROJO</h4>         <b>ID Cliente:</b> 2240863<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Caupolicán364, Punitaqui 364 B<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 40<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">701111, 700041, 701110, 701109, 700039, 700679, 957, 871393, 451200, 1325, 870852, 871392, 700809, 870690</span>     </div>     </div>`)[0];
+                popup_bc98701a3caad095aea6bb7b485ee60a.setContent(html_0cc1640c86c8ed05d48f68809a912ef1);
+            
+        
+
+        marker_5a2819a6afa976d072bf14901e4c2021.bindPopup(popup_bc98701a3caad095aea6bb7b485ee60a)
+        ;
+
+        
+    
+    
+            marker_5a2819a6afa976d072bf14901e4c2021.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2240863 - JUAN ANTONIO ZARRICUETA ROJO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5a2819a6afa976d072bf14901e4c2021.setIcon(icon_b6f340629bfc8541de4265e01d468ba4);
+            
+    
+            var marker_53da00b288378b323af391a41c125236 = L.marker(
+                [-30.585371, -71.182959],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_a6db3f06a2b98202df3c3cafe149ea12 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b69608e9febc1b569e93581ba1fcbe85 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_a4886f25d7c85b28abe317860e96e0c4 = $(`<div id="html_a4886f25d7c85b28abe317860e96e0c4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MARIO ARAYA</h4>         <b>ID Cliente:</b> 2310215<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Calle Julio Mercado Illanes1501, Limari 1501<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 24<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870713, 871473, 1448, 1307, 1756, 1745, 1744, 1727, 1858, 1840, 870235, 870203</span>     </div>     </div>`)[0];
+                popup_b69608e9febc1b569e93581ba1fcbe85.setContent(html_a4886f25d7c85b28abe317860e96e0c4);
+            
+        
+
+        marker_53da00b288378b323af391a41c125236.bindPopup(popup_b69608e9febc1b569e93581ba1fcbe85)
+        ;
+
+        
+    
+    
+            marker_53da00b288378b323af391a41c125236.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2310215 - MARIO ARAYA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_53da00b288378b323af391a41c125236.setIcon(icon_a6db3f06a2b98202df3c3cafe149ea12);
+            
+    
+            var marker_8ade6a2f42abc44b789cd55b08a72853 = L.marker(
+                [-30.64646, -71.103232],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_8579eec91ed5f0e13b588eba43156d5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f6b1c29605756858c32cda4e6e089b3 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_9f6912da8028749614d5453ff92a7a14 = $(`<div id="html_9f6912da8028749614d5453ff92a7a14" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">PEDRO CASTILLO</h4>         <b>ID Cliente:</b> 2326085<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Los Lirios230, Limari 235<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 12<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1448, 1756, 870203, 4714, 870409, 871543, 871545, 871275, 871473, 1745</span>     </div>     </div>`)[0];
+                popup_8f6b1c29605756858c32cda4e6e089b3.setContent(html_9f6912da8028749614d5453ff92a7a14);
+            
+        
+
+        marker_8ade6a2f42abc44b789cd55b08a72853.bindPopup(popup_8f6b1c29605756858c32cda4e6e089b3)
+        ;
+
+        
+    
+    
+            marker_8ade6a2f42abc44b789cd55b08a72853.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2326085 - PEDRO CASTILLO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8ade6a2f42abc44b789cd55b08a72853.setIcon(icon_8579eec91ed5f0e13b588eba43156d5c);
+            
+    
+            var marker_06407a71a05ea901803c6389b0436b48 = L.marker(
+                [-30.682726, -71.273384],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_3678cb94a1c812d4fe24c2c0c6d40e6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dd851d6a6d3a3e57acb192af1928c732 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_4ff31aa4dfeb7899719cded3ed72cbae = $(`<div id="html_4ff31aa4dfeb7899719cded3ed72cbae" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MICHELLE ARACELLY PIZARRO BARRAZA</h4>         <b>ID Cliente:</b> 2380328<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> D-625 SN<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 14<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1743, 1745, 1822, 1448, 1600, 1602, 871537, 871579, 871581, 871275, 870656, 870657, 1603</span>     </div>     </div>`)[0];
+                popup_dd851d6a6d3a3e57acb192af1928c732.setContent(html_4ff31aa4dfeb7899719cded3ed72cbae);
+            
+        
+
+        marker_06407a71a05ea901803c6389b0436b48.bindPopup(popup_dd851d6a6d3a3e57acb192af1928c732)
+        ;
+
+        
+    
+    
+            marker_06407a71a05ea901803c6389b0436b48.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2380328 - MICHELLE ARACELLY PIZARRO BARRAZA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_06407a71a05ea901803c6389b0436b48.setIcon(icon_3678cb94a1c812d4fe24c2c0c6d40e6b);
+            
+    
+            var marker_8055b5a6fa44adff30495f79c5053dd5 = L.marker(
+                [-30.594822, -71.191356],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_56d8f1504e1c6738ab93a6d9bf31114f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e7165e2c055a14df7677d149a39156bb = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_2f54345d71d06f8c8600cf5a5c7571d0 = $(`<div id="html_2f54345d71d06f8c8600cf5a5c7571d0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MARCELA EUGENIA VEGA VEGA</h4>         <b>ID Cliente:</b> 2384815<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PJE EDUARDO HYATT 3<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 10<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871392, 1848, 1307, 871393, 871418, 871423, 871425</span>     </div>     </div>`)[0];
+                popup_e7165e2c055a14df7677d149a39156bb.setContent(html_2f54345d71d06f8c8600cf5a5c7571d0);
+            
+        
+
+        marker_8055b5a6fa44adff30495f79c5053dd5.bindPopup(popup_e7165e2c055a14df7677d149a39156bb)
+        ;
+
+        
+    
+    
+            marker_8055b5a6fa44adff30495f79c5053dd5.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2384815 - MARCELA EUGENIA VEGA VEGA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8055b5a6fa44adff30495f79c5053dd5.setIcon(icon_56d8f1504e1c6738ab93a6d9bf31114f);
+            
+    
+            var marker_36fbf033a86f79b5cd163ac264f9bba1 = L.marker(
+                [-30.615804, -71.210986],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_5ba7f8312c759833dad926a40dae03d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a544e2c7fc9e76beea925b67146ab8ed = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_cd400feeb5756c506298cfca4248a478 = $(`<div id="html_cd400feeb5756c506298cfca4248a478" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MINIMARKET Y COMERCIALIZADORA JOSE OPAZO OPAZ</h4>         <b>ID Cliente:</b> 2391114<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Jorge Galleguillos Valdivia 780, Jorge Galleg 780<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 20<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871473</span>     </div>     </div>`)[0];
+                popup_a544e2c7fc9e76beea925b67146ab8ed.setContent(html_cd400feeb5756c506298cfca4248a478);
+            
+        
+
+        marker_36fbf033a86f79b5cd163ac264f9bba1.bindPopup(popup_a544e2c7fc9e76beea925b67146ab8ed)
+        ;
+
+        
+    
+    
+            marker_36fbf033a86f79b5cd163ac264f9bba1.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2391114 - MINIMARKET Y COMERCIALIZADORA JOSE OPAZO OPAZ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_36fbf033a86f79b5cd163ac264f9bba1.setIcon(icon_5ba7f8312c759833dad926a40dae03d6);
+            
+    
+            var marker_ac1ae9d2dc2a75f0e3196d74b8e8024a = L.marker(
+                [-30.586735, -71.195701],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_72f382c09fff2bc33f91899a3c208757 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddc78a5a4754fc13830dcb3139652ef2 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_b34ca1ee0ebe20666c924c96bfc55a82 = $(`<div id="html_b34ca1ee0ebe20666c924c96bfc55a82" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">HECTOR ANTONIO VALENCIA MOYA</h4>         <b>ID Cliente:</b> 2439460<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Las Tortolas 6, Ovalle 6<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 23<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871242, 871240, 871098, 1600, 1007, 953, 929, 919, 1603, 4715, 4714, 1823, 870129, 870339, 870337, 870336, 870335</span>     </div>     </div>`)[0];
+                popup_ddc78a5a4754fc13830dcb3139652ef2.setContent(html_b34ca1ee0ebe20666c924c96bfc55a82);
+            
+        
+
+        marker_ac1ae9d2dc2a75f0e3196d74b8e8024a.bindPopup(popup_ddc78a5a4754fc13830dcb3139652ef2)
+        ;
+
+        
+    
+    
+            marker_ac1ae9d2dc2a75f0e3196d74b8e8024a.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2439460 - HECTOR ANTONIO VALENCIA MOYA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac1ae9d2dc2a75f0e3196d74b8e8024a.setIcon(icon_72f382c09fff2bc33f91899a3c208757);
+            
+    
+            var marker_579f5fc8e1dca3acf096f5f25772b524 = L.marker(
+                [-30.583599, -71.192669],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_49e989fdf62602111c5b84af62cab917 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f59bd2a5d63d8939868264c205e95915 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_97ddb292e5806050b6ee50f87cfe4dfe = $(`<div id="html_97ddb292e5806050b6ee50f87cfe4dfe" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">NOLFA PEGGY HEIMPELLER NUNEZ</h4>         <b>ID Cliente:</b> 2471029<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Avenida la Paz 1189, Ovalle 1189<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 18<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870235, 1603, 1602, 1267, 1600, 871545, 871548, 871549</span>     </div>     </div>`)[0];
+                popup_f59bd2a5d63d8939868264c205e95915.setContent(html_97ddb292e5806050b6ee50f87cfe4dfe);
+            
+        
+
+        marker_579f5fc8e1dca3acf096f5f25772b524.bindPopup(popup_f59bd2a5d63d8939868264c205e95915)
+        ;
+
+        
+    
+    
+            marker_579f5fc8e1dca3acf096f5f25772b524.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2471029 - NOLFA PEGGY HEIMPELLER NUNEZ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_579f5fc8e1dca3acf096f5f25772b524.setIcon(icon_49e989fdf62602111c5b84af62cab917);
+            
+    
+            var marker_e8193e2eafc681ae622b93dac2628b6e = L.marker(
+                [-30.594976, -71.190714],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_d4fc0cdd558c925143111e7808e4f41b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64b849b27507871e7043f5f280bf1afe = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_f5613d844ccf22d6a4ff4215ea3d6362 = $(`<div id="html_f5613d844ccf22d6a4ff4215ea3d6362" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MINIMARKET MAYA SPA</h4>         <b>ID Cliente:</b> 2478658<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Francisco Guzmán 1215, Ovalle 1215<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 10<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870277, 870278, 870690, 1325, 4715, 957, 1840</span>     </div>     </div>`)[0];
+                popup_64b849b27507871e7043f5f280bf1afe.setContent(html_f5613d844ccf22d6a4ff4215ea3d6362);
+            
+        
+
+        marker_e8193e2eafc681ae622b93dac2628b6e.bindPopup(popup_64b849b27507871e7043f5f280bf1afe)
+        ;
+
+        
+    
+    
+            marker_e8193e2eafc681ae622b93dac2628b6e.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2478658 - MINIMARKET MAYA SPA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8193e2eafc681ae622b93dac2628b6e.setIcon(icon_d4fc0cdd558c925143111e7808e4f41b);
+            
+    
+            var marker_3b9c7903c597226113dd5cb4d9558a3e = L.marker(
+                [-30.590805, -71.183862],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_bd111ea1f902a176bb1bd395f0685b24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_192c9fd6b5db58e425e20a27414f05c9 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_017ed0d775e461dc417b8c56cd6084ea = $(`<div id="html_017ed0d775e461dc417b8c56cd6084ea" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">TIENDA Y BAZAR JM SPA</h4>         <b>ID Cliente:</b> 2487045<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Diaguitas 1318, Ovalle 1318<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 4<br>         <b>Total Cajas:</b> 394<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871098, 1602, 871242, 871498, 871499, 870278, 870338, 870339, 870353, 870693, 870779, 871095, 450606, 450754, 450875, 451105, 451500, 451512, 870277, 1850, 4714, 4715, 4976, 7493, 450237, 450403, 450605, 1603, 1674, 1714, 1715, 1743, 1744, 1745, 1756, 1822, 905, 1018, 1258, 1267, 1325, 1340, 1448, 1473, 1600, 1601, 871182</span>     </div>     </div>`)[0];
+                popup_192c9fd6b5db58e425e20a27414f05c9.setContent(html_017ed0d775e461dc417b8c56cd6084ea);
+            
+        
+
+        marker_3b9c7903c597226113dd5cb4d9558a3e.bindPopup(popup_192c9fd6b5db58e425e20a27414f05c9)
+        ;
+
+        
+    
+    
+            marker_3b9c7903c597226113dd5cb4d9558a3e.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2487045 - TIENDA Y BAZAR JM SPA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3b9c7903c597226113dd5cb4d9558a3e.setIcon(icon_bd111ea1f902a176bb1bd395f0685b24);
+            
+    
+            var marker_f26763f5806f073e02649c7a2d54a72f = L.marker(
+                [-30.570378, -71.17801],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_ee1da82ba0c3d29af5b17bc2393bbeef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7255429d69f778f0d941a5353b217ae = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_1373dc1ed130fc761da455aa52c23ffd = $(`<div id="html_1373dc1ed130fc761da455aa52c23ffd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MINIMARKET GISSELLE STEPHANIE ZEPEDA VALDIVIA</h4>         <b>ID Cliente:</b> 2492933<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Teodoro Aguirre Alvarez 328, Ovalle 328<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 3<br>         <b>Total Cajas:</b> 11<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870235, 870277, 871545, 871392, 1743, 1840, 870690, 871551, 871499, 4714, 871347</span>     </div>     </div>`)[0];
+                popup_d7255429d69f778f0d941a5353b217ae.setContent(html_1373dc1ed130fc761da455aa52c23ffd);
+            
+        
+
+        marker_f26763f5806f073e02649c7a2d54a72f.bindPopup(popup_d7255429d69f778f0d941a5353b217ae)
+        ;
+
+        
+    
+    
+            marker_f26763f5806f073e02649c7a2d54a72f.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2492933 - MINIMARKET GISSELLE STEPHANIE ZEPEDA VALDIVIA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f26763f5806f073e02649c7a2d54a72f.setIcon(icon_ee1da82ba0c3d29af5b17bc2393bbeef);
+            
+    
+            var marker_a88a78c0dd65fb2eef5a25a0f088e8a0 = L.marker(
+                [-30.584497, -71.192947],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_b3499a4a799cd25a4762192b57950f41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9b6a00295e5c3744b532ed70460936c = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_ef49f5ae12fc0585a952c5a867caed6d = $(`<div id="html_ef49f5ae12fc0585a952c5a867caed6d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">COMERCIAL SANTA EMILIA SPA</h4>         <b>ID Cliente:</b> 2500636<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Avenida la Paz 1133, Ovalle 1133<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 9<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871499, 4714, 870277, 870206</span>     </div>     </div>`)[0];
+                popup_c9b6a00295e5c3744b532ed70460936c.setContent(html_ef49f5ae12fc0585a952c5a867caed6d);
+            
+        
+
+        marker_a88a78c0dd65fb2eef5a25a0f088e8a0.bindPopup(popup_c9b6a00295e5c3744b532ed70460936c)
+        ;
+
+        
+    
+    
+            marker_a88a78c0dd65fb2eef5a25a0f088e8a0.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2500636 - COMERCIAL SANTA EMILIA SPA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a88a78c0dd65fb2eef5a25a0f088e8a0.setIcon(icon_b3499a4a799cd25a4762192b57950f41);
+            
+    
+            var marker_ca44ad83eef6751eb794d427ed39bf80 = L.marker(
+                [-30.586467, -71.190903],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_e35ac1bce57074dca2e969757e4a950b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc7a22648afd41b1fa7fcf6ce8ea3743 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_04c0115976f05f41ba67618e3b4066ed = $(`<div id="html_04c0115976f05f41ba67618e3b4066ed" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MARICELA PASTEN VILLALON</h4>         <b>ID Cliente:</b> 2536403<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Pedro Lira 1002, Ovalle 1002<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 10<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871532, 871347, 1840, 1307, 1858, 1727, 1728, 1848</span>     </div>     </div>`)[0];
+                popup_dc7a22648afd41b1fa7fcf6ce8ea3743.setContent(html_04c0115976f05f41ba67618e3b4066ed);
+            
+        
+
+        marker_ca44ad83eef6751eb794d427ed39bf80.bindPopup(popup_dc7a22648afd41b1fa7fcf6ce8ea3743)
+        ;
+
+        
+    
+    
+            marker_ca44ad83eef6751eb794d427ed39bf80.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2536403 - MARICELA PASTEN VILLALON
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca44ad83eef6751eb794d427ed39bf80.setIcon(icon_e35ac1bce57074dca2e969757e4a950b);
+            
+    
+            var marker_79728e3eebdbc48caffe3e11446488b8 = L.marker(
+                [-30.585344, -71.187265],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_d411ec7ba7c7c88610b3466bff78f33a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d57f76d66628d3f572557f9c794fa5d = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_789b31c3094217c574eb68314b9d2662 = $(`<div id="html_789b31c3094217c574eb68314b9d2662" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JONATHAN CASTRO ROBLES</h4>         <b>ID Cliente:</b> 2564600<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> Mario Ramirez Araya 740, Limari 740<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 3<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1840, 870692</span>     </div>     </div>`)[0];
+                popup_8d57f76d66628d3f572557f9c794fa5d.setContent(html_789b31c3094217c574eb68314b9d2662);
+            
+        
+
+        marker_79728e3eebdbc48caffe3e11446488b8.bindPopup(popup_8d57f76d66628d3f572557f9c794fa5d)
+        ;
+
+        
+    
+    
+            marker_79728e3eebdbc48caffe3e11446488b8.bindTooltip(
+                `<div>
+                     [RUTA] ID: 2564600 - JONATHAN CASTRO ROBLES
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79728e3eebdbc48caffe3e11446488b8.setIcon(icon_d411ec7ba7c7c88610b3466bff78f33a);
+            
+    
+            var marker_ca2a1b71315616f150c91ba127c1faa3 = L.marker(
+                [-30.585644, -71.197966],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_701c249b9c8853a58c22f45b6539acc8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58b9ec59a14544b0906876b196c3a3c6 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_1edb3656192200ffcc175853e53083e5 = $(`<div id="html_1edb3656192200ffcc175853e53083e5" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ALICIA ORELLANA INFANTE</h4>         <b>ID Cliente:</b> 514247<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> LOS TORDOS 805<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 158<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">451500, 1756, 450754, 450749, 450607, 450605, 450604, 450336, 451523, 1840, 1822, 451216, 1743, 871499, 592, 1448, 451381</span>     </div>     </div>`)[0];
+                popup_58b9ec59a14544b0906876b196c3a3c6.setContent(html_1edb3656192200ffcc175853e53083e5);
+            
+        
+
+        marker_ca2a1b71315616f150c91ba127c1faa3.bindPopup(popup_58b9ec59a14544b0906876b196c3a3c6)
+        ;
+
+        
+    
+    
+            marker_ca2a1b71315616f150c91ba127c1faa3.bindTooltip(
+                `<div>
+                     [RUTA] ID: 514247 - ALICIA ORELLANA INFANTE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca2a1b71315616f150c91ba127c1faa3.setIcon(icon_701c249b9c8853a58c22f45b6539acc8);
+            
+    
+            var marker_c920b1299d87b398223d9d4c68cbc2ce = L.marker(
+                [-30.5833, -71.196],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_b54c5a22784f1920a087bd944113e4d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa9aa1bf4f241b44a613548a4010e6f4 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_555cf199caf9fccf08ec939ea4d4e536 = $(`<div id="html_555cf199caf9fccf08ec939ea4d4e536" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ESTELVINA OLIVARES ROJAS</h4>         <b>ID Cliente:</b> 515781<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> IGOR STRABINSKY 1104<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 54<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871499, 451500, 1603, 870662, 870661, 870779, 1600, 870901, 870903, 1267, 870653, 1448, 1776, 451419, 870203</span>     </div>     </div>`)[0];
+                popup_fa9aa1bf4f241b44a613548a4010e6f4.setContent(html_555cf199caf9fccf08ec939ea4d4e536);
+            
+        
+
+        marker_c920b1299d87b398223d9d4c68cbc2ce.bindPopup(popup_fa9aa1bf4f241b44a613548a4010e6f4)
+        ;
+
+        
+    
+    
+            marker_c920b1299d87b398223d9d4c68cbc2ce.bindTooltip(
+                `<div>
+                     [RUTA] ID: 515781 - ESTELVINA OLIVARES ROJAS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c920b1299d87b398223d9d4c68cbc2ce.setIcon(icon_b54c5a22784f1920a087bd944113e4d7);
+            
+    
+            var marker_309dd8ec529c2c8d35353f5b5d9ac101 = L.marker(
+                [-30.589437, -71.195943],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_6efb18558d43468d8a640d8f2a06b40d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca5d53988be97687757c6e2737d6b75c = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_76348f1e0c88f3302a1fed6df4d49dfa = $(`<div id="html_76348f1e0c88f3302a1fed6df4d49dfa" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ERNESTINA LEDEZMA ROMERO</h4>         <b>ID Cliente:</b> 516202<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> V. P. ROSALES 515<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 12<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1858, 1840, 1603, 1600, 871548, 871549, 871547, 870693, 870277</span>     </div>     </div>`)[0];
+                popup_ca5d53988be97687757c6e2737d6b75c.setContent(html_76348f1e0c88f3302a1fed6df4d49dfa);
+            
+        
+
+        marker_309dd8ec529c2c8d35353f5b5d9ac101.bindPopup(popup_ca5d53988be97687757c6e2737d6b75c)
+        ;
+
+        
+    
+    
+            marker_309dd8ec529c2c8d35353f5b5d9ac101.bindTooltip(
+                `<div>
+                     [RUTA] ID: 516202 - ERNESTINA LEDEZMA ROMERO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_309dd8ec529c2c8d35353f5b5d9ac101.setIcon(icon_6efb18558d43468d8a640d8f2a06b40d);
+            
+    
+            var marker_71c88a6721e70e8ea652adb0d90aed01 = L.marker(
+                [-30.593487, -71.196306],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_75b8f93bd9b5c354b1fee490ec6e88f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c49dac0f5dd7fd8e6a7a4e6dfc1bde3 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_ccbe41aa7705fdd237a0eaeaf7f198dc = $(`<div id="html_ccbe41aa7705fdd237a0eaeaf7f198dc" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CARMEN ROJAS ARAYA</h4>         <b>ID Cliente:</b> 517013<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PEDRO ANTONIO GONZALEZ 517<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 4<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1858, 4714, 870858, 870278</span>     </div>     </div>`)[0];
+                popup_6c49dac0f5dd7fd8e6a7a4e6dfc1bde3.setContent(html_ccbe41aa7705fdd237a0eaeaf7f198dc);
+            
+        
+
+        marker_71c88a6721e70e8ea652adb0d90aed01.bindPopup(popup_6c49dac0f5dd7fd8e6a7a4e6dfc1bde3)
+        ;
+
+        
+    
+    
+            marker_71c88a6721e70e8ea652adb0d90aed01.bindTooltip(
+                `<div>
+                     [RUTA] ID: 517013 - CARMEN ROJAS ARAYA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71c88a6721e70e8ea652adb0d90aed01.setIcon(icon_75b8f93bd9b5c354b1fee490ec6e88f1);
+            
+    
+            var marker_9d39851e8170a40bb0247419d8ea701e = L.marker(
+                [-30.586516, -71.191752],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_c81a207b6fb829babb9e983ad6d7aa02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd041c831be8c529bb9eb038cdeceaf5 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_940ab1bd762a3a6f96383eae67b8ae2e = $(`<div id="html_940ab1bd762a3a6f96383eae67b8ae2e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">EMILIA ZEPEDA CORTES</h4>         <b>ID Cliente:</b> 517141<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> EPEDRO LUNA 986<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 9<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871095, 871093, 1307, 1603, 870203, 1602, 870653, 1858, 1600</span>     </div>     </div>`)[0];
+                popup_cd041c831be8c529bb9eb038cdeceaf5.setContent(html_940ab1bd762a3a6f96383eae67b8ae2e);
+            
+        
+
+        marker_9d39851e8170a40bb0247419d8ea701e.bindPopup(popup_cd041c831be8c529bb9eb038cdeceaf5)
+        ;
+
+        
+    
+    
+            marker_9d39851e8170a40bb0247419d8ea701e.bindTooltip(
+                `<div>
+                     [RUTA] ID: 517141 - EMILIA ZEPEDA CORTES
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9d39851e8170a40bb0247419d8ea701e.setIcon(icon_c81a207b6fb829babb9e983ad6d7aa02);
+            
+    
+            var marker_8ea82fb51c1c944cd0c6b069883a3448 = L.marker(
+                [-30.828506, -71.25492],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_5db9fc7133840d34bd8f99a82c0723f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_497e9e51db82d77e4f071d638328dbf1 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_fc5be4e3a597f0a1b710cb267610d003 = $(`<div id="html_fc5be4e3a597f0a1b710cb267610d003" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">OMAR ARAYA BUGUEÑO</h4>         <b>ID Cliente:</b> 518216<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> LA SERENA 86<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 8<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870203, 870235, 1600, 1267, 1840, 870278, 870277</span>     </div>     </div>`)[0];
+                popup_497e9e51db82d77e4f071d638328dbf1.setContent(html_fc5be4e3a597f0a1b710cb267610d003);
+            
+        
+
+        marker_8ea82fb51c1c944cd0c6b069883a3448.bindPopup(popup_497e9e51db82d77e4f071d638328dbf1)
+        ;
+
+        
+    
+    
+            marker_8ea82fb51c1c944cd0c6b069883a3448.bindTooltip(
+                `<div>
+                     [RUTA] ID: 518216 - OMAR ARAYA BUGUEÑO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8ea82fb51c1c944cd0c6b069883a3448.setIcon(icon_5db9fc7133840d34bd8f99a82c0723f6);
+            
+    
+            var marker_8229425d9b9cf8d4290e7f115974358b = L.marker(
+                [-30.590839, -71.184421],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_10ee168fc6ce3ab48000baf92fbdb54e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d100585ee68479fd5bafeaa511289d3 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_45e43199e9db9b5e49d6768c045a6e17 = $(`<div id="html_45e43199e9db9b5e49d6768c045a6e17" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ORLINDA TORREJON</h4>         <b>ID Cliente:</b> 520034<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> DIAGUITA 1284<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 15<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870690, 1258, 4715, 4714, 1603, 1756, 870277, 871242, 870653, 1448, 1473, 1600, 870278, 1602</span>     </div>     </div>`)[0];
+                popup_6d100585ee68479fd5bafeaa511289d3.setContent(html_45e43199e9db9b5e49d6768c045a6e17);
+            
+        
+
+        marker_8229425d9b9cf8d4290e7f115974358b.bindPopup(popup_6d100585ee68479fd5bafeaa511289d3)
+        ;
+
+        
+    
+    
+            marker_8229425d9b9cf8d4290e7f115974358b.bindTooltip(
+                `<div>
+                     [RUTA] ID: 520034 - ORLINDA TORREJON
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8229425d9b9cf8d4290e7f115974358b.setIcon(icon_10ee168fc6ce3ab48000baf92fbdb54e);
+            
+    
+            var marker_5cf38e2e6086b8481f5eefa1e8e15576 = L.marker(
+                [-30.592177, -71.194147],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_3af4b270cfd18c7e2a5229486e9dbd99 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_861e79cde422f6b7fc526a5fcda38dbe = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_535d4e38f2a3668b0edfac3c9af10c91 = $(`<div id="html_535d4e38f2a3668b0edfac3c9af10c91" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">SILVIA ZENTENO BORQUEZ</h4>         <b>ID Cliente:</b> 520475<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> NUNEZDE PINEDA 670<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 9<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">305751, 1600, 1603, 1267, 871499, 1727, 871569, 305750, 1601</span>     </div>     </div>`)[0];
+                popup_861e79cde422f6b7fc526a5fcda38dbe.setContent(html_535d4e38f2a3668b0edfac3c9af10c91);
+            
+        
+
+        marker_5cf38e2e6086b8481f5eefa1e8e15576.bindPopup(popup_861e79cde422f6b7fc526a5fcda38dbe)
+        ;
+
+        
+    
+    
+            marker_5cf38e2e6086b8481f5eefa1e8e15576.bindTooltip(
+                `<div>
+                     [RUTA] ID: 520475 - SILVIA ZENTENO BORQUEZ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5cf38e2e6086b8481f5eefa1e8e15576.setIcon(icon_3af4b270cfd18c7e2a5229486e9dbd99);
+            
+    
+            var marker_9aac337fd3704a4b6cbfca2a5ff58f63 = L.marker(
+                [-30.83135, -71.258929],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_0fe092a8bd578f4c30a198088a2e37a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b585da4d5b55a26ba496e0a683573778 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_562c7a6cbfbd88f16caf546235699293 = $(`<div id="html_562c7a6cbfbd88f16caf546235699293" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CAROLINA GUERRERO GUER</h4>         <b>ID Cliente:</b> 521856<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> CAUPOLICAN 862<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 4<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1756, 1448, 870278, 4715</span>     </div>     </div>`)[0];
+                popup_b585da4d5b55a26ba496e0a683573778.setContent(html_562c7a6cbfbd88f16caf546235699293);
+            
+        
+
+        marker_9aac337fd3704a4b6cbfca2a5ff58f63.bindPopup(popup_b585da4d5b55a26ba496e0a683573778)
+        ;
+
+        
+    
+    
+            marker_9aac337fd3704a4b6cbfca2a5ff58f63.bindTooltip(
+                `<div>
+                     [RUTA] ID: 521856 - CAROLINA GUERRERO GUER
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9aac337fd3704a4b6cbfca2a5ff58f63.setIcon(icon_0fe092a8bd578f4c30a198088a2e37a7);
+            
+    
+            var marker_76241fa937926c62ba58f4ce27ee5e59 = L.marker(
+                [-30.587053, -71.183066],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_2d4d445c82f801329fc6a2a4c438fc49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_375af43565dc75351c0a6c0a9de8a881 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_2f58a4fa7ca1c2b4bb6ae1f97eec1792 = $(`<div id="html_2f58a4fa7ca1c2b4bb6ae1f97eec1792" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JANET DIAZ MICHEA</h4>         <b>ID Cliente:</b> 521865<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> ABDON JIMENEZ 1427<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 20<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1603, 1602, 1307, 1840, 870277, 870235, 870661, 870653, 870278, 871549, 871543, 871545</span>     </div>     </div>`)[0];
+                popup_375af43565dc75351c0a6c0a9de8a881.setContent(html_2f58a4fa7ca1c2b4bb6ae1f97eec1792);
+            
+        
+
+        marker_76241fa937926c62ba58f4ce27ee5e59.bindPopup(popup_375af43565dc75351c0a6c0a9de8a881)
+        ;
+
+        
+    
+    
+            marker_76241fa937926c62ba58f4ce27ee5e59.bindTooltip(
+                `<div>
+                     [RUTA] ID: 521865 - JANET DIAZ MICHEA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_76241fa937926c62ba58f4ce27ee5e59.setIcon(icon_2d4d445c82f801329fc6a2a4c438fc49);
+            
+    
+            var marker_c5a6109bebdbb18787df8cfbdea24493 = L.marker(
+                [-30.586334, -71.190758],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_baba2bfddb21d958acfdb33cc11767c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc4fea264a8daefa771be5cf88809cb8 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_da6c6f3f8786d19fb630d04b298efa36 = $(`<div id="html_da6c6f3f8786d19fb630d04b298efa36" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">DANIEL GARCIA LIZARDI</h4>         <b>ID Cliente:</b> 574625<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PEDRO LIRA             POB SAN JOSE 1001<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 15<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1307, 1600, 1602, 1727, 1728, 1840, 871532, 4714, 870203, 870277, 871392, 871499, 1858</span>     </div>     </div>`)[0];
+                popup_bc4fea264a8daefa771be5cf88809cb8.setContent(html_da6c6f3f8786d19fb630d04b298efa36);
+            
+        
+
+        marker_c5a6109bebdbb18787df8cfbdea24493.bindPopup(popup_bc4fea264a8daefa771be5cf88809cb8)
+        ;
+
+        
+    
+    
+            marker_c5a6109bebdbb18787df8cfbdea24493.bindTooltip(
+                `<div>
+                     [RUTA] ID: 574625 - DANIEL GARCIA LIZARDI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c5a6109bebdbb18787df8cfbdea24493.setIcon(icon_baba2bfddb21d958acfdb33cc11767c5);
+            
+    
+            var marker_514da66792776b6dd3d5cfe70f7c013b = L.marker(
+                [-30.829563, -71.262381],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_e0c4d9119e0d38e0765c9d9f073d9baa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2253b607498e863191d8e8310bd63fbc = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_d2afffd209c9b8ae1ed1cfc3a86a4086 = $(`<div id="html_d2afffd209c9b8ae1ed1cfc3a86a4086" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ROCIO ROJAS ROJAS</h4>         <b>ID Cliente:</b> 683156<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> CONDELL 649<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 10<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">700039, 701106, 701111, 701110, 701109</span>     </div>     </div>`)[0];
+                popup_2253b607498e863191d8e8310bd63fbc.setContent(html_d2afffd209c9b8ae1ed1cfc3a86a4086);
+            
+        
+
+        marker_514da66792776b6dd3d5cfe70f7c013b.bindPopup(popup_2253b607498e863191d8e8310bd63fbc)
+        ;
+
+        
+    
+    
+            marker_514da66792776b6dd3d5cfe70f7c013b.bindTooltip(
+                `<div>
+                     [RUTA] ID: 683156 - ROCIO ROJAS ROJAS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_514da66792776b6dd3d5cfe70f7c013b.setIcon(icon_e0c4d9119e0d38e0765c9d9f073d9baa);
+            
+    
+            var marker_25e49e87e33cb9ea0e1b5d659accea40 = L.marker(
+                [-30.394811, -70.869942],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_9ca11a66102ac8a023f5b6187ca478e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0831ed603752639583e014c882944398 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_d6d0e38a7fa1c53aee64f193e258363e = $(`<div id="html_d6d0e38a7fa1c53aee64f193e258363e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">KRASNA BASIC TATAN</h4>         <b>ID Cliente:</b> 698069<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PICHASCA S/N<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 70<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">905, 871498, 957, 1005, 1325, 1448, 1745, 1756, 4714, 4715, 450235, 450328, 450754, 451419, 701009, 870235, 925</span>     </div>     </div>`)[0];
+                popup_0831ed603752639583e014c882944398.setContent(html_d6d0e38a7fa1c53aee64f193e258363e);
+            
+        
+
+        marker_25e49e87e33cb9ea0e1b5d659accea40.bindPopup(popup_0831ed603752639583e014c882944398)
+        ;
+
+        
+    
+    
+            marker_25e49e87e33cb9ea0e1b5d659accea40.bindTooltip(
+                `<div>
+                     [RUTA] ID: 698069 - KRASNA BASIC TATAN
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_25e49e87e33cb9ea0e1b5d659accea40.setIcon(icon_9ca11a66102ac8a023f5b6187ca478e7);
+            
+    
+            var marker_4436b5b6c76c5560f391eadc14228e8a = L.marker(
+                [-30.829023, -71.26009],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_cc9c29320906535fa3ed9db08d2a506d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_300e2e9b18e3697fcd19b77410724268 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_a4a8eb65428bfeb1e5bb19c21fbd1794 = $(`<div id="html_a4a8eb65428bfeb1e5bb19c21fbd1794" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">VITALIA CORDERO BUGUENO</h4>         <b>ID Cliente:</b> 702103<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> CAUPOLICAN 548<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 35<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">909, 1822, 450417, 450605, 450754, 870202, 871528, 870235, 871144, 871240, 871242, 871275, 870203</span>     </div>     </div>`)[0];
+                popup_300e2e9b18e3697fcd19b77410724268.setContent(html_a4a8eb65428bfeb1e5bb19c21fbd1794);
+            
+        
+
+        marker_4436b5b6c76c5560f391eadc14228e8a.bindPopup(popup_300e2e9b18e3697fcd19b77410724268)
+        ;
+
+        
+    
+    
+            marker_4436b5b6c76c5560f391eadc14228e8a.bindTooltip(
+                `<div>
+                     [RUTA] ID: 702103 - VITALIA CORDERO BUGUENO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4436b5b6c76c5560f391eadc14228e8a.setIcon(icon_cc9c29320906535fa3ed9db08d2a506d);
+            
+    
+            var marker_0194bb5fedb503c28f5e09e6dceca2fe = L.marker(
+                [-30.59087, -71.203591],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_d78ef6b248510898d853d8ddc947edb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee6b7873dce32c56af3da6a74d92d8e2 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_b795e94234c83f4080a0616a71a8c3d9 = $(`<div id="html_b795e94234c83f4080a0616a71a8c3d9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">OLGA BERRIOS BERRIOS</h4>         <b>ID Cliente:</b> 726505<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> HUMBERTO ARAYA 125 125<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 12<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1448, 1600, 1603, 1743, 871545, 870203, 870856, 871275, 871473, 1968</span>     </div>     </div>`)[0];
+                popup_ee6b7873dce32c56af3da6a74d92d8e2.setContent(html_b795e94234c83f4080a0616a71a8c3d9);
+            
+        
+
+        marker_0194bb5fedb503c28f5e09e6dceca2fe.bindPopup(popup_ee6b7873dce32c56af3da6a74d92d8e2)
+        ;
+
+        
+    
+    
+            marker_0194bb5fedb503c28f5e09e6dceca2fe.bindTooltip(
+                `<div>
+                     [RUTA] ID: 726505 - OLGA BERRIOS BERRIOS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0194bb5fedb503c28f5e09e6dceca2fe.setIcon(icon_d78ef6b248510898d853d8ddc947edb9);
+            
+    
+            var marker_9b9dcd866cf86f695b2682e28b0c4800 = L.marker(
+                [-30.583482, -71.197488],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_239e164d206690ca59fedc907ec084f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa655beeae31ee8d9ba05fb324cd5167 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_af7efc493547846bff1dbdb04e77444b = $(`<div id="html_af7efc493547846bff1dbdb04e77444b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">LUIS ROJAS MALDONADO</h4>         <b>ID Cliente:</b> 759730<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> JEAN SEBELIUS #1017<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 7<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1600, 1727, 1728, 871545, 1840, 871242, 1745</span>     </div>     </div>`)[0];
+                popup_fa655beeae31ee8d9ba05fb324cd5167.setContent(html_af7efc493547846bff1dbdb04e77444b);
+            
+        
+
+        marker_9b9dcd866cf86f695b2682e28b0c4800.bindPopup(popup_fa655beeae31ee8d9ba05fb324cd5167)
+        ;
+
+        
+    
+    
+            marker_9b9dcd866cf86f695b2682e28b0c4800.bindTooltip(
+                `<div>
+                     [RUTA] ID: 759730 - LUIS ROJAS MALDONADO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9b9dcd866cf86f695b2682e28b0c4800.setIcon(icon_239e164d206690ca59fedc907ec084f6);
+            
+    
+            var marker_305549f1f6a6fc8d11817ce5ac14f837 = L.marker(
+                [-30.824855, -71.260337],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_f95c5302e903aa1f17806e9456362f82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_35f3afd46a3c4b6f236ab93d3865e711 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_2e54289af099252513181bc9e3bd0374 = $(`<div id="html_2e54289af099252513181bc9e3bd0374" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">EKLIPSE SERVICIOS SPA</h4>         <b>ID Cliente:</b> 766817<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> CAMINO A COMBARBALA SIN NUMERO SIN NUM<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 90<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1717, 870687, 871188, 870913, 871176, 870912</span>     </div>     </div>`)[0];
+                popup_35f3afd46a3c4b6f236ab93d3865e711.setContent(html_2e54289af099252513181bc9e3bd0374);
+            
+        
+
+        marker_305549f1f6a6fc8d11817ce5ac14f837.bindPopup(popup_35f3afd46a3c4b6f236ab93d3865e711)
+        ;
+
+        
+    
+    
+            marker_305549f1f6a6fc8d11817ce5ac14f837.bindTooltip(
+                `<div>
+                     [RUTA] ID: 766817 - EKLIPSE SERVICIOS SPA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_305549f1f6a6fc8d11817ce5ac14f837.setIcon(icon_f95c5302e903aa1f17806e9456362f82);
+            
+    
+            var marker_add58bb6ffb5b3df606918c2a591459f = L.marker(
+                [-30.588346, -71.172818],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_ec4a800f38479aa3dd71de3e49446692 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e76fa23e32e35b03060d91341c3f9724 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_57585c90cafc5b658e6df7294cdb4e97 = $(`<div id="html_57585c90cafc5b658e6df7294cdb4e97" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JESSICA SOLEDAD ROJO GONZALEZ</h4>         <b>ID Cliente:</b> 829124<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> DANILO PEÑAFIEL OLIVARES 99<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 20<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">4715, 870278, 870235, 871473</span>     </div>     </div>`)[0];
+                popup_e76fa23e32e35b03060d91341c3f9724.setContent(html_57585c90cafc5b658e6df7294cdb4e97);
+            
+        
+
+        marker_add58bb6ffb5b3df606918c2a591459f.bindPopup(popup_e76fa23e32e35b03060d91341c3f9724)
+        ;
+
+        
+    
+    
+            marker_add58bb6ffb5b3df606918c2a591459f.bindTooltip(
+                `<div>
+                     [RUTA] ID: 829124 - JESSICA SOLEDAD ROJO GONZALEZ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_add58bb6ffb5b3df606918c2a591459f.setIcon(icon_ec4a800f38479aa3dd71de3e49446692);
+            
+    
+            var marker_af7840234171bbeaad0000c082d5058f = L.marker(
+                [-30.624217, -71.122229],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_6ae415ea3a6291f5425ef8bf5343b44d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b36b2f8668470dd00e435c96a742c1e4 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_68ada699832098dc211a27bd07813574 = $(`<div id="html_68ada699832098dc211a27bd07813574" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">GUSTAVO ANTONIO CORTES TAPIA</h4>         <b>ID Cliente:</b> 846319<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> BILBAO 221<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 35<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">450607, 450754, 870278, 450605, 1822, 1600, 592, 450417</span>     </div>     </div>`)[0];
+                popup_b36b2f8668470dd00e435c96a742c1e4.setContent(html_68ada699832098dc211a27bd07813574);
+            
+        
+
+        marker_af7840234171bbeaad0000c082d5058f.bindPopup(popup_b36b2f8668470dd00e435c96a742c1e4)
+        ;
+
+        
+    
+    
+            marker_af7840234171bbeaad0000c082d5058f.bindTooltip(
+                `<div>
+                     [RUTA] ID: 846319 - GUSTAVO ANTONIO CORTES TAPIA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_af7840234171bbeaad0000c082d5058f.setIcon(icon_6ae415ea3a6291f5425ef8bf5343b44d);
+            
+    
+            var marker_5c0eb497afea4d94f9b6657be558a75b = L.marker(
+                [-30.2728, -70.666702],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_ea8dfaeac876317067e519cfb359625c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24a7abb72e2ac552000cd42e7154cf4d = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_c8cfedbd837e001ed7c76c1ed944c11f = $(`<div id="html_c8cfedbd837e001ed7c76c1ed944c11f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">SONIA JIMENA MOLINA ROJAS</h4>         <b>ID Cliente:</b> 851866<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> PUEBLO DE HURTADO SIN NUM<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 7<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871393, 870278, 870235</span>     </div>     </div>`)[0];
+                popup_24a7abb72e2ac552000cd42e7154cf4d.setContent(html_c8cfedbd837e001ed7c76c1ed944c11f);
+            
+        
+
+        marker_5c0eb497afea4d94f9b6657be558a75b.bindPopup(popup_24a7abb72e2ac552000cd42e7154cf4d)
+        ;
+
+        
+    
+    
+            marker_5c0eb497afea4d94f9b6657be558a75b.bindTooltip(
+                `<div>
+                     [RUTA] ID: 851866 - SONIA JIMENA MOLINA ROJAS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5c0eb497afea4d94f9b6657be558a75b.setIcon(icon_ea8dfaeac876317067e519cfb359625c);
+            
+    
+            var marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80 = L.marker(
+                [-30.833936, -71.257496],
+                {
+}
+            ).addTo(marker_cluster_54a8af00973d6c5e984c3cc89453c489);
+        
+    
+            var icon_3aa4831f5e2eed7a6ecb24a307c003b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6dcc44f472c87d57398a277e3f5e0165 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_c9389d881d5541e1859650e0874ea0c9 = $(`<div id="html_c9389d881d5541e1859650e0874ea0c9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MAURICIO HURTADO CUEVAS</h4>         <b>ID Cliente:</b> 983513<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> CAUPOLICAN 1310 1310<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 22<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">700809, 701009, 701109, 701110, 701111, 870235, 700564, 700271, 7799, 700041, 700576, 700575, 700039</span>     </div>     </div>`)[0];
+                popup_6dcc44f472c87d57398a277e3f5e0165.setContent(html_c9389d881d5541e1859650e0874ea0c9);
+            
+        
+
+        marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80.bindPopup(popup_6dcc44f472c87d57398a277e3f5e0165)
+        ;
+
+        
+    
+    
+            marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80.bindTooltip(
+                `<div>
+                     [RUTA] ID: 983513 - MAURICIO HURTADO CUEVAS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80.setIcon(icon_3aa4831f5e2eed7a6ecb24a307c003b8);
+            
+    
+            marker_cluster_54a8af00973d6c5e984c3cc89453c489.addTo(feature_group_ac3ab7e55c20ac04897d445c706b0cb8);
+        
+    
+            feature_group_ac3ab7e55c20ac04897d445c706b0cb8.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            var layer_control_666b51fe60de65917d5b2616195a8130_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f5a74411d7b8c84c41755c357f4ed95c,
+                },
+                overlays :  {
+                    "\ud83d\uded2 Supermercados" : feature_group_6ce151dcc28f022fedbda9f8fbfa6af6,
+                    "\ud83d\ude9b Ruta" : feature_group_ac3ab7e55c20ac04897d445c706b0cb8,
+                    "macro_element_171014c581cf3e1955aa01c60c5cfacd" : geo_json_171014c581cf3e1955aa01c60c5cfacd,
+                },
+            };
+            let layer_control_666b51fe60de65917d5b2616195a8130 = L.control.layers(
+                layer_control_666b51fe60de65917d5b2616195a8130_layers.base_layers,
+                layer_control_666b51fe60de65917d5b2616195a8130_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+
+        
+    
+        function geo_json_171014c581cf3e1955aa01c60c5cfacd_pointToLayer(feature, latlng) {
+            var opts = {
+  "stroke": true,
+  "color": "transparent",
+  "weight": 0,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "transparent",
+  "fillOpacity": 0,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+};
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_171014c581cf3e1955aa01c60c5cfacd_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_171014c581cf3e1955aa01c60c5cfacd = L.geoJson(null, {
+                onEachFeature: geo_json_171014c581cf3e1955aa01c60c5cfacd_onEachFeature,
+            
+                pointToLayer: geo_json_171014c581cf3e1955aa01c60c5cfacd_pointToLayer,
+            ...{
+}
+        });
+
+        function geo_json_171014c581cf3e1955aa01c60c5cfacd_add (data) {
+            geo_json_171014c581cf3e1955aa01c60c5cfacd
+                .addData(data);
+        }
+            geo_json_171014c581cf3e1955aa01c60c5cfacd_add({"features": [{"geometry": {"coordinates": [-71.193179, -30.593341], "type": "Point"}, "properties": {"Cliente": "1379259", "SKU": "1840, 1325, 1307"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.248218, -30.8296], "type": "Point"}, "properties": {"Cliente": "1427221", "SKU": "870203, 870855, 870235, 870277, 1823, 1602, 1603, 1727, 1728, 1743, 1744, 1745, 1756, 1776, 1822, 1325, 1448, 1600, 871543, 871545, 871547, 871549, 871551, 871173, 871180, 871184, 871186, 871189, 871240, 871242, 871275, 871416, 871418, 871421, 870278, 870657, 870690, 870693, 870206"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.179028, -30.564884], "type": "Point"}, "properties": {"Cliente": "1446268", "SKU": "1840, 870072, 1602, 1603, 1743, 1744, 1267, 1307, 1325, 1448, 1600, 871499, 871498, 870690, 870779, 870831, 4976"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.180893, -30.584791], "type": "Point"}, "properties": {"Cliente": "1624161", "SKU": "1823, 1840, 1727, 870855, 870278, 870375, 870690, 1325"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.18428, -30.583639], "type": "Point"}, "properties": {"Cliente": "1645697", "SKU": "4714, 4715, 870690, 870278, 871473"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.186362, -30.574894], "type": "Point"}, "properties": {"Cliente": "1767449", "SKU": "870223, 305750, 305751, 305752, 305754, 871525, 871569, 871588, 871173, 871180, 871184, 871186, 871189, 871207, 871208, 871209, 871214, 871240, 871242, 871346, 870334, 870336, 870408, 870002, 870008, 870203"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.248241, -30.8296], "type": "Point"}, "properties": {"Cliente": "1869187", "SKU": "700576, 451548, 450417, 450555, 592, 450851, 701109, 4714, 4715, 450605, 871498"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.187842, -30.589442], "type": "Point"}, "properties": {"Cliente": "1937870", "SKU": "870856, 870692, 870690"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.199562, -30.584855], "type": "Point"}, "properties": {"Cliente": "2197764", "SKU": "870690, 1307, 1728, 1325, 871242"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.194042, -30.585585], "type": "Point"}, "properties": {"Cliente": "2207704", "SKU": "1840, 1822, 1858, 1745, 870690, 1602, 870779, 870656, 870655, 1603, 1600, 1448, 1743, 1325, 1728, 1267"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.261036, -30.825998], "type": "Point"}, "properties": {"Cliente": "2240863", "SKU": "701111, 700041, 701110, 701109, 700039, 700679, 957, 871393, 451200, 1325, 870852, 871392, 700809, 870690"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.182959, -30.585371], "type": "Point"}, "properties": {"Cliente": "2310215", "SKU": "870713, 871473, 1448, 1307, 1756, 1745, 1744, 1727, 1858, 1840, 870235, 870203"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.103232, -30.64646], "type": "Point"}, "properties": {"Cliente": "2326085", "SKU": "1448, 1756, 870203, 4714, 870409, 871543, 871545, 871275, 871473, 1745"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.273384, -30.682726], "type": "Point"}, "properties": {"Cliente": "2380328", "SKU": "1743, 1745, 1822, 1448, 1600, 1602, 871537, 871579, 871581, 871275, 870656, 870657, 1603"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.191356, -30.594822], "type": "Point"}, "properties": {"Cliente": "2384815", "SKU": "871392, 1848, 1307, 871393, 871418, 871423, 871425"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.210986, -30.615804], "type": "Point"}, "properties": {"Cliente": "2391114", "SKU": "871473"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.195701, -30.586735], "type": "Point"}, "properties": {"Cliente": "2439460", "SKU": "871242, 871240, 871098, 1600, 1007, 953, 929, 919, 1603, 4715, 4714, 1823, 870129, 870339, 870337, 870336, 870335"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.192669, -30.583599], "type": "Point"}, "properties": {"Cliente": "2471029", "SKU": "870235, 1603, 1602, 1267, 1600, 871545, 871548, 871549"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.196692, -30.601499], "type": "Point"}, "properties": {"Cliente": "2471541", "SKU": "871543, 871545, 871549, 871551, 871630, 871183, 871392, 871393, 870278, 870353, 870402, 870656, 870693, 870698, 870779, 870851, 870903, 450851, 700571, 870196, 870203, 870204, 870216, 870235, 870253, 1840, 4714, 4715, 4976, 445294, 445755, 445761, 450328, 1602, 1603, 1604, 1743, 1756, 1822, 817, 829, 859, 1014, 1016, 1124, 1188, 1258, 1267, 1448, 1600"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.190714, -30.594976], "type": "Point"}, "properties": {"Cliente": "2478658", "SKU": "870277, 870278, 870690, 1325, 4715, 957, 1840"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.183862, -30.590805], "type": "Point"}, "properties": {"Cliente": "2487045", "SKU": "871098, 1602, 871242, 871498, 871499, 870278, 870338, 870339, 870353, 870693, 870779, 871095, 450606, 450754, 450875, 451105, 451500, 451512, 870277, 1850, 4714, 4715, 4976, 7493, 450237, 450403, 450605, 1603, 1674, 1714, 1715, 1743, 1744, 1745, 1756, 1822, 905, 1018, 1258, 1267, 1325, 1340, 1448, 1473, 1600, 1601, 871182"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.17801, -30.570378], "type": "Point"}, "properties": {"Cliente": "2492933", "SKU": "870235, 870277, 871545, 871392, 1743, 1840, 870690, 871551, 871499, 4714, 871347"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.202645, -30.605286], "type": "Point"}, "properties": {"Cliente": "2497856", "SKU": "871441, 871443, 871444, 870656, 870687, 870693, 870698, 870706, 450737, 450831, 451299, 451300, 451429, 451433, 700155, 700564, 700571, 700572, 700809, 870195, 870196, 870205, 870235, 4714, 4715, 7493, 7795, 445226, 445294, 447010, 450189, 450237, 450602, 1602, 1603, 1714, 1717, 1743, 1744, 1745, 1822, 871439, 871434, 871432, 871272, 871271, 871185, 871633, 871628, 871624, 871547, 1267, 871543"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.192947, -30.584497], "type": "Point"}, "properties": {"Cliente": "2500636", "SKU": "871499, 4714, 870277, 870206"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.190903, -30.586467], "type": "Point"}, "properties": {"Cliente": "2536403", "SKU": "871532, 871347, 1840, 1307, 1858, 1727, 1728, 1848"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.187265, -30.585344], "type": "Point"}, "properties": {"Cliente": "2564600", "SKU": "1840, 870692"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.197966, -30.585644], "type": "Point"}, "properties": {"Cliente": "514247", "SKU": "451500, 1756, 450754, 450749, 450607, 450605, 450604, 450336, 451523, 1840, 1822, 451216, 1743, 871499, 592, 1448, 451381"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.196, -30.5833], "type": "Point"}, "properties": {"Cliente": "515781", "SKU": "871499, 451500, 1603, 870662, 870661, 870779, 1600, 870901, 870903, 1267, 870653, 1448, 1776, 451419, 870203"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.195943, -30.589437], "type": "Point"}, "properties": {"Cliente": "516202", "SKU": "1858, 1840, 1603, 1600, 871548, 871549, 871547, 870693, 870277"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.196306, -30.593487], "type": "Point"}, "properties": {"Cliente": "517013", "SKU": "1858, 4714, 870858, 870278"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.191752, -30.586516], "type": "Point"}, "properties": {"Cliente": "517141", "SKU": "871095, 871093, 1307, 1603, 870203, 1602, 870653, 1858, 1600"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.25492, -30.828506], "type": "Point"}, "properties": {"Cliente": "518216", "SKU": "870203, 870235, 1600, 1267, 1840, 870278, 870277"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.184421, -30.590839], "type": "Point"}, "properties": {"Cliente": "520034", "SKU": "870690, 1258, 4715, 4714, 1603, 1756, 870277, 871242, 870653, 1448, 1473, 1600, 870278, 1602"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.194147, -30.592177], "type": "Point"}, "properties": {"Cliente": "520475", "SKU": "305751, 1600, 1603, 1267, 871499, 1727, 871569, 305750, 1601"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.258929, -30.83135], "type": "Point"}, "properties": {"Cliente": "521856", "SKU": "1756, 1448, 870278, 4715"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.183066, -30.587053], "type": "Point"}, "properties": {"Cliente": "521865", "SKU": "1603, 1602, 1307, 1840, 870277, 870235, 870661, 870653, 870278, 871549, 871543, 871545"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.196552, -30.604174], "type": "Point"}, "properties": {"Cliente": "525931", "SKU": "871547, 871548, 871567, 871594, 871717, 871718, 870912, 870913, 871037, 871078, 871095, 871144, 871175, 871180, 871181, 871183, 871185, 871186, 871242, 871271, 871275, 871327, 871329, 871342, 871347, 871392, 871393, 871470, 871498, 871524, 871525, 871528, 871532, 871534, 871537, 871539, 871540, 870277, 870278, 870334, 870335, 870337, 870338, 870339, 870353, 870400, 870401, 870402, 870405, 870420, 870424, 870432, 870653, 870655, 870656, 870661, 870662, 870687, 870689, 870693, 870698, 870704, 870717, 870851, 870854, 870901, 870903, 700533, 700555, 700556, 700558, 700564, 700565, 700575, 700576, 700688, 700809, 701004, 701009, 701018, 701109, 701110, 870180, 870181, 870189, 870195, 870196, 870202, 870203, 870205, 870206, 870215, 870216, 870235, 447107, 447111, 450112, 450133, 450189, 450237, 450329, 450356, 450403, 450404, 450472, 450536, 450554, 450590, 450602, 450704, 450746, 450851, 450855, 450859, 450933, 451290, 451370, 451381, 451395, 451404, 451422, 451429, 451451, 451453, 451523, 451549, 451551, 700039, 700041, 700042, 700271, 700387, 700398, 700399, 1743, 1744, 1745, 1756, 1776, 1822, 1840, 1850, 4714, 4715, 4976, 7266, 7280, 7794, 7799, 7801, 7802, 445227, 445294, 445407, 445455, 445520, 445696, 445761, 445811, 445928, 447010, 447076, 447077, 447086, 817, 829, 859, 909, 919, 929, 953, 1007, 1014, 1016, 1018, 1124, 1237, 1258, 1267, 1283, 1448, 1473, 1600, 1602, 1603, 1604, 1710, 1712, 1714, 1716"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.193856, -30.600433], "type": "Point"}, "properties": {"Cliente": "525932", "SKU": "871547, 1603, 871189, 871191, 871393, 871470, 871499, 871525, 871537, 870698, 870851, 870854, 700564, 700572, 701110, 870180, 870189, 870196, 870205, 870206, 870216, 450859, 451290, 451422, 1744, 1822, 4714, 4976, 1014, 1124, 1267, 1600, 1602, 871095"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.198053, -30.598207], "type": "Point"}, "properties": {"Cliente": "526280", "SKU": "7795, 445877, 445882, 447010, 447042, 447088, 447093, 1007, 1016, 1018, 1258, 1307, 1448, 1510, 1604, 871579, 871580, 871581, 871667, 871191, 871272, 871273, 871275, 871327, 871342, 871415, 871449, 871470, 871524, 871525, 870653, 870655, 870662, 870693, 870698, 870717, 870837, 870854, 700556, 700564, 700571, 700576, 700679, 700701, 700705, 700809, 701009, 701107, 701109, 701110, 701111, 870205, 870206, 447104, 450320, 450336, 450403, 450426, 450536, 450684, 450691, 450692, 450737, 450746, 450874, 451108, 451122, 451200, 451224, 451519, 700041, 700271, 700525, 700533, 1743, 1744, 1745, 1848, 1968"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.190758, -30.586334], "type": "Point"}, "properties": {"Cliente": "574625", "SKU": "1307, 1600, 1602, 1727, 1728, 1840, 871532, 4714, 870203, 870277, 871392, 871499, 1858"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.262381, -30.829563], "type": "Point"}, "properties": {"Cliente": "683156", "SKU": "700039, 701106, 701111, 701110, 701109"}, "type": "Feature"}, {"geometry": {"coordinates": [-70.869942, -30.394811], "type": "Point"}, "properties": {"Cliente": "698069", "SKU": "905, 871498, 957, 1005, 1325, 1448, 1745, 1756, 4714, 4715, 450235, 450328, 450754, 451419, 701009, 870235, 925"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.26009, -30.829023], "type": "Point"}, "properties": {"Cliente": "702103", "SKU": "909, 1822, 450417, 450605, 450754, 870202, 871528, 870235, 871144, 871240, 871242, 871275, 870203"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.203591, -30.59087], "type": "Point"}, "properties": {"Cliente": "726505", "SKU": "1448, 1600, 1603, 1743, 871545, 870203, 870856, 871275, 871473, 1968"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.197488, -30.583482], "type": "Point"}, "properties": {"Cliente": "759730", "SKU": "1600, 1727, 1728, 871545, 1840, 871242, 1745"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.260337, -30.824855], "type": "Point"}, "properties": {"Cliente": "766817", "SKU": "1717, 870687, 871188, 870913, 871176, 870912"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.18517, -30.597231], "type": "Point"}, "properties": {"Cliente": "791375", "SKU": "905, 915, 929, 957, 1005, 1016, 1057, 1124, 1258, 1267, 1473, 1600, 1601, 1602, 1603, 1604, 1745, 1756, 4714, 4715, 4976, 7245, 7280, 7493, 7686, 7788, 7792, 7794, 7799, 7801, 7803, 7845, 7996, 445225, 445227, 445696, 445767, 445879, 445982, 447010, 447089, 447092, 447111, 450237, 450302, 450328, 450329, 450336, 450352, 450356, 450363, 450403, 450404, 450415, 450426, 450472, 450531, 450536, 450554, 450557, 450603, 450660, 450684, 450691, 450692, 450774, 450831, 450850, 450851, 450855, 450859, 450916, 450933, 451122, 451200, 451224, 451243, 451247, 451370, 451374, 451381, 451395, 451423, 451429, 451431, 451432, 451433, 451488, 451491, 451496, 451502, 451512, 451519, 451533, 451554, 604581, 700039, 700041, 700042, 700271, 700517, 700533, 700561, 700564, 700565, 700572, 700574, 700576, 700638, 700679, 700702, 700705, 700809, 701009, 701010, 701012, 701018, 701106, 701109, 701110, 701111, 870072, 870195, 870196, 870202, 870203, 870205, 870206, 870215, 870216, 870223, 870235, 870263, 870277, 870278, 870327, 870334, 870336, 870337, 870338, 870339, 870353, 870402, 870409, 870583, 870653, 870655, 870656, 870661, 870662, 870687, 870693, 870704, 870717, 870831, 870837, 870849, 870851, 870854, 870901, 870903, 870912, 871095, 871097, 871176, 871181, 871183, 871185, 871192, 871207, 871208, 871209, 871210, 871213, 871214, 871215, 871240, 871241, 871242, 871272, 871275, 871329, 871335, 871346, 871347, 871388, 871389, 871392, 871393, 871470, 871473, 871484, 871486, 871498, 871499, 871528, 871531, 871532, 871534, 871537, 871543, 871545, 871547, 871548, 871549, 871551, 871567, 871580, 871581, 871589, 871594"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.172818, -30.588346], "type": "Point"}, "properties": {"Cliente": "829124", "SKU": "4715, 870278, 870235, 871473"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.122229, -30.624217], "type": "Point"}, "properties": {"Cliente": "846319", "SKU": "450607, 450754, 870278, 450605, 1822, 1600, 592, 450417"}, "type": "Feature"}, {"geometry": {"coordinates": [-70.666702, -30.2728], "type": "Point"}, "properties": {"Cliente": "851866", "SKU": "871393, 870278, 870235"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.257496, -30.833936], "type": "Point"}, "properties": {"Cliente": "983513", "SKU": "700809, 701009, 701109, 701110, 701111, 870235, 700564, 700271, 7799, 700041, 700576, 700575, 700039"}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_171014c581cf3e1955aa01c60c5cfacd.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_171014c581cf3e1955aa01c60c5cfacd.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            var geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl = new L.Control.Search({
+                layer: geo_json_171014c581cf3e1955aa01c60c5cfacd,
+                
+                propertyName: 'Cliente',
+                
+                collapsed: false,
+                textPlaceholder: '🔍 Buscar ID Cliente...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl.on('search:locationfound', function(e) {
+                    geo_json_171014c581cf3e1955aa01c60c5cfacd.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl.on('search:collapsed', function(e) {
+                        geo_json_171014c581cf3e1955aa01c60c5cfacd.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_d9d58c16562a57cd0170ae5d5508c8e8.addControl( geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl );
+
+        
+    
+            var geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl = new L.Control.Search({
+                layer: geo_json_171014c581cf3e1955aa01c60c5cfacd,
+                
+                propertyName: 'SKU',
+                
+                collapsed: true,
+                textPlaceholder: '📦 Buscar por SKU...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl.on('search:locationfound', function(e) {
+                    geo_json_171014c581cf3e1955aa01c60c5cfacd.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl.on('search:collapsed', function(e) {
+                        geo_json_171014c581cf3e1955aa01c60c5cfacd.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_d9d58c16562a57cd0170ae5d5508c8e8.addControl( geo_json_171014c581cf3e1955aa01c60c5cfacdsearchControl );
+
+        
+    
+            tile_layer_f5a74411d7b8c84c41755c357f4ed95c.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+                marker_9082194a7eaf1e85467c903f46939a34.setIcon(icon_49d5529239b0bd3be4e23ea5b3754ae6);
+            
+    
+                marker_bc08777605744dc007ebe6a495cd77c7.setIcon(icon_1f92af2b980577f51a6fda24c715aeea);
+            
+    
+                marker_283a4a635f90d8288a36ebf0ee704ed8.setIcon(icon_bb59d13e27d62c7c780d5c821138fb1d);
+            
+    
+                marker_bdf8d2a88d0680b89d842e57ca0d9af9.setIcon(icon_65fbcc48684963fa21a3994492e484cb);
+            
+    
+                marker_d9e2419d11b00a6928e39aca47d0a835.setIcon(icon_0dad13d7771a21194fef14ab00fae431);
+            
+    
+                marker_dd1981a7e72fbe0662798d5f6824cf83.setIcon(icon_c073e4edb2bae179fb6bd1898dc090d8);
+            
+    
+            marker_cluster_e8d385adaccf7317ba6da3a9079947b2.addTo(feature_group_6ce151dcc28f022fedbda9f8fbfa6af6);
+        
+    
+            feature_group_6ce151dcc28f022fedbda9f8fbfa6af6.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+                marker_0b22b04659063544c337f14d451e3036.setIcon(icon_7d68fc168639db300045e9157f5e673c);
+            
+    
+                marker_00a04ce2c074979a26fb358b377b415e.setIcon(icon_4a9f4c3ed0be1a8140d82c06fec278ec);
+            
+    
+                marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6.setIcon(icon_1fb7d3e2d3636bc296fe7fe2896da638);
+            
+    
+                marker_7cc9015cbde26b0d7864728f0eb85ab4.setIcon(icon_51919bb18bddd348b9efb868622309ac);
+            
+    
+                marker_3c35f465ec65a38ec71167d2b2bc5821.setIcon(icon_f4f9eff9563e6100f8efc8b82e2d97ba);
+            
+    
+                marker_c7ea96211d131d1ee767f5aa948d7886.setIcon(icon_863ad26df9381a7a2234dfe383164066);
+            
+    
+                marker_45502a36e416e17c3f65ff1d5ff3c7a4.setIcon(icon_26ebfd262d40bad536ac7e581b6a7873);
+            
+    
+                marker_67761f3159933e7606fc6283f2407ef5.setIcon(icon_1f3b96c64b068e81af8f10d6f35be93d);
+            
+    
+                marker_ebd28df56264eb337b13ffcf0a6bc5e8.setIcon(icon_a13b4bdec660840f67bb2c191eb229d8);
+            
+    
+                marker_31da1ef3382d721f4f2a2f981e9c3c62.setIcon(icon_375826a1bebee3e89cb539b7af18725a);
+            
+    
+                marker_5a2819a6afa976d072bf14901e4c2021.setIcon(icon_b6f340629bfc8541de4265e01d468ba4);
+            
+    
+                marker_53da00b288378b323af391a41c125236.setIcon(icon_a6db3f06a2b98202df3c3cafe149ea12);
+            
+    
+                marker_8ade6a2f42abc44b789cd55b08a72853.setIcon(icon_8579eec91ed5f0e13b588eba43156d5c);
+            
+    
+                marker_06407a71a05ea901803c6389b0436b48.setIcon(icon_3678cb94a1c812d4fe24c2c0c6d40e6b);
+            
+    
+                marker_8055b5a6fa44adff30495f79c5053dd5.setIcon(icon_56d8f1504e1c6738ab93a6d9bf31114f);
+            
+    
+                marker_36fbf033a86f79b5cd163ac264f9bba1.setIcon(icon_5ba7f8312c759833dad926a40dae03d6);
+            
+    
+                marker_ac1ae9d2dc2a75f0e3196d74b8e8024a.setIcon(icon_72f382c09fff2bc33f91899a3c208757);
+            
+    
+                marker_579f5fc8e1dca3acf096f5f25772b524.setIcon(icon_49e989fdf62602111c5b84af62cab917);
+            
+    
+                marker_e8193e2eafc681ae622b93dac2628b6e.setIcon(icon_d4fc0cdd558c925143111e7808e4f41b);
+            
+    
+                marker_3b9c7903c597226113dd5cb4d9558a3e.setIcon(icon_bd111ea1f902a176bb1bd395f0685b24);
+            
+    
+                marker_f26763f5806f073e02649c7a2d54a72f.setIcon(icon_ee1da82ba0c3d29af5b17bc2393bbeef);
+            
+    
+                marker_a88a78c0dd65fb2eef5a25a0f088e8a0.setIcon(icon_b3499a4a799cd25a4762192b57950f41);
+            
+    
+                marker_ca44ad83eef6751eb794d427ed39bf80.setIcon(icon_e35ac1bce57074dca2e969757e4a950b);
+            
+    
+                marker_79728e3eebdbc48caffe3e11446488b8.setIcon(icon_d411ec7ba7c7c88610b3466bff78f33a);
+            
+    
+                marker_ca2a1b71315616f150c91ba127c1faa3.setIcon(icon_701c249b9c8853a58c22f45b6539acc8);
+            
+    
+                marker_c920b1299d87b398223d9d4c68cbc2ce.setIcon(icon_b54c5a22784f1920a087bd944113e4d7);
+            
+    
+                marker_309dd8ec529c2c8d35353f5b5d9ac101.setIcon(icon_6efb18558d43468d8a640d8f2a06b40d);
+            
+    
+                marker_71c88a6721e70e8ea652adb0d90aed01.setIcon(icon_75b8f93bd9b5c354b1fee490ec6e88f1);
+            
+    
+                marker_9d39851e8170a40bb0247419d8ea701e.setIcon(icon_c81a207b6fb829babb9e983ad6d7aa02);
+            
+    
+                marker_8ea82fb51c1c944cd0c6b069883a3448.setIcon(icon_5db9fc7133840d34bd8f99a82c0723f6);
+            
+    
+                marker_8229425d9b9cf8d4290e7f115974358b.setIcon(icon_10ee168fc6ce3ab48000baf92fbdb54e);
+            
+    
+                marker_5cf38e2e6086b8481f5eefa1e8e15576.setIcon(icon_3af4b270cfd18c7e2a5229486e9dbd99);
+            
+    
+                marker_9aac337fd3704a4b6cbfca2a5ff58f63.setIcon(icon_0fe092a8bd578f4c30a198088a2e37a7);
+            
+    
+                marker_76241fa937926c62ba58f4ce27ee5e59.setIcon(icon_2d4d445c82f801329fc6a2a4c438fc49);
+            
+    
+                marker_c5a6109bebdbb18787df8cfbdea24493.setIcon(icon_baba2bfddb21d958acfdb33cc11767c5);
+            
+    
+                marker_514da66792776b6dd3d5cfe70f7c013b.setIcon(icon_e0c4d9119e0d38e0765c9d9f073d9baa);
+            
+    
+                marker_25e49e87e33cb9ea0e1b5d659accea40.setIcon(icon_9ca11a66102ac8a023f5b6187ca478e7);
+            
+    
+                marker_4436b5b6c76c5560f391eadc14228e8a.setIcon(icon_cc9c29320906535fa3ed9db08d2a506d);
+            
+    
+                marker_0194bb5fedb503c28f5e09e6dceca2fe.setIcon(icon_d78ef6b248510898d853d8ddc947edb9);
+            
+    
+                marker_9b9dcd866cf86f695b2682e28b0c4800.setIcon(icon_239e164d206690ca59fedc907ec084f6);
+            
+    
+                marker_305549f1f6a6fc8d11817ce5ac14f837.setIcon(icon_f95c5302e903aa1f17806e9456362f82);
+            
+    
+                marker_add58bb6ffb5b3df606918c2a591459f.setIcon(icon_ec4a800f38479aa3dd71de3e49446692);
+            
+    
+                marker_af7840234171bbeaad0000c082d5058f.setIcon(icon_6ae415ea3a6291f5425ef8bf5343b44d);
+            
+    
+                marker_5c0eb497afea4d94f9b6657be558a75b.setIcon(icon_ea8dfaeac876317067e519cfb359625c);
+            
+    
+                marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80.setIcon(icon_3aa4831f5e2eed7a6ecb24a307c003b8);
+            
+    
+            marker_cluster_54a8af00973d6c5e984c3cc89453c489.addTo(feature_group_ac3ab7e55c20ac04897d445c706b0cb8);
+        
+    
+            feature_group_ac3ab7e55c20ac04897d445c706b0cb8.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            geo_json_171014c581cf3e1955aa01c60c5cfacd.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            tile_layer_f5a74411d7b8c84c41755c357f4ed95c.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+                marker_9082194a7eaf1e85467c903f46939a34.setIcon(icon_49d5529239b0bd3be4e23ea5b3754ae6);
+            
+    
+                marker_bc08777605744dc007ebe6a495cd77c7.setIcon(icon_1f92af2b980577f51a6fda24c715aeea);
+            
+    
+                marker_283a4a635f90d8288a36ebf0ee704ed8.setIcon(icon_bb59d13e27d62c7c780d5c821138fb1d);
+            
+    
+                marker_bdf8d2a88d0680b89d842e57ca0d9af9.setIcon(icon_65fbcc48684963fa21a3994492e484cb);
+            
+    
+                marker_d9e2419d11b00a6928e39aca47d0a835.setIcon(icon_0dad13d7771a21194fef14ab00fae431);
+            
+    
+                marker_dd1981a7e72fbe0662798d5f6824cf83.setIcon(icon_c073e4edb2bae179fb6bd1898dc090d8);
+            
+    
+            marker_cluster_e8d385adaccf7317ba6da3a9079947b2.addTo(feature_group_6ce151dcc28f022fedbda9f8fbfa6af6);
+        
+    
+            feature_group_6ce151dcc28f022fedbda9f8fbfa6af6.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+                marker_0b22b04659063544c337f14d451e3036.setIcon(icon_7d68fc168639db300045e9157f5e673c);
+            
+    
+                marker_00a04ce2c074979a26fb358b377b415e.setIcon(icon_4a9f4c3ed0be1a8140d82c06fec278ec);
+            
+    
+                marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6.setIcon(icon_1fb7d3e2d3636bc296fe7fe2896da638);
+            
+    
+                marker_7cc9015cbde26b0d7864728f0eb85ab4.setIcon(icon_51919bb18bddd348b9efb868622309ac);
+            
+    
+                marker_3c35f465ec65a38ec71167d2b2bc5821.setIcon(icon_f4f9eff9563e6100f8efc8b82e2d97ba);
+            
+    
+                marker_c7ea96211d131d1ee767f5aa948d7886.setIcon(icon_863ad26df9381a7a2234dfe383164066);
+            
+    
+                marker_45502a36e416e17c3f65ff1d5ff3c7a4.setIcon(icon_26ebfd262d40bad536ac7e581b6a7873);
+            
+    
+                marker_67761f3159933e7606fc6283f2407ef5.setIcon(icon_1f3b96c64b068e81af8f10d6f35be93d);
+            
+    
+                marker_ebd28df56264eb337b13ffcf0a6bc5e8.setIcon(icon_a13b4bdec660840f67bb2c191eb229d8);
+            
+    
+                marker_31da1ef3382d721f4f2a2f981e9c3c62.setIcon(icon_375826a1bebee3e89cb539b7af18725a);
+            
+    
+                marker_5a2819a6afa976d072bf14901e4c2021.setIcon(icon_b6f340629bfc8541de4265e01d468ba4);
+            
+    
+                marker_53da00b288378b323af391a41c125236.setIcon(icon_a6db3f06a2b98202df3c3cafe149ea12);
+            
+    
+                marker_8ade6a2f42abc44b789cd55b08a72853.setIcon(icon_8579eec91ed5f0e13b588eba43156d5c);
+            
+    
+                marker_06407a71a05ea901803c6389b0436b48.setIcon(icon_3678cb94a1c812d4fe24c2c0c6d40e6b);
+            
+    
+                marker_8055b5a6fa44adff30495f79c5053dd5.setIcon(icon_56d8f1504e1c6738ab93a6d9bf31114f);
+            
+    
+                marker_36fbf033a86f79b5cd163ac264f9bba1.setIcon(icon_5ba7f8312c759833dad926a40dae03d6);
+            
+    
+                marker_ac1ae9d2dc2a75f0e3196d74b8e8024a.setIcon(icon_72f382c09fff2bc33f91899a3c208757);
+            
+    
+                marker_579f5fc8e1dca3acf096f5f25772b524.setIcon(icon_49e989fdf62602111c5b84af62cab917);
+            
+    
+                marker_e8193e2eafc681ae622b93dac2628b6e.setIcon(icon_d4fc0cdd558c925143111e7808e4f41b);
+            
+    
+                marker_3b9c7903c597226113dd5cb4d9558a3e.setIcon(icon_bd111ea1f902a176bb1bd395f0685b24);
+            
+    
+                marker_f26763f5806f073e02649c7a2d54a72f.setIcon(icon_ee1da82ba0c3d29af5b17bc2393bbeef);
+            
+    
+                marker_a88a78c0dd65fb2eef5a25a0f088e8a0.setIcon(icon_b3499a4a799cd25a4762192b57950f41);
+            
+    
+                marker_ca44ad83eef6751eb794d427ed39bf80.setIcon(icon_e35ac1bce57074dca2e969757e4a950b);
+            
+    
+                marker_79728e3eebdbc48caffe3e11446488b8.setIcon(icon_d411ec7ba7c7c88610b3466bff78f33a);
+            
+    
+                marker_ca2a1b71315616f150c91ba127c1faa3.setIcon(icon_701c249b9c8853a58c22f45b6539acc8);
+            
+    
+                marker_c920b1299d87b398223d9d4c68cbc2ce.setIcon(icon_b54c5a22784f1920a087bd944113e4d7);
+            
+    
+                marker_309dd8ec529c2c8d35353f5b5d9ac101.setIcon(icon_6efb18558d43468d8a640d8f2a06b40d);
+            
+    
+                marker_71c88a6721e70e8ea652adb0d90aed01.setIcon(icon_75b8f93bd9b5c354b1fee490ec6e88f1);
+            
+    
+                marker_9d39851e8170a40bb0247419d8ea701e.setIcon(icon_c81a207b6fb829babb9e983ad6d7aa02);
+            
+    
+                marker_8ea82fb51c1c944cd0c6b069883a3448.setIcon(icon_5db9fc7133840d34bd8f99a82c0723f6);
+            
+    
+                marker_8229425d9b9cf8d4290e7f115974358b.setIcon(icon_10ee168fc6ce3ab48000baf92fbdb54e);
+            
+    
+                marker_5cf38e2e6086b8481f5eefa1e8e15576.setIcon(icon_3af4b270cfd18c7e2a5229486e9dbd99);
+            
+    
+                marker_9aac337fd3704a4b6cbfca2a5ff58f63.setIcon(icon_0fe092a8bd578f4c30a198088a2e37a7);
+            
+    
+                marker_76241fa937926c62ba58f4ce27ee5e59.setIcon(icon_2d4d445c82f801329fc6a2a4c438fc49);
+            
+    
+                marker_c5a6109bebdbb18787df8cfbdea24493.setIcon(icon_baba2bfddb21d958acfdb33cc11767c5);
+            
+    
+                marker_514da66792776b6dd3d5cfe70f7c013b.setIcon(icon_e0c4d9119e0d38e0765c9d9f073d9baa);
+            
+    
+                marker_25e49e87e33cb9ea0e1b5d659accea40.setIcon(icon_9ca11a66102ac8a023f5b6187ca478e7);
+            
+    
+                marker_4436b5b6c76c5560f391eadc14228e8a.setIcon(icon_cc9c29320906535fa3ed9db08d2a506d);
+            
+    
+                marker_0194bb5fedb503c28f5e09e6dceca2fe.setIcon(icon_d78ef6b248510898d853d8ddc947edb9);
+            
+    
+                marker_9b9dcd866cf86f695b2682e28b0c4800.setIcon(icon_239e164d206690ca59fedc907ec084f6);
+            
+    
+                marker_305549f1f6a6fc8d11817ce5ac14f837.setIcon(icon_f95c5302e903aa1f17806e9456362f82);
+            
+    
+                marker_add58bb6ffb5b3df606918c2a591459f.setIcon(icon_ec4a800f38479aa3dd71de3e49446692);
+            
+    
+                marker_af7840234171bbeaad0000c082d5058f.setIcon(icon_6ae415ea3a6291f5425ef8bf5343b44d);
+            
+    
+                marker_5c0eb497afea4d94f9b6657be558a75b.setIcon(icon_ea8dfaeac876317067e519cfb359625c);
+            
+    
+                marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80.setIcon(icon_3aa4831f5e2eed7a6ecb24a307c003b8);
+            
+    
+            marker_cluster_54a8af00973d6c5e984c3cc89453c489.addTo(feature_group_ac3ab7e55c20ac04897d445c706b0cb8);
+        
+    
+            feature_group_ac3ab7e55c20ac04897d445c706b0cb8.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            geo_json_171014c581cf3e1955aa01c60c5cfacd.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            tile_layer_f5a74411d7b8c84c41755c357f4ed95c.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+                marker_9082194a7eaf1e85467c903f46939a34.setIcon(icon_49d5529239b0bd3be4e23ea5b3754ae6);
+            
+    
+                marker_bc08777605744dc007ebe6a495cd77c7.setIcon(icon_1f92af2b980577f51a6fda24c715aeea);
+            
+    
+                marker_283a4a635f90d8288a36ebf0ee704ed8.setIcon(icon_bb59d13e27d62c7c780d5c821138fb1d);
+            
+    
+                marker_bdf8d2a88d0680b89d842e57ca0d9af9.setIcon(icon_65fbcc48684963fa21a3994492e484cb);
+            
+    
+                marker_d9e2419d11b00a6928e39aca47d0a835.setIcon(icon_0dad13d7771a21194fef14ab00fae431);
+            
+    
+                marker_dd1981a7e72fbe0662798d5f6824cf83.setIcon(icon_c073e4edb2bae179fb6bd1898dc090d8);
+            
+    
+            marker_cluster_e8d385adaccf7317ba6da3a9079947b2.addTo(feature_group_6ce151dcc28f022fedbda9f8fbfa6af6);
+        
+    
+            feature_group_6ce151dcc28f022fedbda9f8fbfa6af6.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+                marker_0b22b04659063544c337f14d451e3036.setIcon(icon_7d68fc168639db300045e9157f5e673c);
+            
+    
+                marker_00a04ce2c074979a26fb358b377b415e.setIcon(icon_4a9f4c3ed0be1a8140d82c06fec278ec);
+            
+    
+                marker_67dd8aeeceaaf1f3d7e6dbf13b1eedd6.setIcon(icon_1fb7d3e2d3636bc296fe7fe2896da638);
+            
+    
+                marker_7cc9015cbde26b0d7864728f0eb85ab4.setIcon(icon_51919bb18bddd348b9efb868622309ac);
+            
+    
+                marker_3c35f465ec65a38ec71167d2b2bc5821.setIcon(icon_f4f9eff9563e6100f8efc8b82e2d97ba);
+            
+    
+                marker_c7ea96211d131d1ee767f5aa948d7886.setIcon(icon_863ad26df9381a7a2234dfe383164066);
+            
+    
+                marker_45502a36e416e17c3f65ff1d5ff3c7a4.setIcon(icon_26ebfd262d40bad536ac7e581b6a7873);
+            
+    
+                marker_67761f3159933e7606fc6283f2407ef5.setIcon(icon_1f3b96c64b068e81af8f10d6f35be93d);
+            
+    
+                marker_ebd28df56264eb337b13ffcf0a6bc5e8.setIcon(icon_a13b4bdec660840f67bb2c191eb229d8);
+            
+    
+                marker_31da1ef3382d721f4f2a2f981e9c3c62.setIcon(icon_375826a1bebee3e89cb539b7af18725a);
+            
+    
+                marker_5a2819a6afa976d072bf14901e4c2021.setIcon(icon_b6f340629bfc8541de4265e01d468ba4);
+            
+    
+                marker_53da00b288378b323af391a41c125236.setIcon(icon_a6db3f06a2b98202df3c3cafe149ea12);
+            
+    
+                marker_8ade6a2f42abc44b789cd55b08a72853.setIcon(icon_8579eec91ed5f0e13b588eba43156d5c);
+            
+    
+                marker_06407a71a05ea901803c6389b0436b48.setIcon(icon_3678cb94a1c812d4fe24c2c0c6d40e6b);
+            
+    
+                marker_8055b5a6fa44adff30495f79c5053dd5.setIcon(icon_56d8f1504e1c6738ab93a6d9bf31114f);
+            
+    
+                marker_36fbf033a86f79b5cd163ac264f9bba1.setIcon(icon_5ba7f8312c759833dad926a40dae03d6);
+            
+    
+                marker_ac1ae9d2dc2a75f0e3196d74b8e8024a.setIcon(icon_72f382c09fff2bc33f91899a3c208757);
+            
+    
+                marker_579f5fc8e1dca3acf096f5f25772b524.setIcon(icon_49e989fdf62602111c5b84af62cab917);
+            
+    
+                marker_e8193e2eafc681ae622b93dac2628b6e.setIcon(icon_d4fc0cdd558c925143111e7808e4f41b);
+            
+    
+                marker_3b9c7903c597226113dd5cb4d9558a3e.setIcon(icon_bd111ea1f902a176bb1bd395f0685b24);
+            
+    
+                marker_f26763f5806f073e02649c7a2d54a72f.setIcon(icon_ee1da82ba0c3d29af5b17bc2393bbeef);
+            
+    
+                marker_a88a78c0dd65fb2eef5a25a0f088e8a0.setIcon(icon_b3499a4a799cd25a4762192b57950f41);
+            
+    
+                marker_ca44ad83eef6751eb794d427ed39bf80.setIcon(icon_e35ac1bce57074dca2e969757e4a950b);
+            
+    
+                marker_79728e3eebdbc48caffe3e11446488b8.setIcon(icon_d411ec7ba7c7c88610b3466bff78f33a);
+            
+    
+                marker_ca2a1b71315616f150c91ba127c1faa3.setIcon(icon_701c249b9c8853a58c22f45b6539acc8);
+            
+    
+                marker_c920b1299d87b398223d9d4c68cbc2ce.setIcon(icon_b54c5a22784f1920a087bd944113e4d7);
+            
+    
+                marker_309dd8ec529c2c8d35353f5b5d9ac101.setIcon(icon_6efb18558d43468d8a640d8f2a06b40d);
+            
+    
+                marker_71c88a6721e70e8ea652adb0d90aed01.setIcon(icon_75b8f93bd9b5c354b1fee490ec6e88f1);
+            
+    
+                marker_9d39851e8170a40bb0247419d8ea701e.setIcon(icon_c81a207b6fb829babb9e983ad6d7aa02);
+            
+    
+                marker_8ea82fb51c1c944cd0c6b069883a3448.setIcon(icon_5db9fc7133840d34bd8f99a82c0723f6);
+            
+    
+                marker_8229425d9b9cf8d4290e7f115974358b.setIcon(icon_10ee168fc6ce3ab48000baf92fbdb54e);
+            
+    
+                marker_5cf38e2e6086b8481f5eefa1e8e15576.setIcon(icon_3af4b270cfd18c7e2a5229486e9dbd99);
+            
+    
+                marker_9aac337fd3704a4b6cbfca2a5ff58f63.setIcon(icon_0fe092a8bd578f4c30a198088a2e37a7);
+            
+    
+                marker_76241fa937926c62ba58f4ce27ee5e59.setIcon(icon_2d4d445c82f801329fc6a2a4c438fc49);
+            
+    
+                marker_c5a6109bebdbb18787df8cfbdea24493.setIcon(icon_baba2bfddb21d958acfdb33cc11767c5);
+            
+    
+                marker_514da66792776b6dd3d5cfe70f7c013b.setIcon(icon_e0c4d9119e0d38e0765c9d9f073d9baa);
+            
+    
+                marker_25e49e87e33cb9ea0e1b5d659accea40.setIcon(icon_9ca11a66102ac8a023f5b6187ca478e7);
+            
+    
+                marker_4436b5b6c76c5560f391eadc14228e8a.setIcon(icon_cc9c29320906535fa3ed9db08d2a506d);
+            
+    
+                marker_0194bb5fedb503c28f5e09e6dceca2fe.setIcon(icon_d78ef6b248510898d853d8ddc947edb9);
+            
+    
+                marker_9b9dcd866cf86f695b2682e28b0c4800.setIcon(icon_239e164d206690ca59fedc907ec084f6);
+            
+    
+                marker_305549f1f6a6fc8d11817ce5ac14f837.setIcon(icon_f95c5302e903aa1f17806e9456362f82);
+            
+    
+                marker_add58bb6ffb5b3df606918c2a591459f.setIcon(icon_ec4a800f38479aa3dd71de3e49446692);
+            
+    
+                marker_af7840234171bbeaad0000c082d5058f.setIcon(icon_6ae415ea3a6291f5425ef8bf5343b44d);
+            
+    
+                marker_5c0eb497afea4d94f9b6657be558a75b.setIcon(icon_ea8dfaeac876317067e519cfb359625c);
+            
+    
+                marker_10cbdb8b64906f3ee4c3ad2ddd6a5d80.setIcon(icon_3aa4831f5e2eed7a6ecb24a307c003b8);
+            
+    
+            marker_cluster_54a8af00973d6c5e984c3cc89453c489.addTo(feature_group_ac3ab7e55c20ac04897d445c706b0cb8);
+        
+    
+            feature_group_ac3ab7e55c20ac04897d445c706b0cb8.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+    
+            geo_json_171014c581cf3e1955aa01c60c5cfacd.addTo(map_d9d58c16562a57cd0170ae5d5508c8e8);
+        
+</script>
+</html>
