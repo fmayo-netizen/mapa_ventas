@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fa1a5ed4e891cf136df19e2336e5ee0e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; right: 10px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; font-family: Arial, sans-serif;">
+    <div style="background-color: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-left: 4px solid #34a853; min-width: 200px;">
+        <span style="font-size: 10px; color: #666; font-weight: bold; text-transform: uppercase;">Preventa Total</span><br>
+        <span style="font-size: 18px; color: #2d8643; font-weight: bold;">📦 2,099 Cajas</span>
+        <hr style="margin:6px 0;">
+        <span style="font-size: 11px; color: #d93025;">🔴 <b>Supermercados:</b> 2,091 cajas</span><br>
+        <span style="font-size: 11px; color: #1a73e8;">🔵 <b>Ruta:</b> 8 cajas</span>
+    </div>
+
+    <div style="background-color: white; padding: 8px 12px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-left: 4px solid #1a73e8; font-size: 11px; color: #333; min-width: 200px;">
+        <b style="font-size:11px; color:#1a73e8;">📍 Última actualización:</b><br>
+        📅 20/07/2026 15:01:01
+    </div>
+</div>
+    
+            <div class="folium-map" id="map_fa1a5ed4e891cf136df19e2336e5ee0e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fa1a5ed4e891cf136df19e2336e5ee0e = L.map(
+                "map_fa1a5ed4e891cf136df19e2336e5ee0e",
+                {
+                    center: [-31.575059166666666, -71.118342],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e7e3fcacf5ccb961c7a2a9b72f9c397c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e7e3fcacf5ccb961c7a2a9b72f9c397c.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            var feature_group_4f36baf93adcb3afe2b92e37b6d106c6 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_1cbd7689f30fe9c7916263c5a17dee2e = L.marker(
+                [-31.631517, -71.166882],
+                {
+}
+            ).addTo(marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a);
+        
+    
+            var icon_6c99f893b2a49da2f3f234ca4cacc978 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_828f833c1c0659d1c8a368470f82c089 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_1170f30d5c6100b85260ec0ed4035f49 = $(`<div id="html_1170f30d5c6100b85260ec0ed4035f49" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 693376<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> AVDA DEL VALLE 537<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 10<br>         <b>Total Cajas:</b> 100<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870693, 870698, 870851, 871095, 871189, 871191, 871242, 871498, 871499, 871525, 871548, 871718, 817, 829, 919, 939, 953, 1007, 1124, 1267, 1283, 1448, 1473, 1510, 1600, 1603, 1604, 1743, 1744, 1745, 1756, 1822, 1840, 4714, 4715, 4976, 445696, 445882, 447107, 450295, 450536, 450554, 450660, 450851, 450855, 451432, 451551, 870180, 870203, 870204, 870206, 870215, 870353, 870400, 870655, 870656, 870662</span>     </div>     </div>`)[0];
+                popup_828f833c1c0659d1c8a368470f82c089.setContent(html_1170f30d5c6100b85260ec0ed4035f49);
+            
+        
+
+        marker_1cbd7689f30fe9c7916263c5a17dee2e.bindPopup(popup_828f833c1c0659d1c8a368470f82c089)
+        ;
+
+        
+    
+    
+            marker_1cbd7689f30fe9c7916263c5a17dee2e.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 693376 - RENDIC HERMANOS S. A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1cbd7689f30fe9c7916263c5a17dee2e.setIcon(icon_6c99f893b2a49da2f3f234ca4cacc978);
+            
+    
+            var marker_ca5f75299fc5f3d8b7242bc07c20d4cc = L.marker(
+                [-31.630517, -71.164329],
+                {
+}
+            ).addTo(marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a);
+        
+    
+            var icon_184dc5233d7c54f75bd7df03a0a7d7c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4636bc4d199c407d096ac8ee1dd6aff7 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_ddd65aa1f1d791ee37df21d2b895fb9f = $(`<div id="html_ddd65aa1f1d791ee37df21d2b895fb9f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 693377<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> CONSTITUCION 515<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 17<br>         <b>Total Cajas:</b> 622<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">829, 909, 919, 939, 953, 1007, 1014, 1016, 1018, 1124, 1152, 1188, 1237, 1258, 1267, 1283, 1448, 1473, 1510, 1600, 1602, 1603, 1604, 1721, 1743, 1744, 1745, 1756, 1776, 1822, 1840, 1850, 4714, 4715, 4976, 7493, 7854, 269169, 445294, 445471, 445491, 445696, 445767, 445847, 445879, 445880, 445982, 447010, 447057, 447085, 447108, 447111, 450237, 450295, 450302, 450320, 450328, 450356, 450403, 450426, 450531, 450602, 450660, 450691, 450692, 450704, 450746, 450851, 450855, 450859, 450933, 451112, 451247, 451290, 451381, 451404, 451423, 451429, 451430, 451453, 451504, 451523, 451535, 451537, 604581, 700039, 700041, 700288, 700555, 700565, 700571, 700576, 700688, 700691, 700698, 700707, 700809, 701009, 701018, 870180, 870181, 870189, 870202, 870203, 870206, 870215, 870235, 870277, 870278, 870337, 870339, 870353, 870400, 870401, 870402, 870405, 870414, 870418, 870419, 870421, 870423, 870653, 870655, 870656, 870661, 870662, 870687, 870689, 870693, 870698, 870717, 870851, 870901, 870903, 870912, 870913, 871095, 871180, 871182, 871189, 871191, 871209, 871215, 871240, 871241, 871242, 871272, 871275, 871327, 871329, 871347, 871392, 871393, 871415, 871462, 871498, 871499, 871524, 871525, 871528, 871532, 871534, 871537, 871539, 871540, 871548, 871589, 871594, 871717, 875219</span>     </div>     </div>`)[0];
+                popup_4636bc4d199c407d096ac8ee1dd6aff7.setContent(html_ddd65aa1f1d791ee37df21d2b895fb9f);
+            
+        
+
+        marker_ca5f75299fc5f3d8b7242bc07c20d4cc.bindPopup(popup_4636bc4d199c407d096ac8ee1dd6aff7)
+        ;
+
+        
+    
+    
+            marker_ca5f75299fc5f3d8b7242bc07c20d4cc.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 693377 - RENDIC HERMANOS S. A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca5f75299fc5f3d8b7242bc07c20d4cc.setIcon(icon_184dc5233d7c54f75bd7df03a0a7d7c6);
+            
+    
+            var marker_e86a38efd2d98693b4b37f95e0a052e3 = L.marker(
+                [-31.775897, -70.967259],
+                {
+}
+            ).addTo(marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a);
+        
+    
+            var icon_e7999953b7d36b7eccb3f28f1c94cb75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8b410b7faa9e9cb60a416ec1fcfe1c9 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_71b5d46ee2f7faa548aa897d70190c66 = $(`<div id="html_71b5d46ee2f7faa548aa897d70190c66" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 693378<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> BULNES 677<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 14<br>         <b>Total Cajas:</b> 277<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">871329, 871342, 871347, 871392, 871393, 871498, 871524, 871528, 871532, 871537, 871539, 871547, 871548, 871589, 871594, 871717, 871718, 450855, 451200, 451431, 451432, 451504, 451519, 451523, 451526, 700039, 700042, 700683, 700707, 701111, 870180, 870189, 870202, 870203, 870205, 870206, 870215, 870235, 870353, 870400, 870401, 870405, 870423, 870432, 870653, 870655, 870656, 870661, 870662, 870689, 870693, 870698, 870851, 870901, 870903, 871024, 871037, 871095, 871144, 871173, 871184, 871186, 871191, 871207, 871240, 871327, 909, 919, 929, 939, 953, 1007, 1018, 1124, 1152, 1258, 1267, 1283, 1448, 1473, 1510, 1600, 1602, 1603, 1604, 1674, 1710, 1712, 1715, 1743, 1744, 1745, 1756, 1776, 1840, 4714, 4715, 4976, 7492, 7801, 7803, 269169, 445294, 445696, 445847, 447042, 447108, 447111, 450133, 450237, 450295, 450320, 450329, 450531, 450660, 450692, 450704, 450851</span>     </div>     </div>`)[0];
+                popup_b8b410b7faa9e9cb60a416ec1fcfe1c9.setContent(html_71b5d46ee2f7faa548aa897d70190c66);
+            
+        
+
+        marker_e86a38efd2d98693b4b37f95e0a052e3.bindPopup(popup_b8b410b7faa9e9cb60a416ec1fcfe1c9)
+        ;
+
+        
+    
+    
+            marker_e86a38efd2d98693b4b37f95e0a052e3.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 693378 - RENDIC HERMANOS S. A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e86a38efd2d98693b4b37f95e0a052e3.setIcon(icon_e7999953b7d36b7eccb3f28f1c94cb75);
+            
+    
+            var marker_cd797001372f69f83b77559221cb5134 = L.marker(
+                [-31.78251, -70.96121],
+                {
+}
+            ).addTo(marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a);
+        
+    
+            var icon_b357053bfff48b200920978678e7ed4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b293eb4cbfdde39fe4915da057c4e7da = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_f8fd06bb60a0ed553b9663ec9f05f824 = $(`<div id="html_f8fd06bb60a0ed553b9663ec9f05f824" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 746210<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> BULNES 220<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 15<br>         <b>Total Cajas:</b> 545<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">870401, 870402, 870414, 870653, 870655, 870656, 870661, 870662, 870689, 870693, 870698, 870901, 870903, 871037, 871095, 871182, 871191, 871240, 871327, 871329, 871342, 871347, 871392, 871393, 871415, 871498, 871524, 871525, 871532, 871537, 871539, 871547, 871548, 871567, 871571, 871717, 871718, 871730, 447085, 447088, 447104, 447108, 447111, 450295, 450328, 450404, 450426, 450536, 450602, 450660, 450704, 450774, 450850, 450855, 450859, 450933, 451112, 451290, 451370, 451404, 451429, 451430, 451453, 451536, 451551, 604581, 700039, 700041, 700057, 700555, 700558, 700564, 700565, 700683, 700705, 700706, 700707, 700808, 700809, 701009, 701018, 701019, 870202, 870203, 870205, 870206, 870235, 870277, 870278, 870334, 870337, 870338, 870339, 870353, 870400, 909, 919, 929, 953, 1007, 1018, 1124, 1258, 1267, 1448, 1473, 1510, 1600, 1602, 1603, 1604, 1710, 1712, 1743, 1744, 1745, 1756, 1776, 1822, 1840, 4714, 4715, 4976, 7266, 7280, 7798, 269169, 445227, 445294, 445407, 445503, 445554, 445696, 445727, 445755, 445761, 445770, 445847, 445880, 447010, 447075, 447076, 447077</span>     </div>     </div>`)[0];
+                popup_b293eb4cbfdde39fe4915da057c4e7da.setContent(html_f8fd06bb60a0ed553b9663ec9f05f824);
+            
+        
+
+        marker_cd797001372f69f83b77559221cb5134.bindPopup(popup_b293eb4cbfdde39fe4915da057c4e7da)
+        ;
+
+        
+    
+    
+            marker_cd797001372f69f83b77559221cb5134.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 746210 - RENDIC HERMANOS S. A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cd797001372f69f83b77559221cb5134.setIcon(icon_b357053bfff48b200920978678e7ed4b);
+            
+    
+            var marker_cd0a81c043c1d9c4f479ce5f4b5fe62f = L.marker(
+                [-31.625614, -71.165269],
+                {
+}
+            ).addTo(marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a);
+        
+    
+            var icon_d5229bb5e24ef8e60b3bc98ad7cc38b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5c3f22a0db9bbcdbede35c2a89f73fe = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_d33c0aeb39f866a54db535891c7b90bd = $(`<div id="html_d33c0aeb39f866a54db535891c7b90bd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">WALMART CHILE S.A.</h4>         <b>ID Cliente:</b> 897490<br>         <b>Canal:</b> <span style="color:red; font-weight:bold;">SUPERMERCADO</span><br>         <b>Dirección:</b> SALVADOR ALLENDE 894<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 6<br>         <b>Total Cajas:</b> 547<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">450855, 450881, 451216, 451269, 451293, 451429, 451480, 451512, 700039, 700040, 700041, 700555, 700564, 700571, 700576, 700809, 701009, 870180, 870181, 870195, 870196, 870206, 870353, 870402, 870405, 870414, 870417, 870418, 870421, 870653, 870656, 870684, 870689, 870692, 870704, 870774, 870779, 871095, 871173, 871174, 871175, 871177, 871180, 871184, 871186, 871188, 871189, 871191, 871240, 871242, 871335, 871342, 871430, 871446, 871449, 871451, 871470, 871493, 871499, 871524, 871525, 871532, 909, 919, 929, 939, 953, 1007, 1016, 1018, 1124, 1152, 1237, 1258, 1307, 1448, 1600, 1602, 1603, 1604, 1714, 1727, 1728, 1743, 1744, 1745, 1761, 1776, 1822, 1858, 1968, 4714, 4976, 7245, 7280, 7803, 445294, 445471, 445491, 445503, 445593, 445598, 445696, 445761, 445880, 445902, 447076, 447077, 447088, 447107, 447108, 450237, 450320, 450328, 450329, 450336, 450360, 450404, 450472, 450531, 450536, 450544, 450691, 450692, 450850, 450851</span>     </div>     </div>`)[0];
+                popup_d5c3f22a0db9bbcdbede35c2a89f73fe.setContent(html_d33c0aeb39f866a54db535891c7b90bd);
+            
+        
+
+        marker_cd0a81c043c1d9c4f479ce5f4b5fe62f.bindPopup(popup_d5c3f22a0db9bbcdbede35c2a89f73fe)
+        ;
+
+        
+    
+    
+            marker_cd0a81c043c1d9c4f479ce5f4b5fe62f.bindTooltip(
+                `<div>
+                     [SUPERMERCADO] ID: 897490 - WALMART CHILE S.A.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cd0a81c043c1d9c4f479ce5f4b5fe62f.setIcon(icon_d5229bb5e24ef8e60b3bc98ad7cc38b1);
+            
+    
+            marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a.addTo(feature_group_4f36baf93adcb3afe2b92e37b6d106c6);
+        
+    
+            feature_group_4f36baf93adcb3afe2b92e37b6d106c6.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            var feature_group_0b2dd235c971a9fa32283b271ec07669 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_03a83d5f51f3c2a84186ee572f562d82 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86 = L.marker(
+                [-31.0043, -71.285103],
+                {
+}
+            ).addTo(marker_cluster_03a83d5f51f3c2a84186ee572f562d82);
+        
+    
+            var icon_534170a279e7fb9f393740fa635fcd83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "store",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7b9c71d313cb529ec47988fa7c1a7d92 = L.popup({
+  "maxWidth": 270,
+});
+
+        
+            
+                var html_e511b971882d7215fa30b3e60d264130 = $(`<div id="html_e511b971882d7215fa30b3e60d264130" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 230px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">BLADIMIR HERNAN TAPIA ARAYA</h4>         <b>ID Cliente:</b> 518848<br>         <b>Canal:</b> <span style="color:blue; font-weight:bold;">RUTA</span><br>         <b>Dirección:</b> EL HUACHO 0<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 8<br>         <b>Total Unidades:</b> 0<br>         <hr style="margin: 6px 0;">         <b>SKUs:</b> <span style="font-size:10px; color:#555;">1325, 1448, 1743, 871548, 1745, 1756, 871499, 1744</span>     </div>     </div>`)[0];
+                popup_7b9c71d313cb529ec47988fa7c1a7d92.setContent(html_e511b971882d7215fa30b3e60d264130);
+            
+        
+
+        marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86.bindPopup(popup_7b9c71d313cb529ec47988fa7c1a7d92)
+        ;
+
+        
+    
+    
+            marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86.bindTooltip(
+                `<div>
+                     [RUTA] ID: 518848 - BLADIMIR HERNAN TAPIA ARAYA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86.setIcon(icon_534170a279e7fb9f393740fa635fcd83);
+            
+    
+            marker_cluster_03a83d5f51f3c2a84186ee572f562d82.addTo(feature_group_0b2dd235c971a9fa32283b271ec07669);
+        
+    
+            feature_group_0b2dd235c971a9fa32283b271ec07669.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            var layer_control_7a1fc664aa97bf62434c5ecbfef661fe_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_e7e3fcacf5ccb961c7a2a9b72f9c397c,
+                },
+                overlays :  {
+                    "\ud83d\uded2 Supermercados" : feature_group_4f36baf93adcb3afe2b92e37b6d106c6,
+                    "\ud83d\ude9b Ruta" : feature_group_0b2dd235c971a9fa32283b271ec07669,
+                    "macro_element_5016ee58ea5b31bca1209ce5db5a54e5" : geo_json_5016ee58ea5b31bca1209ce5db5a54e5,
+                },
+            };
+            let layer_control_7a1fc664aa97bf62434c5ecbfef661fe = L.control.layers(
+                layer_control_7a1fc664aa97bf62434c5ecbfef661fe_layers.base_layers,
+                layer_control_7a1fc664aa97bf62434c5ecbfef661fe_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+
+        
+    
+        function geo_json_5016ee58ea5b31bca1209ce5db5a54e5_pointToLayer(feature, latlng) {
+            var opts = {
+  "stroke": true,
+  "color": "transparent",
+  "weight": 0,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "transparent",
+  "fillOpacity": 0,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+};
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_5016ee58ea5b31bca1209ce5db5a54e5_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_5016ee58ea5b31bca1209ce5db5a54e5 = L.geoJson(null, {
+                onEachFeature: geo_json_5016ee58ea5b31bca1209ce5db5a54e5_onEachFeature,
+            
+                pointToLayer: geo_json_5016ee58ea5b31bca1209ce5db5a54e5_pointToLayer,
+            ...{
+}
+        });
+
+        function geo_json_5016ee58ea5b31bca1209ce5db5a54e5_add (data) {
+            geo_json_5016ee58ea5b31bca1209ce5db5a54e5
+                .addData(data);
+        }
+            geo_json_5016ee58ea5b31bca1209ce5db5a54e5_add({"features": [{"geometry": {"coordinates": [-71.285103, -31.0043], "type": "Point"}, "properties": {"Cliente": "518848", "SKU": "1325, 1448, 1743, 871548, 1745, 1756, 871499, 1744"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.166882, -31.631517], "type": "Point"}, "properties": {"Cliente": "693376", "SKU": "870693, 870698, 870851, 871095, 871189, 871191, 871242, 871498, 871499, 871525, 871548, 871718, 817, 829, 919, 939, 953, 1007, 1124, 1267, 1283, 1448, 1473, 1510, 1600, 1603, 1604, 1743, 1744, 1745, 1756, 1822, 1840, 4714, 4715, 4976, 445696, 445882, 447107, 450295, 450536, 450554, 450660, 450851, 450855, 451432, 451551, 870180, 870203, 870204, 870206, 870215, 870353, 870400, 870655, 870656, 870662"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.164329, -31.630517], "type": "Point"}, "properties": {"Cliente": "693377", "SKU": "829, 909, 919, 939, 953, 1007, 1014, 1016, 1018, 1124, 1152, 1188, 1237, 1258, 1267, 1283, 1448, 1473, 1510, 1600, 1602, 1603, 1604, 1721, 1743, 1744, 1745, 1756, 1776, 1822, 1840, 1850, 4714, 4715, 4976, 7493, 7854, 269169, 445294, 445471, 445491, 445696, 445767, 445847, 445879, 445880, 445982, 447010, 447057, 447085, 447108, 447111, 450237, 450295, 450302, 450320, 450328, 450356, 450403, 450426, 450531, 450602, 450660, 450691, 450692, 450704, 450746, 450851, 450855, 450859, 450933, 451112, 451247, 451290, 451381, 451404, 451423, 451429, 451430, 451453, 451504, 451523, 451535, 451537, 604581, 700039, 700041, 700288, 700555, 700565, 700571, 700576, 700688, 700691, 700698, 700707, 700809, 701009, 701018, 870180, 870181, 870189, 870202, 870203, 870206, 870215, 870235, 870277, 870278, 870337, 870339, 870353, 870400, 870401, 870402, 870405, 870414, 870418, 870419, 870421, 870423, 870653, 870655, 870656, 870661, 870662, 870687, 870689, 870693, 870698, 870717, 870851, 870901, 870903, 870912, 870913, 871095, 871180, 871182, 871189, 871191, 871209, 871215, 871240, 871241, 871242, 871272, 871275, 871327, 871329, 871347, 871392, 871393, 871415, 871462, 871498, 871499, 871524, 871525, 871528, 871532, 871534, 871537, 871539, 871540, 871548, 871589, 871594, 871717, 875219"}, "type": "Feature"}, {"geometry": {"coordinates": [-70.967259, -31.775897], "type": "Point"}, "properties": {"Cliente": "693378", "SKU": "871329, 871342, 871347, 871392, 871393, 871498, 871524, 871528, 871532, 871537, 871539, 871547, 871548, 871589, 871594, 871717, 871718, 450855, 451200, 451431, 451432, 451504, 451519, 451523, 451526, 700039, 700042, 700683, 700707, 701111, 870180, 870189, 870202, 870203, 870205, 870206, 870215, 870235, 870353, 870400, 870401, 870405, 870423, 870432, 870653, 870655, 870656, 870661, 870662, 870689, 870693, 870698, 870851, 870901, 870903, 871024, 871037, 871095, 871144, 871173, 871184, 871186, 871191, 871207, 871240, 871327, 909, 919, 929, 939, 953, 1007, 1018, 1124, 1152, 1258, 1267, 1283, 1448, 1473, 1510, 1600, 1602, 1603, 1604, 1674, 1710, 1712, 1715, 1743, 1744, 1745, 1756, 1776, 1840, 4714, 4715, 4976, 7492, 7801, 7803, 269169, 445294, 445696, 445847, 447042, 447108, 447111, 450133, 450237, 450295, 450320, 450329, 450531, 450660, 450692, 450704, 450851"}, "type": "Feature"}, {"geometry": {"coordinates": [-70.96121, -31.78251], "type": "Point"}, "properties": {"Cliente": "746210", "SKU": "870401, 870402, 870414, 870653, 870655, 870656, 870661, 870662, 870689, 870693, 870698, 870901, 870903, 871037, 871095, 871182, 871191, 871240, 871327, 871329, 871342, 871347, 871392, 871393, 871415, 871498, 871524, 871525, 871532, 871537, 871539, 871547, 871548, 871567, 871571, 871717, 871718, 871730, 447085, 447088, 447104, 447108, 447111, 450295, 450328, 450404, 450426, 450536, 450602, 450660, 450704, 450774, 450850, 450855, 450859, 450933, 451112, 451290, 451370, 451404, 451429, 451430, 451453, 451536, 451551, 604581, 700039, 700041, 700057, 700555, 700558, 700564, 700565, 700683, 700705, 700706, 700707, 700808, 700809, 701009, 701018, 701019, 870202, 870203, 870205, 870206, 870235, 870277, 870278, 870334, 870337, 870338, 870339, 870353, 870400, 909, 919, 929, 953, 1007, 1018, 1124, 1258, 1267, 1448, 1473, 1510, 1600, 1602, 1603, 1604, 1710, 1712, 1743, 1744, 1745, 1756, 1776, 1822, 1840, 4714, 4715, 4976, 7266, 7280, 7798, 269169, 445227, 445294, 445407, 445503, 445554, 445696, 445727, 445755, 445761, 445770, 445847, 445880, 447010, 447075, 447076, 447077"}, "type": "Feature"}, {"geometry": {"coordinates": [-71.165269, -31.625614], "type": "Point"}, "properties": {"Cliente": "897490", "SKU": "450855, 450881, 451216, 451269, 451293, 451429, 451480, 451512, 700039, 700040, 700041, 700555, 700564, 700571, 700576, 700809, 701009, 870180, 870181, 870195, 870196, 870206, 870353, 870402, 870405, 870414, 870417, 870418, 870421, 870653, 870656, 870684, 870689, 870692, 870704, 870774, 870779, 871095, 871173, 871174, 871175, 871177, 871180, 871184, 871186, 871188, 871189, 871191, 871240, 871242, 871335, 871342, 871430, 871446, 871449, 871451, 871470, 871493, 871499, 871524, 871525, 871532, 909, 919, 929, 939, 953, 1007, 1016, 1018, 1124, 1152, 1237, 1258, 1307, 1448, 1600, 1602, 1603, 1604, 1714, 1727, 1728, 1743, 1744, 1745, 1761, 1776, 1822, 1858, 1968, 4714, 4976, 7245, 7280, 7803, 445294, 445471, 445491, 445503, 445593, 445598, 445696, 445761, 445880, 445902, 447076, 447077, 447088, 447107, 447108, 450237, 450320, 450328, 450329, 450336, 450360, 450404, 450472, 450531, 450536, 450544, 450691, 450692, 450850, 450851"}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_5016ee58ea5b31bca1209ce5db5a54e5.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_5016ee58ea5b31bca1209ce5db5a54e5.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            var geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl = new L.Control.Search({
+                layer: geo_json_5016ee58ea5b31bca1209ce5db5a54e5,
+                
+                propertyName: 'Cliente',
+                
+                collapsed: false,
+                textPlaceholder: '🔍 Buscar ID Cliente...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl.on('search:locationfound', function(e) {
+                    geo_json_5016ee58ea5b31bca1209ce5db5a54e5.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl.on('search:collapsed', function(e) {
+                        geo_json_5016ee58ea5b31bca1209ce5db5a54e5.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_fa1a5ed4e891cf136df19e2336e5ee0e.addControl( geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl );
+
+        
+    
+            var geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl = new L.Control.Search({
+                layer: geo_json_5016ee58ea5b31bca1209ce5db5a54e5,
+                
+                propertyName: 'SKU',
+                
+                collapsed: true,
+                textPlaceholder: '📦 Buscar por SKU...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl.on('search:locationfound', function(e) {
+                    geo_json_5016ee58ea5b31bca1209ce5db5a54e5.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl.on('search:collapsed', function(e) {
+                        geo_json_5016ee58ea5b31bca1209ce5db5a54e5.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_fa1a5ed4e891cf136df19e2336e5ee0e.addControl( geo_json_5016ee58ea5b31bca1209ce5db5a54e5searchControl );
+
+        
+    
+            tile_layer_e7e3fcacf5ccb961c7a2a9b72f9c397c.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+                marker_1cbd7689f30fe9c7916263c5a17dee2e.setIcon(icon_6c99f893b2a49da2f3f234ca4cacc978);
+            
+    
+                marker_ca5f75299fc5f3d8b7242bc07c20d4cc.setIcon(icon_184dc5233d7c54f75bd7df03a0a7d7c6);
+            
+    
+                marker_e86a38efd2d98693b4b37f95e0a052e3.setIcon(icon_e7999953b7d36b7eccb3f28f1c94cb75);
+            
+    
+                marker_cd797001372f69f83b77559221cb5134.setIcon(icon_b357053bfff48b200920978678e7ed4b);
+            
+    
+                marker_cd0a81c043c1d9c4f479ce5f4b5fe62f.setIcon(icon_d5229bb5e24ef8e60b3bc98ad7cc38b1);
+            
+    
+            marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a.addTo(feature_group_4f36baf93adcb3afe2b92e37b6d106c6);
+        
+    
+            feature_group_4f36baf93adcb3afe2b92e37b6d106c6.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+                marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86.setIcon(icon_534170a279e7fb9f393740fa635fcd83);
+            
+    
+            marker_cluster_03a83d5f51f3c2a84186ee572f562d82.addTo(feature_group_0b2dd235c971a9fa32283b271ec07669);
+        
+    
+            feature_group_0b2dd235c971a9fa32283b271ec07669.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            geo_json_5016ee58ea5b31bca1209ce5db5a54e5.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            tile_layer_e7e3fcacf5ccb961c7a2a9b72f9c397c.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+                marker_1cbd7689f30fe9c7916263c5a17dee2e.setIcon(icon_6c99f893b2a49da2f3f234ca4cacc978);
+            
+    
+                marker_ca5f75299fc5f3d8b7242bc07c20d4cc.setIcon(icon_184dc5233d7c54f75bd7df03a0a7d7c6);
+            
+    
+                marker_e86a38efd2d98693b4b37f95e0a052e3.setIcon(icon_e7999953b7d36b7eccb3f28f1c94cb75);
+            
+    
+                marker_cd797001372f69f83b77559221cb5134.setIcon(icon_b357053bfff48b200920978678e7ed4b);
+            
+    
+                marker_cd0a81c043c1d9c4f479ce5f4b5fe62f.setIcon(icon_d5229bb5e24ef8e60b3bc98ad7cc38b1);
+            
+    
+            marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a.addTo(feature_group_4f36baf93adcb3afe2b92e37b6d106c6);
+        
+    
+            feature_group_4f36baf93adcb3afe2b92e37b6d106c6.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+                marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86.setIcon(icon_534170a279e7fb9f393740fa635fcd83);
+            
+    
+            marker_cluster_03a83d5f51f3c2a84186ee572f562d82.addTo(feature_group_0b2dd235c971a9fa32283b271ec07669);
+        
+    
+            feature_group_0b2dd235c971a9fa32283b271ec07669.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            geo_json_5016ee58ea5b31bca1209ce5db5a54e5.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            tile_layer_e7e3fcacf5ccb961c7a2a9b72f9c397c.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+                marker_1cbd7689f30fe9c7916263c5a17dee2e.setIcon(icon_6c99f893b2a49da2f3f234ca4cacc978);
+            
+    
+                marker_ca5f75299fc5f3d8b7242bc07c20d4cc.setIcon(icon_184dc5233d7c54f75bd7df03a0a7d7c6);
+            
+    
+                marker_e86a38efd2d98693b4b37f95e0a052e3.setIcon(icon_e7999953b7d36b7eccb3f28f1c94cb75);
+            
+    
+                marker_cd797001372f69f83b77559221cb5134.setIcon(icon_b357053bfff48b200920978678e7ed4b);
+            
+    
+                marker_cd0a81c043c1d9c4f479ce5f4b5fe62f.setIcon(icon_d5229bb5e24ef8e60b3bc98ad7cc38b1);
+            
+    
+            marker_cluster_8d784c79865ec83a4674f78bf1ecdf4a.addTo(feature_group_4f36baf93adcb3afe2b92e37b6d106c6);
+        
+    
+            feature_group_4f36baf93adcb3afe2b92e37b6d106c6.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+                marker_21e2ae9a7a2ed046fa3e7a92ba5b4e86.setIcon(icon_534170a279e7fb9f393740fa635fcd83);
+            
+    
+            marker_cluster_03a83d5f51f3c2a84186ee572f562d82.addTo(feature_group_0b2dd235c971a9fa32283b271ec07669);
+        
+    
+            feature_group_0b2dd235c971a9fa32283b271ec07669.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+    
+            geo_json_5016ee58ea5b31bca1209ce5db5a54e5.addTo(map_fa1a5ed4e891cf136df19e2336e5ee0e);
+        
+</script>
+</html>
