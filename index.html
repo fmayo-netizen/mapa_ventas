@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ee1e92fc93dce1a67016759d4f75661b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ee1e92fc93dce1a67016759d4f75661b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ee1e92fc93dce1a67016759d4f75661b = L.map(
+                "map_ee1e92fc93dce1a67016759d4f75661b",
+                {
+                    center: [-29.947402970588232, -71.25994914705883],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9882aa260cebf23c763ffac0f82d4458 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9882aa260cebf23c763ffac0f82d4458.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+            var marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_740746125bbaa395b7677c32875f5885 = L.marker(
+                [-29.918261, -71.211744],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_7ee3cd8656c98f51423f7251e6c32877 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99f3fb0320e0858a6bf607a9f0299c4e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fb0e757555baa7b6c5f5bb5a878de782 = $(`<div id="html_fb0e757555baa7b6c5f5bb5a878de782" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RICARDO FRANCISCO TANGOL RIVAS</h4>         <b>ID Cliente:</b> 1463971<br>         <b>Dirección:</b> 18 DE SEPTIEMBRE 4535<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 12<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_99f3fb0320e0858a6bf607a9f0299c4e.setContent(html_fb0e757555baa7b6c5f5bb5a878de782);
+            
+        
+
+        marker_740746125bbaa395b7677c32875f5885.bindPopup(popup_99f3fb0320e0858a6bf607a9f0299c4e)
+        ;
+
+        
+    
+    
+            marker_740746125bbaa395b7677c32875f5885.bindTooltip(
+                `<div>
+                     RICARDO FRANCISCO TANGOL RIVAS (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_740746125bbaa395b7677c32875f5885.setIcon(icon_7ee3cd8656c98f51423f7251e6c32877);
+            
+    
+            var marker_21f0de678d82b6c185af196226ae5713 = L.marker(
+                [-29.900945, -71.245314],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_c191df2775a3fb4b19cfbadcf08efe20 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_92a56d2eaf2430c266251611c452ccb8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a2ecb2498323462c2b095d2fc6df6b92 = $(`<div id="html_a2ecb2498323462c2b095d2fc6df6b92" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">SOCIEDAD COMERCIAL MINENA LIMITADA</h4>         <b>ID Cliente:</b> 1492048<br>         <b>Dirección:</b> RENGIFO 336 336<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 41<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_92a56d2eaf2430c266251611c452ccb8.setContent(html_a2ecb2498323462c2b095d2fc6df6b92);
+            
+        
+
+        marker_21f0de678d82b6c185af196226ae5713.bindPopup(popup_92a56d2eaf2430c266251611c452ccb8)
+        ;
+
+        
+    
+    
+            marker_21f0de678d82b6c185af196226ae5713.bindTooltip(
+                `<div>
+                     SOCIEDAD COMERCIAL MINENA LIMITADA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21f0de678d82b6c185af196226ae5713.setIcon(icon_c191df2775a3fb4b19cfbadcf08efe20);
+            
+    
+            var marker_ebdc0a1eb0dfdf970485d6d6004fffad = L.marker(
+                [-29.900945, -71.245314],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_c95b354a230e83d66593f55d764286ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c76acdea4a84fbbbf18d172b4c050aa9 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d9c2ed0976f9a0c52d8958308fdeda48 = $(`<div id="html_d9c2ed0976f9a0c52d8958308fdeda48" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">SOCIEDAD COMERCIAL MINENA LIMITADA</h4>         <b>ID Cliente:</b> 1492048<br>         <b>Dirección:</b> RENGIFO 336 336<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 41<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_c76acdea4a84fbbbf18d172b4c050aa9.setContent(html_d9c2ed0976f9a0c52d8958308fdeda48);
+            
+        
+
+        marker_ebdc0a1eb0dfdf970485d6d6004fffad.bindPopup(popup_c76acdea4a84fbbbf18d172b4c050aa9)
+        ;
+
+        
+    
+    
+            marker_ebdc0a1eb0dfdf970485d6d6004fffad.bindTooltip(
+                `<div>
+                     SOCIEDAD COMERCIAL MINENA LIMITADA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ebdc0a1eb0dfdf970485d6d6004fffad.setIcon(icon_c95b354a230e83d66593f55d764286ac);
+            
+    
+            var marker_d6fac736537aba0b6a92a3bc9901779e = L.marker(
+                [-29.884257, -71.247151],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_84cdd32b1c119adcf4818d57afa8e7bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1ea024daa0eddd9dd9a7bb0fb2dbfcc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_370ce948124f96f3fd372db98ac802af = $(`<div id="html_370ce948124f96f3fd372db98ac802af" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">VERONICA CONTRERAS ZAVALA</h4>         <b>ID Cliente:</b> 1824797<br>         <b>Dirección:</b> RIO ELQUI 1772<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 48<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_c1ea024daa0eddd9dd9a7bb0fb2dbfcc.setContent(html_370ce948124f96f3fd372db98ac802af);
+            
+        
+
+        marker_d6fac736537aba0b6a92a3bc9901779e.bindPopup(popup_c1ea024daa0eddd9dd9a7bb0fb2dbfcc)
+        ;
+
+        
+    
+    
+            marker_d6fac736537aba0b6a92a3bc9901779e.bindTooltip(
+                `<div>
+                     VERONICA CONTRERAS ZAVALA (2 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d6fac736537aba0b6a92a3bc9901779e.setIcon(icon_84cdd32b1c119adcf4818d57afa8e7bd);
+            
+    
+            var marker_f09be0622ffe006ee8e47c9ea1cab6bc = L.marker(
+                [-29.926677, -71.276514],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_0a81c9c957af9c2c8ddebf84223b0c1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61a9a2117aa82a45e8907b5074ecf048 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4c200010bac0804a4a0cd37982bcee21 = $(`<div id="html_4c200010bac0804a4a0cd37982bcee21" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">INVERSIONES BOMBO SPA</h4>         <b>ID Cliente:</b> 1992738<br>         <b>Dirección:</b> Cuatro Esquinas 4, Coquimbo 3494<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 7<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_61a9a2117aa82a45e8907b5074ecf048.setContent(html_4c200010bac0804a4a0cd37982bcee21);
+            
+        
+
+        marker_f09be0622ffe006ee8e47c9ea1cab6bc.bindPopup(popup_61a9a2117aa82a45e8907b5074ecf048)
+        ;
+
+        
+    
+    
+            marker_f09be0622ffe006ee8e47c9ea1cab6bc.bindTooltip(
+                `<div>
+                     INVERSIONES BOMBO SPA (2 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f09be0622ffe006ee8e47c9ea1cab6bc.setIcon(icon_0a81c9c957af9c2c8ddebf84223b0c1e);
+            
+    
+            var marker_e91398876365ba377450518c692573f7 = L.marker(
+                [-29.915865, -71.213391],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_2603b495e0b396604a7b9bab8d5d87aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24816ff8a060774e4c4367ee87019141 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c25075e87f3fbdf8082c50b126b17b9c = $(`<div id="html_c25075e87f3fbdf8082c50b126b17b9c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">DISTRIBUIDORA SANTA PAULINA LTDA</h4>         <b>ID Cliente:</b> 2158099<br>         <b>Dirección:</b> Las Orquídeas4369, La Serena 4369 LO<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 32<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_24816ff8a060774e4c4367ee87019141.setContent(html_c25075e87f3fbdf8082c50b126b17b9c);
+            
+        
+
+        marker_e91398876365ba377450518c692573f7.bindPopup(popup_24816ff8a060774e4c4367ee87019141)
+        ;
+
+        
+    
+    
+            marker_e91398876365ba377450518c692573f7.bindTooltip(
+                `<div>
+                     DISTRIBUIDORA SANTA PAULINA LTDA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e91398876365ba377450518c692573f7.setIcon(icon_2603b495e0b396604a7b9bab8d5d87aa);
+            
+    
+            var marker_ea505211c09af1db18ae1df4d2961a92 = L.marker(
+                [-29.915865, -71.213391],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_3d07a21093c01bc452e1f41eb178097c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b77380a519f7f8e5c51d28179962df25 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2afe1b54fd9267bd682c5cffcdfb3434 = $(`<div id="html_2afe1b54fd9267bd682c5cffcdfb3434" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">DISTRIBUIDORA SANTA PAULINA LTDA</h4>         <b>ID Cliente:</b> 2158099<br>         <b>Dirección:</b> Las Orquídeas4369, La Serena 4369 LO<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 32<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_b77380a519f7f8e5c51d28179962df25.setContent(html_2afe1b54fd9267bd682c5cffcdfb3434);
+            
+        
+
+        marker_ea505211c09af1db18ae1df4d2961a92.bindPopup(popup_b77380a519f7f8e5c51d28179962df25)
+        ;
+
+        
+    
+    
+            marker_ea505211c09af1db18ae1df4d2961a92.bindTooltip(
+                `<div>
+                     DISTRIBUIDORA SANTA PAULINA LTDA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea505211c09af1db18ae1df4d2961a92.setIcon(icon_3d07a21093c01bc452e1f41eb178097c);
+            
+    
+            var marker_7b1ff03a52e8f1a748e35874a810282e = L.marker(
+                [-29.915865, -71.213391],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_96e189bd98b5a6a5ad2a0e4006549eef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7938e0727168705b8ecef108efaef046 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_41989ab96e65da18d8478c33d1f93c6f = $(`<div id="html_41989ab96e65da18d8478c33d1f93c6f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">DISTRIBUIDORA SANTA PAULINA LTDA</h4>         <b>ID Cliente:</b> 2158099<br>         <b>Dirección:</b> Las Orquídeas4369, La Serena 4369 LO<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 32<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_7938e0727168705b8ecef108efaef046.setContent(html_41989ab96e65da18d8478c33d1f93c6f);
+            
+        
+
+        marker_7b1ff03a52e8f1a748e35874a810282e.bindPopup(popup_7938e0727168705b8ecef108efaef046)
+        ;
+
+        
+    
+    
+            marker_7b1ff03a52e8f1a748e35874a810282e.bindTooltip(
+                `<div>
+                     DISTRIBUIDORA SANTA PAULINA LTDA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7b1ff03a52e8f1a748e35874a810282e.setIcon(icon_96e189bd98b5a6a5ad2a0e4006549eef);
+            
+    
+            var marker_d5ee57bcfa90a3f83447aa392ea416b5 = L.marker(
+                [-29.927516, -71.205499],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_97bf60659b0a5496facab301f49b9e96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3f6057f6f1e8a54ec1f57714451b5be = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_10fd837812161e43b280336f71c2f860 = $(`<div id="html_10fd837812161e43b280336f71c2f860" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">GABRIELA LOPEZ CONTRERAS</h4>         <b>ID Cliente:</b> 2208965<br>         <b>Dirección:</b> Periodista Mario Peña Carreño5431, La Serena 5431<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 16<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_a3f6057f6f1e8a54ec1f57714451b5be.setContent(html_10fd837812161e43b280336f71c2f860);
+            
+        
+
+        marker_d5ee57bcfa90a3f83447aa392ea416b5.bindPopup(popup_a3f6057f6f1e8a54ec1f57714451b5be)
+        ;
+
+        
+    
+    
+            marker_d5ee57bcfa90a3f83447aa392ea416b5.bindTooltip(
+                `<div>
+                     GABRIELA LOPEZ CONTRERAS (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d5ee57bcfa90a3f83447aa392ea416b5.setIcon(icon_97bf60659b0a5496facab301f49b9e96);
+            
+    
+            var marker_c5340784d34dfd6afdcb14f136bc0105 = L.marker(
+                [-29.926746, -71.207634],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_6c4455ca7b906413a372bdc403eacb77 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27a47edb253c42be40175717aa0e83a8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9ed548c444a801ab1422e9a338458bd2 = $(`<div id="html_9ed548c444a801ab1422e9a338458bd2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ANGELINA CALABRANO CORTES</h4>         <b>ID Cliente:</b> 2208966<br>         <b>Dirección:</b> Periodista Mario Peña Carreño5354, La Serena 5354<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 60<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_27a47edb253c42be40175717aa0e83a8.setContent(html_9ed548c444a801ab1422e9a338458bd2);
+            
+        
+
+        marker_c5340784d34dfd6afdcb14f136bc0105.bindPopup(popup_27a47edb253c42be40175717aa0e83a8)
+        ;
+
+        
+    
+    
+            marker_c5340784d34dfd6afdcb14f136bc0105.bindTooltip(
+                `<div>
+                     ANGELINA CALABRANO CORTES (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c5340784d34dfd6afdcb14f136bc0105.setIcon(icon_6c4455ca7b906413a372bdc403eacb77);
+            
+    
+            var marker_093e52e57b23efe35de147031f6d8629 = L.marker(
+                [-29.977733, -71.330421],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_f0daf0c3067bd1aa97e8cc09a4e54992 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c910a9f212d500e50fa37dddda1d72e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_728bbd37ed8afb29d55a779c44eb7eea = $(`<div id="html_728bbd37ed8afb29d55a779c44eb7eea" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">COMERCIAL E INVERSIONES  MOL CASTILLO SPA</h4>         <b>ID Cliente:</b> 2258934<br>         <b>Dirección:</b> Estados Unidos1190, Coquimbo 1190<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 3<br>         <b>Total Cajas:</b> 47<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_2c910a9f212d500e50fa37dddda1d72e.setContent(html_728bbd37ed8afb29d55a779c44eb7eea);
+            
+        
+
+        marker_093e52e57b23efe35de147031f6d8629.bindPopup(popup_2c910a9f212d500e50fa37dddda1d72e)
+        ;
+
+        
+    
+    
+            marker_093e52e57b23efe35de147031f6d8629.bindTooltip(
+                `<div>
+                     COMERCIAL E INVERSIONES  MOL CASTILLO SPA (3 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_093e52e57b23efe35de147031f6d8629.setIcon(icon_f0daf0c3067bd1aa97e8cc09a4e54992);
+            
+    
+            var marker_224e928a22251144819d9c561a72ed3b = L.marker(
+                [-29.977733, -71.330421],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_bb6aa1127805a8009dab66863239bc5e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2590b8c4b3f4cba531f7c317b2ad5129 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_dc4ebb4f50f568bd93fd5087ceeceb06 = $(`<div id="html_dc4ebb4f50f568bd93fd5087ceeceb06" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">COMERCIAL E INVERSIONES  MOL CASTILLO SPA</h4>         <b>ID Cliente:</b> 2258934<br>         <b>Dirección:</b> Estados Unidos1190, Coquimbo 1190<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 3<br>         <b>Total Cajas:</b> 47<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_2590b8c4b3f4cba531f7c317b2ad5129.setContent(html_dc4ebb4f50f568bd93fd5087ceeceb06);
+            
+        
+
+        marker_224e928a22251144819d9c561a72ed3b.bindPopup(popup_2590b8c4b3f4cba531f7c317b2ad5129)
+        ;
+
+        
+    
+    
+            marker_224e928a22251144819d9c561a72ed3b.bindTooltip(
+                `<div>
+                     COMERCIAL E INVERSIONES  MOL CASTILLO SPA (3 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_224e928a22251144819d9c561a72ed3b.setIcon(icon_bb6aa1127805a8009dab66863239bc5e);
+            
+    
+            var marker_9c3eec240aa77f94362bf7e24fe0c884 = L.marker(
+                [-29.977733, -71.330421],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_34760c943eec8c5a6e0e7725e6410c19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f231b81c38d6dde52fd76201d8ba3993 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_031b3287534dad63ab7f6c22890cf4b8 = $(`<div id="html_031b3287534dad63ab7f6c22890cf4b8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">COMERCIAL E INVERSIONES  MOL CASTILLO SPA</h4>         <b>ID Cliente:</b> 2258934<br>         <b>Dirección:</b> Estados Unidos1190, Coquimbo 1190<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 3<br>         <b>Total Cajas:</b> 47<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_f231b81c38d6dde52fd76201d8ba3993.setContent(html_031b3287534dad63ab7f6c22890cf4b8);
+            
+        
+
+        marker_9c3eec240aa77f94362bf7e24fe0c884.bindPopup(popup_f231b81c38d6dde52fd76201d8ba3993)
+        ;
+
+        
+    
+    
+            marker_9c3eec240aa77f94362bf7e24fe0c884.bindTooltip(
+                `<div>
+                     COMERCIAL E INVERSIONES  MOL CASTILLO SPA (3 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c3eec240aa77f94362bf7e24fe0c884.setIcon(icon_34760c943eec8c5a6e0e7725e6410c19);
+            
+    
+            var marker_be72c99305ba6d9e52671bc07a055576 = L.marker(
+                [-29.987894, -71.316168],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_78ec9ff9bfd4a4643afd46c1b78902e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65b2c13b3d8bc6bf9eaefc79810f8023 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f4bb4f6d0e3ccd40058d65bd0c02c61c = $(`<div id="html_f4bb4f6d0e3ccd40058d65bd0c02c61c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">PAOLA JUANA CORTES BUGUENO</h4>         <b>ID Cliente:</b> 2295303<br>         <b>Dirección:</b> Caleta Puerto Manso3007, Coquimbo 3007<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 13<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_65b2c13b3d8bc6bf9eaefc79810f8023.setContent(html_f4bb4f6d0e3ccd40058d65bd0c02c61c);
+            
+        
+
+        marker_be72c99305ba6d9e52671bc07a055576.bindPopup(popup_65b2c13b3d8bc6bf9eaefc79810f8023)
+        ;
+
+        
+    
+    
+            marker_be72c99305ba6d9e52671bc07a055576.bindTooltip(
+                `<div>
+                     PAOLA JUANA CORTES BUGUENO (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_be72c99305ba6d9e52671bc07a055576.setIcon(icon_78ec9ff9bfd4a4643afd46c1b78902e9);
+            
+    
+            var marker_de1b38c0d81691ec81a79de6685edab6 = L.marker(
+                [-30.032286, -70.718583],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_fbf367fa26ab4c32d143517044e3c174 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ca323b86eab7a8125afa184e3aa665c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_486314c8b2a00f983c89e30b517ef59b = $(`<div id="html_486314c8b2a00f983c89e30b517ef59b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MARICELA CHACANA A</h4>         <b>ID Cliente:</b> 2306030<br>         <b>Dirección:</b> RIO LA GLORIA35, Vicuña 35<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 7<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_4ca323b86eab7a8125afa184e3aa665c.setContent(html_486314c8b2a00f983c89e30b517ef59b);
+            
+        
+
+        marker_de1b38c0d81691ec81a79de6685edab6.bindPopup(popup_4ca323b86eab7a8125afa184e3aa665c)
+        ;
+
+        
+    
+    
+            marker_de1b38c0d81691ec81a79de6685edab6.bindTooltip(
+                `<div>
+                     MARICELA CHACANA A (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_de1b38c0d81691ec81a79de6685edab6.setIcon(icon_fbf367fa26ab4c32d143517044e3c174);
+            
+    
+            var marker_e0679e16efbdb4bf2edf7dfe4077a925 = L.marker(
+                [-29.98867, -71.340154],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_faaaad44b8642875710508327326384c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7398668b3ee22d507635a122f271db3a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_27c0ccab0bf8c1b4c811252e2ec590b0 = $(`<div id="html_27c0ccab0bf8c1b4c811252e2ec590b0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">JOSE ANTONIO ASTUDILLO LEDEZMA</h4>         <b>ID Cliente:</b> 2353401<br>         <b>Dirección:</b> Avenida El Sauce1182, Coquimbo 1182<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 6<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_7398668b3ee22d507635a122f271db3a.setContent(html_27c0ccab0bf8c1b4c811252e2ec590b0);
+            
+        
+
+        marker_e0679e16efbdb4bf2edf7dfe4077a925.bindPopup(popup_7398668b3ee22d507635a122f271db3a)
+        ;
+
+        
+    
+    
+            marker_e0679e16efbdb4bf2edf7dfe4077a925.bindTooltip(
+                `<div>
+                     JOSE ANTONIO ASTUDILLO LEDEZMA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e0679e16efbdb4bf2edf7dfe4077a925.setIcon(icon_faaaad44b8642875710508327326384c);
+            
+    
+            var marker_c7ddf6e5c78ac1648dc7c269e4a97fd6 = L.marker(
+                [-29.903093, -71.246985],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_784572f606bfc996ed646d0f7c6f5fab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ce1adf4780e0f65d18732aa7d2946c1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_68dc1d0a87acea4b165fc0db1fde7799 = $(`<div id="html_68dc1d0a87acea4b165fc0db1fde7799" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MILOS SPA</h4>         <b>ID Cliente:</b> 2363590<br>         <b>Dirección:</b> Gregorio Cordovez718, La Serena 718<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 8<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_6ce1adf4780e0f65d18732aa7d2946c1.setContent(html_68dc1d0a87acea4b165fc0db1fde7799);
+            
+        
+
+        marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.bindPopup(popup_6ce1adf4780e0f65d18732aa7d2946c1)
+        ;
+
+        
+    
+    
+            marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.bindTooltip(
+                `<div>
+                     MILOS SPA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.setIcon(icon_784572f606bfc996ed646d0f7c6f5fab);
+            
+    
+            var marker_758e8866fc81ffe5608d470303c83806 = L.marker(
+                [-29.916604, -71.215163],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_9bfc04bd09cffa8c8c3c9d43ecc2d55d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c56fe6b7ffb5f08037b5ed5e97786b79 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1c52350f2e6184159eb50152e4c0ffb1 = $(`<div id="html_1c52350f2e6184159eb50152e4c0ffb1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MINIMARKET CASTRO ALVARADO LTDA</h4>         <b>ID Cliente:</b> 2397464<br>         <b>Dirección:</b> Juan Pablo I 878, Elqui 878<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 5<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_c56fe6b7ffb5f08037b5ed5e97786b79.setContent(html_1c52350f2e6184159eb50152e4c0ffb1);
+            
+        
+
+        marker_758e8866fc81ffe5608d470303c83806.bindPopup(popup_c56fe6b7ffb5f08037b5ed5e97786b79)
+        ;
+
+        
+    
+    
+            marker_758e8866fc81ffe5608d470303c83806.bindTooltip(
+                `<div>
+                     MINIMARKET CASTRO ALVARADO LTDA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_758e8866fc81ffe5608d470303c83806.setIcon(icon_9bfc04bd09cffa8c8c3c9d43ecc2d55d);
+            
+    
+            var marker_666d64c3eaf0c1e9d32c97181fd263ae = L.marker(
+                [-29.904598, -71.250323],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_0589ee214511978e654bb1b1f2e0ac41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3eb84f8a8c6a8fd4ab9435598bc1a56c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0f320223bb83b31048767219048bbfac = $(`<div id="html_0f320223bb83b31048767219048bbfac" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MILOS SPA</h4>         <b>ID Cliente:</b> 2472479<br>         <b>Dirección:</b> Avenida Balmaceda 601, La Serena 601<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 5<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_3eb84f8a8c6a8fd4ab9435598bc1a56c.setContent(html_0f320223bb83b31048767219048bbfac);
+            
+        
+
+        marker_666d64c3eaf0c1e9d32c97181fd263ae.bindPopup(popup_3eb84f8a8c6a8fd4ab9435598bc1a56c)
+        ;
+
+        
+    
+    
+            marker_666d64c3eaf0c1e9d32c97181fd263ae.bindTooltip(
+                `<div>
+                     MILOS SPA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_666d64c3eaf0c1e9d32c97181fd263ae.setIcon(icon_0589ee214511978e654bb1b1f2e0ac41);
+            
+    
+            var marker_84b218ed78a6d1041368ebf3c6a88f8a = L.marker(
+                [-30.0063, -71.3268],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_5df98f25bee37262970cd37cf11627e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f84269a1bb5edea8f28a980897a0955 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_915da862085e1df11e49a494637bb620 = $(`<div id="html_915da862085e1df11e49a494637bb620" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">MINIMARKET CRISTIAN DIAZ AGUIRRE EIRL</h4>         <b>ID Cliente:</b> 2538537<br>         <b>Dirección:</b> Elena Copier 861, Coquimbo 861<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 12<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_4f84269a1bb5edea8f28a980897a0955.setContent(html_915da862085e1df11e49a494637bb620);
+            
+        
+
+        marker_84b218ed78a6d1041368ebf3c6a88f8a.bindPopup(popup_4f84269a1bb5edea8f28a980897a0955)
+        ;
+
+        
+    
+    
+            marker_84b218ed78a6d1041368ebf3c6a88f8a.bindTooltip(
+                `<div>
+                     MINIMARKET CRISTIAN DIAZ AGUIRRE EIRL (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_84b218ed78a6d1041368ebf3c6a88f8a.setIcon(icon_5df98f25bee37262970cd37cf11627e9);
+            
+    
+            var marker_900661351c0e81052c62c751dcd4840b = L.marker(
+                [-29.97468, -71.331372],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_3b4adca86a1f0437544005e2d22110ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb3b64002eea68e2ec991a8736b1de25 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5b6fbae4161b1480e3d501182861133b = $(`<div id="html_5b6fbae4161b1480e3d501182861133b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CECILIA PAZ RIVERA</h4>         <b>ID Cliente:</b> 516927<br>         <b>Dirección:</b> MEXICO 157<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 4<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_eb3b64002eea68e2ec991a8736b1de25.setContent(html_5b6fbae4161b1480e3d501182861133b);
+            
+        
+
+        marker_900661351c0e81052c62c751dcd4840b.bindPopup(popup_eb3b64002eea68e2ec991a8736b1de25)
+        ;
+
+        
+    
+    
+            marker_900661351c0e81052c62c751dcd4840b.bindTooltip(
+                `<div>
+                     CECILIA PAZ RIVERA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_900661351c0e81052c62c751dcd4840b.setIcon(icon_3b4adca86a1f0437544005e2d22110ec);
+            
+    
+            var marker_ad5a17d8d72737271a918966e2bca344 = L.marker(
+                [-29.97468, -71.331372],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_0e5a2efec82ba5e9bc505c85f8da208b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8723967eb3535729d17d354fb05f0197 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_beceff868553eb4c4ef9ff2b9c35cb72 = $(`<div id="html_beceff868553eb4c4ef9ff2b9c35cb72" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CECILIA PAZ RIVERA</h4>         <b>ID Cliente:</b> 516927<br>         <b>Dirección:</b> MEXICO 157<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 4<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_8723967eb3535729d17d354fb05f0197.setContent(html_beceff868553eb4c4ef9ff2b9c35cb72);
+            
+        
+
+        marker_ad5a17d8d72737271a918966e2bca344.bindPopup(popup_8723967eb3535729d17d354fb05f0197)
+        ;
+
+        
+    
+    
+            marker_ad5a17d8d72737271a918966e2bca344.bindTooltip(
+                `<div>
+                     CECILIA PAZ RIVERA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ad5a17d8d72737271a918966e2bca344.setIcon(icon_0e5a2efec82ba5e9bc505c85f8da208b);
+            
+    
+            var marker_227d2f6b49c4ba47e5c87dfca61711e4 = L.marker(
+                [-29.97468, -71.331372],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_5e3ca82009ce26f4e0d598ed670b416a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70563046ffffd9753295b0e3c104c4e8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_674d6451e45b0a435b3431455097fad2 = $(`<div id="html_674d6451e45b0a435b3431455097fad2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">CECILIA PAZ RIVERA</h4>         <b>ID Cliente:</b> 516927<br>         <b>Dirección:</b> MEXICO 157<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 4<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_70563046ffffd9753295b0e3c104c4e8.setContent(html_674d6451e45b0a435b3431455097fad2);
+            
+        
+
+        marker_227d2f6b49c4ba47e5c87dfca61711e4.bindPopup(popup_70563046ffffd9753295b0e3c104c4e8)
+        ;
+
+        
+    
+    
+            marker_227d2f6b49c4ba47e5c87dfca61711e4.bindTooltip(
+                `<div>
+                     CECILIA PAZ RIVERA (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_227d2f6b49c4ba47e5c87dfca61711e4.setIcon(icon_5e3ca82009ce26f4e0d598ed670b416a);
+            
+    
+            var marker_2164061aa904c904ce1c49dd1c191fb5 = L.marker(
+                [-29.982506, -71.334559],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_a01f474b8d27045a6881abb770007a2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0da9bc8f5811a61c7b2b6f571c77f775 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_bbf9296d512dd61c0e1c9d199f9e80aa = $(`<div id="html_bbf9296d512dd61c0e1c9d199f9e80aa" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">LUIS MORALES</h4>         <b>ID Cliente:</b> 519712<br>         <b>Dirección:</b> LAS LIGUSTINAS 1741<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 1<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_0da9bc8f5811a61c7b2b6f571c77f775.setContent(html_bbf9296d512dd61c0e1c9d199f9e80aa);
+            
+        
+
+        marker_2164061aa904c904ce1c49dd1c191fb5.bindPopup(popup_0da9bc8f5811a61c7b2b6f571c77f775)
+        ;
+
+        
+    
+    
+            marker_2164061aa904c904ce1c49dd1c191fb5.bindTooltip(
+                `<div>
+                     LUIS MORALES (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2164061aa904c904ce1c49dd1c191fb5.setIcon(icon_a01f474b8d27045a6881abb770007a2b);
+            
+    
+            var marker_eee16e0151c55021900606a03bad0d5c = L.marker(
+                [-29.982506, -71.334559],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_350d54173c342d69ea3aceb9c3809b25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d6379a0afa9f862058ccd671551a459b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_81ae55f48c9d23233e4a875a8ef2e9bc = $(`<div id="html_81ae55f48c9d23233e4a875a8ef2e9bc" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">LUIS MORALES</h4>         <b>ID Cliente:</b> 519712<br>         <b>Dirección:</b> LAS LIGUSTINAS 1741<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 1<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_d6379a0afa9f862058ccd671551a459b.setContent(html_81ae55f48c9d23233e4a875a8ef2e9bc);
+            
+        
+
+        marker_eee16e0151c55021900606a03bad0d5c.bindPopup(popup_d6379a0afa9f862058ccd671551a459b)
+        ;
+
+        
+    
+    
+            marker_eee16e0151c55021900606a03bad0d5c.bindTooltip(
+                `<div>
+                     LUIS MORALES (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eee16e0151c55021900606a03bad0d5c.setIcon(icon_350d54173c342d69ea3aceb9c3809b25);
+            
+    
+            var marker_feac403a9ad41ac8aefc05ca519d3ac7 = L.marker(
+                [-29.982506, -71.334559],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_6d3ed57c67c6fe787573e1b1777754f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7a63e6241a2aa66d1de2a7013b6db0a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fa25694a55892dbf16aaada896231c25 = $(`<div id="html_fa25694a55892dbf16aaada896231c25" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">LUIS MORALES</h4>         <b>ID Cliente:</b> 519712<br>         <b>Dirección:</b> LAS LIGUSTINAS 1741<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 1<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_b7a63e6241a2aa66d1de2a7013b6db0a.setContent(html_fa25694a55892dbf16aaada896231c25);
+            
+        
+
+        marker_feac403a9ad41ac8aefc05ca519d3ac7.bindPopup(popup_b7a63e6241a2aa66d1de2a7013b6db0a)
+        ;
+
+        
+    
+    
+            marker_feac403a9ad41ac8aefc05ca519d3ac7.bindTooltip(
+                `<div>
+                     LUIS MORALES (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_feac403a9ad41ac8aefc05ca519d3ac7.setIcon(icon_6d3ed57c67c6fe787573e1b1777754f0);
+            
+    
+            var marker_d20a3d66d7413e2b08ae9a8c32066476 = L.marker(
+                [-29.982506, -71.334559],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_264c722303484f4947ad168de02f811d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c1dec27230dc51ded15edd6348e658a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c383ebcd916aea9ec17c70b24339544c = $(`<div id="html_c383ebcd916aea9ec17c70b24339544c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">LUIS MORALES</h4>         <b>ID Cliente:</b> 519712<br>         <b>Dirección:</b> LAS LIGUSTINAS 1741<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 1<br>         <b>Total Cajas:</b> 1<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_4c1dec27230dc51ded15edd6348e658a.setContent(html_c383ebcd916aea9ec17c70b24339544c);
+            
+        
+
+        marker_d20a3d66d7413e2b08ae9a8c32066476.bindPopup(popup_4c1dec27230dc51ded15edd6348e658a)
+        ;
+
+        
+    
+    
+            marker_d20a3d66d7413e2b08ae9a8c32066476.bindTooltip(
+                `<div>
+                     LUIS MORALES (1 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d20a3d66d7413e2b08ae9a8c32066476.setIcon(icon_264c722303484f4947ad168de02f811d);
+            
+    
+            var marker_fb8265dcf1d0b42ff011e576509b5c81 = L.marker(
+                [-29.949313, -71.272325],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_5379eb4710ca594d0d5c98353615b126 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c2d4267eb0cc318c58856e8a4ee1cc5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3e5a131fbd1b62dca00a3752d78ee974 = $(`<div id="html_3e5a131fbd1b62dca00a3752d78ee974" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 730198<br>         <b>Dirección:</b> REGIMIENTO ARICA 6001<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 5<br>         <b>Total Cajas:</b> 67<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_0c2d4267eb0cc318c58856e8a4ee1cc5.setContent(html_3e5a131fbd1b62dca00a3752d78ee974);
+            
+        
+
+        marker_fb8265dcf1d0b42ff011e576509b5c81.bindPopup(popup_0c2d4267eb0cc318c58856e8a4ee1cc5)
+        ;
+
+        
+    
+    
+            marker_fb8265dcf1d0b42ff011e576509b5c81.bindTooltip(
+                `<div>
+                     RENDIC HERMANOS S. A. (5 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb8265dcf1d0b42ff011e576509b5c81.setIcon(icon_5379eb4710ca594d0d5c98353615b126);
+            
+    
+            var marker_dd354680259394aa8dd867ba16b2475a = L.marker(
+                [-29.949313, -71.272325],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_1a1271906ee0fbefcbc1f2d2a5974506 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_739b8db7d2534e29ab20061ffc2ab49f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fe9e4bc52dae5d8df53260d73a808fc3 = $(`<div id="html_fe9e4bc52dae5d8df53260d73a808fc3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 730198<br>         <b>Dirección:</b> REGIMIENTO ARICA 6001<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 5<br>         <b>Total Cajas:</b> 67<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_739b8db7d2534e29ab20061ffc2ab49f.setContent(html_fe9e4bc52dae5d8df53260d73a808fc3);
+            
+        
+
+        marker_dd354680259394aa8dd867ba16b2475a.bindPopup(popup_739b8db7d2534e29ab20061ffc2ab49f)
+        ;
+
+        
+    
+    
+            marker_dd354680259394aa8dd867ba16b2475a.bindTooltip(
+                `<div>
+                     RENDIC HERMANOS S. A. (5 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd354680259394aa8dd867ba16b2475a.setIcon(icon_1a1271906ee0fbefcbc1f2d2a5974506);
+            
+    
+            var marker_384d4a7239a9a2236fa0998cb9c667d6 = L.marker(
+                [-29.949313, -71.272325],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_604e7c125843a04880c81760136ed216 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_41fb07e516967773efb1b786c52d6f51 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_119aff2fecfc2b9d07e03ec8cf203c72 = $(`<div id="html_119aff2fecfc2b9d07e03ec8cf203c72" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 730198<br>         <b>Dirección:</b> REGIMIENTO ARICA 6001<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 5<br>         <b>Total Cajas:</b> 67<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_41fb07e516967773efb1b786c52d6f51.setContent(html_119aff2fecfc2b9d07e03ec8cf203c72);
+            
+        
+
+        marker_384d4a7239a9a2236fa0998cb9c667d6.bindPopup(popup_41fb07e516967773efb1b786c52d6f51)
+        ;
+
+        
+    
+    
+            marker_384d4a7239a9a2236fa0998cb9c667d6.bindTooltip(
+                `<div>
+                     RENDIC HERMANOS S. A. (5 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_384d4a7239a9a2236fa0998cb9c667d6.setIcon(icon_604e7c125843a04880c81760136ed216);
+            
+    
+            var marker_b53fd791293e106222fbb451d16a68c8 = L.marker(
+                [-29.949313, -71.272325],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_62c75d8964bba45908f30f44a4098898 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e457df5b01c382eee36ebe82c72e925 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7a17725f75c1e6852f452db259776d2a = $(`<div id="html_7a17725f75c1e6852f452db259776d2a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 730198<br>         <b>Dirección:</b> REGIMIENTO ARICA 6001<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 5<br>         <b>Total Cajas:</b> 67<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_7e457df5b01c382eee36ebe82c72e925.setContent(html_7a17725f75c1e6852f452db259776d2a);
+            
+        
+
+        marker_b53fd791293e106222fbb451d16a68c8.bindPopup(popup_7e457df5b01c382eee36ebe82c72e925)
+        ;
+
+        
+    
+    
+            marker_b53fd791293e106222fbb451d16a68c8.bindTooltip(
+                `<div>
+                     RENDIC HERMANOS S. A. (5 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b53fd791293e106222fbb451d16a68c8.setIcon(icon_62c75d8964bba45908f30f44a4098898);
+            
+    
+            var marker_c3838c3621cba09ee4fc0241283d1355 = L.marker(
+                [-29.949313, -71.272325],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_fbad8fdee8a0967c49f3a48b8bde658f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1900b71f6f2b5b4af26d73ac34192792 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4ab99d0049b03aa9010d6b9cfa2b547a = $(`<div id="html_4ab99d0049b03aa9010d6b9cfa2b547a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">RENDIC HERMANOS S. A.</h4>         <b>ID Cliente:</b> 730198<br>         <b>Dirección:</b> REGIMIENTO ARICA 6001<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 5<br>         <b>Total Cajas:</b> 67<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_1900b71f6f2b5b4af26d73ac34192792.setContent(html_4ab99d0049b03aa9010d6b9cfa2b547a);
+            
+        
+
+        marker_c3838c3621cba09ee4fc0241283d1355.bindPopup(popup_1900b71f6f2b5b4af26d73ac34192792)
+        ;
+
+        
+    
+    
+            marker_c3838c3621cba09ee4fc0241283d1355.bindTooltip(
+                `<div>
+                     RENDIC HERMANOS S. A. (5 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3838c3621cba09ee4fc0241283d1355.setIcon(icon_fbad8fdee8a0967c49f3a48b8bde658f);
+            
+    
+            var marker_629fbafa23845250581b5b5d9f206126 = L.marker(
+                [-29.902743, -71.229756],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_2abdd4a341a716b0950892e5c1d3c68e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cfb2ab4d2c546b9282785cd958ce3398 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7dda6496016d271f64d7489e12a1ebd6 = $(`<div id="html_7dda6496016d271f64d7489e12a1ebd6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ADELINDA DE LAS MERCEDES ROJAS SILVA</h4>         <b>ID Cliente:</b> 902278<br>         <b>Dirección:</b> COLONIA ALFALFARES HUERTO 42 SITIO 1A huerto<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 40<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_cfb2ab4d2c546b9282785cd958ce3398.setContent(html_7dda6496016d271f64d7489e12a1ebd6);
+            
+        
+
+        marker_629fbafa23845250581b5b5d9f206126.bindPopup(popup_cfb2ab4d2c546b9282785cd958ce3398)
+        ;
+
+        
+    
+    
+            marker_629fbafa23845250581b5b5d9f206126.bindTooltip(
+                `<div>
+                     ADELINDA DE LAS MERCEDES ROJAS SILVA (2 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_629fbafa23845250581b5b5d9f206126.setIcon(icon_2abdd4a341a716b0950892e5c1d3c68e);
+            
+    
+            var marker_8cab879a33d21be086e60515c26fb86b = L.marker(
+                [-29.902743, -71.229756],
+                {
+}
+            ).addTo(marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f);
+        
+    
+            var icon_a416e3eb45dc100ee6dbc3b614615872 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc0aaf29f352e3c02ab45535787300ef = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9e31c98633e486068242b024837d8ac4 = $(`<div id="html_9e31c98633e486068242b024837d8ac4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; font-size: 12px; width: 220px;">         <h4 style="margin:0 0 5px 0; color: #1a73e8;">ADELINDA DE LAS MERCEDES ROJAS SILVA</h4>         <b>ID Cliente:</b> 902278<br>         <b>Dirección:</b> COLONIA ALFALFARES HUERTO 42 SITIO 1A huerto<br>         <hr style="margin: 6px 0;">         <b>N° de Pedidos:</b> 2<br>         <b>Total Cajas:</b> 40<br>         <b>Total Unidades:</b> 0     </div>     </div>`)[0];
+                popup_dc0aaf29f352e3c02ab45535787300ef.setContent(html_9e31c98633e486068242b024837d8ac4);
+            
+        
+
+        marker_8cab879a33d21be086e60515c26fb86b.bindPopup(popup_dc0aaf29f352e3c02ab45535787300ef)
+        ;
+
+        
+    
+    
+            marker_8cab879a33d21be086e60515c26fb86b.bindTooltip(
+                `<div>
+                     ADELINDA DE LAS MERCEDES ROJAS SILVA (2 pedidos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8cab879a33d21be086e60515c26fb86b.setIcon(icon_a416e3eb45dc100ee6dbc3b614615872);
+            
+    
+            marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+            tile_layer_9882aa260cebf23c763ffac0f82d4458.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+                marker_740746125bbaa395b7677c32875f5885.setIcon(icon_7ee3cd8656c98f51423f7251e6c32877);
+            
+    
+                marker_21f0de678d82b6c185af196226ae5713.setIcon(icon_c191df2775a3fb4b19cfbadcf08efe20);
+            
+    
+                marker_ebdc0a1eb0dfdf970485d6d6004fffad.setIcon(icon_c95b354a230e83d66593f55d764286ac);
+            
+    
+                marker_d6fac736537aba0b6a92a3bc9901779e.setIcon(icon_84cdd32b1c119adcf4818d57afa8e7bd);
+            
+    
+                marker_f09be0622ffe006ee8e47c9ea1cab6bc.setIcon(icon_0a81c9c957af9c2c8ddebf84223b0c1e);
+            
+    
+                marker_e91398876365ba377450518c692573f7.setIcon(icon_2603b495e0b396604a7b9bab8d5d87aa);
+            
+    
+                marker_ea505211c09af1db18ae1df4d2961a92.setIcon(icon_3d07a21093c01bc452e1f41eb178097c);
+            
+    
+                marker_7b1ff03a52e8f1a748e35874a810282e.setIcon(icon_96e189bd98b5a6a5ad2a0e4006549eef);
+            
+    
+                marker_d5ee57bcfa90a3f83447aa392ea416b5.setIcon(icon_97bf60659b0a5496facab301f49b9e96);
+            
+    
+                marker_c5340784d34dfd6afdcb14f136bc0105.setIcon(icon_6c4455ca7b906413a372bdc403eacb77);
+            
+    
+                marker_093e52e57b23efe35de147031f6d8629.setIcon(icon_f0daf0c3067bd1aa97e8cc09a4e54992);
+            
+    
+                marker_224e928a22251144819d9c561a72ed3b.setIcon(icon_bb6aa1127805a8009dab66863239bc5e);
+            
+    
+                marker_9c3eec240aa77f94362bf7e24fe0c884.setIcon(icon_34760c943eec8c5a6e0e7725e6410c19);
+            
+    
+                marker_be72c99305ba6d9e52671bc07a055576.setIcon(icon_78ec9ff9bfd4a4643afd46c1b78902e9);
+            
+    
+                marker_de1b38c0d81691ec81a79de6685edab6.setIcon(icon_fbf367fa26ab4c32d143517044e3c174);
+            
+    
+                marker_e0679e16efbdb4bf2edf7dfe4077a925.setIcon(icon_faaaad44b8642875710508327326384c);
+            
+    
+                marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.setIcon(icon_784572f606bfc996ed646d0f7c6f5fab);
+            
+    
+                marker_758e8866fc81ffe5608d470303c83806.setIcon(icon_9bfc04bd09cffa8c8c3c9d43ecc2d55d);
+            
+    
+                marker_666d64c3eaf0c1e9d32c97181fd263ae.setIcon(icon_0589ee214511978e654bb1b1f2e0ac41);
+            
+    
+                marker_84b218ed78a6d1041368ebf3c6a88f8a.setIcon(icon_5df98f25bee37262970cd37cf11627e9);
+            
+    
+                marker_900661351c0e81052c62c751dcd4840b.setIcon(icon_3b4adca86a1f0437544005e2d22110ec);
+            
+    
+                marker_ad5a17d8d72737271a918966e2bca344.setIcon(icon_0e5a2efec82ba5e9bc505c85f8da208b);
+            
+    
+                marker_227d2f6b49c4ba47e5c87dfca61711e4.setIcon(icon_5e3ca82009ce26f4e0d598ed670b416a);
+            
+    
+                marker_2164061aa904c904ce1c49dd1c191fb5.setIcon(icon_a01f474b8d27045a6881abb770007a2b);
+            
+    
+                marker_eee16e0151c55021900606a03bad0d5c.setIcon(icon_350d54173c342d69ea3aceb9c3809b25);
+            
+    
+                marker_feac403a9ad41ac8aefc05ca519d3ac7.setIcon(icon_6d3ed57c67c6fe787573e1b1777754f0);
+            
+    
+                marker_d20a3d66d7413e2b08ae9a8c32066476.setIcon(icon_264c722303484f4947ad168de02f811d);
+            
+    
+                marker_fb8265dcf1d0b42ff011e576509b5c81.setIcon(icon_5379eb4710ca594d0d5c98353615b126);
+            
+    
+                marker_dd354680259394aa8dd867ba16b2475a.setIcon(icon_1a1271906ee0fbefcbc1f2d2a5974506);
+            
+    
+                marker_384d4a7239a9a2236fa0998cb9c667d6.setIcon(icon_604e7c125843a04880c81760136ed216);
+            
+    
+                marker_b53fd791293e106222fbb451d16a68c8.setIcon(icon_62c75d8964bba45908f30f44a4098898);
+            
+    
+                marker_c3838c3621cba09ee4fc0241283d1355.setIcon(icon_fbad8fdee8a0967c49f3a48b8bde658f);
+            
+    
+                marker_629fbafa23845250581b5b5d9f206126.setIcon(icon_2abdd4a341a716b0950892e5c1d3c68e);
+            
+    
+                marker_8cab879a33d21be086e60515c26fb86b.setIcon(icon_a416e3eb45dc100ee6dbc3b614615872);
+            
+    
+            marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+            tile_layer_9882aa260cebf23c763ffac0f82d4458.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+                marker_740746125bbaa395b7677c32875f5885.setIcon(icon_7ee3cd8656c98f51423f7251e6c32877);
+            
+    
+                marker_21f0de678d82b6c185af196226ae5713.setIcon(icon_c191df2775a3fb4b19cfbadcf08efe20);
+            
+    
+                marker_ebdc0a1eb0dfdf970485d6d6004fffad.setIcon(icon_c95b354a230e83d66593f55d764286ac);
+            
+    
+                marker_d6fac736537aba0b6a92a3bc9901779e.setIcon(icon_84cdd32b1c119adcf4818d57afa8e7bd);
+            
+    
+                marker_f09be0622ffe006ee8e47c9ea1cab6bc.setIcon(icon_0a81c9c957af9c2c8ddebf84223b0c1e);
+            
+    
+                marker_e91398876365ba377450518c692573f7.setIcon(icon_2603b495e0b396604a7b9bab8d5d87aa);
+            
+    
+                marker_ea505211c09af1db18ae1df4d2961a92.setIcon(icon_3d07a21093c01bc452e1f41eb178097c);
+            
+    
+                marker_7b1ff03a52e8f1a748e35874a810282e.setIcon(icon_96e189bd98b5a6a5ad2a0e4006549eef);
+            
+    
+                marker_d5ee57bcfa90a3f83447aa392ea416b5.setIcon(icon_97bf60659b0a5496facab301f49b9e96);
+            
+    
+                marker_c5340784d34dfd6afdcb14f136bc0105.setIcon(icon_6c4455ca7b906413a372bdc403eacb77);
+            
+    
+                marker_093e52e57b23efe35de147031f6d8629.setIcon(icon_f0daf0c3067bd1aa97e8cc09a4e54992);
+            
+    
+                marker_224e928a22251144819d9c561a72ed3b.setIcon(icon_bb6aa1127805a8009dab66863239bc5e);
+            
+    
+                marker_9c3eec240aa77f94362bf7e24fe0c884.setIcon(icon_34760c943eec8c5a6e0e7725e6410c19);
+            
+    
+                marker_be72c99305ba6d9e52671bc07a055576.setIcon(icon_78ec9ff9bfd4a4643afd46c1b78902e9);
+            
+    
+                marker_de1b38c0d81691ec81a79de6685edab6.setIcon(icon_fbf367fa26ab4c32d143517044e3c174);
+            
+    
+                marker_e0679e16efbdb4bf2edf7dfe4077a925.setIcon(icon_faaaad44b8642875710508327326384c);
+            
+    
+                marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.setIcon(icon_784572f606bfc996ed646d0f7c6f5fab);
+            
+    
+                marker_758e8866fc81ffe5608d470303c83806.setIcon(icon_9bfc04bd09cffa8c8c3c9d43ecc2d55d);
+            
+    
+                marker_666d64c3eaf0c1e9d32c97181fd263ae.setIcon(icon_0589ee214511978e654bb1b1f2e0ac41);
+            
+    
+                marker_84b218ed78a6d1041368ebf3c6a88f8a.setIcon(icon_5df98f25bee37262970cd37cf11627e9);
+            
+    
+                marker_900661351c0e81052c62c751dcd4840b.setIcon(icon_3b4adca86a1f0437544005e2d22110ec);
+            
+    
+                marker_ad5a17d8d72737271a918966e2bca344.setIcon(icon_0e5a2efec82ba5e9bc505c85f8da208b);
+            
+    
+                marker_227d2f6b49c4ba47e5c87dfca61711e4.setIcon(icon_5e3ca82009ce26f4e0d598ed670b416a);
+            
+    
+                marker_2164061aa904c904ce1c49dd1c191fb5.setIcon(icon_a01f474b8d27045a6881abb770007a2b);
+            
+    
+                marker_eee16e0151c55021900606a03bad0d5c.setIcon(icon_350d54173c342d69ea3aceb9c3809b25);
+            
+    
+                marker_feac403a9ad41ac8aefc05ca519d3ac7.setIcon(icon_6d3ed57c67c6fe787573e1b1777754f0);
+            
+    
+                marker_d20a3d66d7413e2b08ae9a8c32066476.setIcon(icon_264c722303484f4947ad168de02f811d);
+            
+    
+                marker_fb8265dcf1d0b42ff011e576509b5c81.setIcon(icon_5379eb4710ca594d0d5c98353615b126);
+            
+    
+                marker_dd354680259394aa8dd867ba16b2475a.setIcon(icon_1a1271906ee0fbefcbc1f2d2a5974506);
+            
+    
+                marker_384d4a7239a9a2236fa0998cb9c667d6.setIcon(icon_604e7c125843a04880c81760136ed216);
+            
+    
+                marker_b53fd791293e106222fbb451d16a68c8.setIcon(icon_62c75d8964bba45908f30f44a4098898);
+            
+    
+                marker_c3838c3621cba09ee4fc0241283d1355.setIcon(icon_fbad8fdee8a0967c49f3a48b8bde658f);
+            
+    
+                marker_629fbafa23845250581b5b5d9f206126.setIcon(icon_2abdd4a341a716b0950892e5c1d3c68e);
+            
+    
+                marker_8cab879a33d21be086e60515c26fb86b.setIcon(icon_a416e3eb45dc100ee6dbc3b614615872);
+            
+    
+            marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+            tile_layer_9882aa260cebf23c763ffac0f82d4458.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+                marker_740746125bbaa395b7677c32875f5885.setIcon(icon_7ee3cd8656c98f51423f7251e6c32877);
+            
+    
+                marker_21f0de678d82b6c185af196226ae5713.setIcon(icon_c191df2775a3fb4b19cfbadcf08efe20);
+            
+    
+                marker_ebdc0a1eb0dfdf970485d6d6004fffad.setIcon(icon_c95b354a230e83d66593f55d764286ac);
+            
+    
+                marker_d6fac736537aba0b6a92a3bc9901779e.setIcon(icon_84cdd32b1c119adcf4818d57afa8e7bd);
+            
+    
+                marker_f09be0622ffe006ee8e47c9ea1cab6bc.setIcon(icon_0a81c9c957af9c2c8ddebf84223b0c1e);
+            
+    
+                marker_e91398876365ba377450518c692573f7.setIcon(icon_2603b495e0b396604a7b9bab8d5d87aa);
+            
+    
+                marker_ea505211c09af1db18ae1df4d2961a92.setIcon(icon_3d07a21093c01bc452e1f41eb178097c);
+            
+    
+                marker_7b1ff03a52e8f1a748e35874a810282e.setIcon(icon_96e189bd98b5a6a5ad2a0e4006549eef);
+            
+    
+                marker_d5ee57bcfa90a3f83447aa392ea416b5.setIcon(icon_97bf60659b0a5496facab301f49b9e96);
+            
+    
+                marker_c5340784d34dfd6afdcb14f136bc0105.setIcon(icon_6c4455ca7b906413a372bdc403eacb77);
+            
+    
+                marker_093e52e57b23efe35de147031f6d8629.setIcon(icon_f0daf0c3067bd1aa97e8cc09a4e54992);
+            
+    
+                marker_224e928a22251144819d9c561a72ed3b.setIcon(icon_bb6aa1127805a8009dab66863239bc5e);
+            
+    
+                marker_9c3eec240aa77f94362bf7e24fe0c884.setIcon(icon_34760c943eec8c5a6e0e7725e6410c19);
+            
+    
+                marker_be72c99305ba6d9e52671bc07a055576.setIcon(icon_78ec9ff9bfd4a4643afd46c1b78902e9);
+            
+    
+                marker_de1b38c0d81691ec81a79de6685edab6.setIcon(icon_fbf367fa26ab4c32d143517044e3c174);
+            
+    
+                marker_e0679e16efbdb4bf2edf7dfe4077a925.setIcon(icon_faaaad44b8642875710508327326384c);
+            
+    
+                marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.setIcon(icon_784572f606bfc996ed646d0f7c6f5fab);
+            
+    
+                marker_758e8866fc81ffe5608d470303c83806.setIcon(icon_9bfc04bd09cffa8c8c3c9d43ecc2d55d);
+            
+    
+                marker_666d64c3eaf0c1e9d32c97181fd263ae.setIcon(icon_0589ee214511978e654bb1b1f2e0ac41);
+            
+    
+                marker_84b218ed78a6d1041368ebf3c6a88f8a.setIcon(icon_5df98f25bee37262970cd37cf11627e9);
+            
+    
+                marker_900661351c0e81052c62c751dcd4840b.setIcon(icon_3b4adca86a1f0437544005e2d22110ec);
+            
+    
+                marker_ad5a17d8d72737271a918966e2bca344.setIcon(icon_0e5a2efec82ba5e9bc505c85f8da208b);
+            
+    
+                marker_227d2f6b49c4ba47e5c87dfca61711e4.setIcon(icon_5e3ca82009ce26f4e0d598ed670b416a);
+            
+    
+                marker_2164061aa904c904ce1c49dd1c191fb5.setIcon(icon_a01f474b8d27045a6881abb770007a2b);
+            
+    
+                marker_eee16e0151c55021900606a03bad0d5c.setIcon(icon_350d54173c342d69ea3aceb9c3809b25);
+            
+    
+                marker_feac403a9ad41ac8aefc05ca519d3ac7.setIcon(icon_6d3ed57c67c6fe787573e1b1777754f0);
+            
+    
+                marker_d20a3d66d7413e2b08ae9a8c32066476.setIcon(icon_264c722303484f4947ad168de02f811d);
+            
+    
+                marker_fb8265dcf1d0b42ff011e576509b5c81.setIcon(icon_5379eb4710ca594d0d5c98353615b126);
+            
+    
+                marker_dd354680259394aa8dd867ba16b2475a.setIcon(icon_1a1271906ee0fbefcbc1f2d2a5974506);
+            
+    
+                marker_384d4a7239a9a2236fa0998cb9c667d6.setIcon(icon_604e7c125843a04880c81760136ed216);
+            
+    
+                marker_b53fd791293e106222fbb451d16a68c8.setIcon(icon_62c75d8964bba45908f30f44a4098898);
+            
+    
+                marker_c3838c3621cba09ee4fc0241283d1355.setIcon(icon_fbad8fdee8a0967c49f3a48b8bde658f);
+            
+    
+                marker_629fbafa23845250581b5b5d9f206126.setIcon(icon_2abdd4a341a716b0950892e5c1d3c68e);
+            
+    
+                marker_8cab879a33d21be086e60515c26fb86b.setIcon(icon_a416e3eb45dc100ee6dbc3b614615872);
+            
+    
+            marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+            tile_layer_9882aa260cebf23c763ffac0f82d4458.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+    
+                marker_740746125bbaa395b7677c32875f5885.setIcon(icon_7ee3cd8656c98f51423f7251e6c32877);
+            
+    
+                marker_21f0de678d82b6c185af196226ae5713.setIcon(icon_c191df2775a3fb4b19cfbadcf08efe20);
+            
+    
+                marker_ebdc0a1eb0dfdf970485d6d6004fffad.setIcon(icon_c95b354a230e83d66593f55d764286ac);
+            
+    
+                marker_d6fac736537aba0b6a92a3bc9901779e.setIcon(icon_84cdd32b1c119adcf4818d57afa8e7bd);
+            
+    
+                marker_f09be0622ffe006ee8e47c9ea1cab6bc.setIcon(icon_0a81c9c957af9c2c8ddebf84223b0c1e);
+            
+    
+                marker_e91398876365ba377450518c692573f7.setIcon(icon_2603b495e0b396604a7b9bab8d5d87aa);
+            
+    
+                marker_ea505211c09af1db18ae1df4d2961a92.setIcon(icon_3d07a21093c01bc452e1f41eb178097c);
+            
+    
+                marker_7b1ff03a52e8f1a748e35874a810282e.setIcon(icon_96e189bd98b5a6a5ad2a0e4006549eef);
+            
+    
+                marker_d5ee57bcfa90a3f83447aa392ea416b5.setIcon(icon_97bf60659b0a5496facab301f49b9e96);
+            
+    
+                marker_c5340784d34dfd6afdcb14f136bc0105.setIcon(icon_6c4455ca7b906413a372bdc403eacb77);
+            
+    
+                marker_093e52e57b23efe35de147031f6d8629.setIcon(icon_f0daf0c3067bd1aa97e8cc09a4e54992);
+            
+    
+                marker_224e928a22251144819d9c561a72ed3b.setIcon(icon_bb6aa1127805a8009dab66863239bc5e);
+            
+    
+                marker_9c3eec240aa77f94362bf7e24fe0c884.setIcon(icon_34760c943eec8c5a6e0e7725e6410c19);
+            
+    
+                marker_be72c99305ba6d9e52671bc07a055576.setIcon(icon_78ec9ff9bfd4a4643afd46c1b78902e9);
+            
+    
+                marker_de1b38c0d81691ec81a79de6685edab6.setIcon(icon_fbf367fa26ab4c32d143517044e3c174);
+            
+    
+                marker_e0679e16efbdb4bf2edf7dfe4077a925.setIcon(icon_faaaad44b8642875710508327326384c);
+            
+    
+                marker_c7ddf6e5c78ac1648dc7c269e4a97fd6.setIcon(icon_784572f606bfc996ed646d0f7c6f5fab);
+            
+    
+                marker_758e8866fc81ffe5608d470303c83806.setIcon(icon_9bfc04bd09cffa8c8c3c9d43ecc2d55d);
+            
+    
+                marker_666d64c3eaf0c1e9d32c97181fd263ae.setIcon(icon_0589ee214511978e654bb1b1f2e0ac41);
+            
+    
+                marker_84b218ed78a6d1041368ebf3c6a88f8a.setIcon(icon_5df98f25bee37262970cd37cf11627e9);
+            
+    
+                marker_900661351c0e81052c62c751dcd4840b.setIcon(icon_3b4adca86a1f0437544005e2d22110ec);
+            
+    
+                marker_ad5a17d8d72737271a918966e2bca344.setIcon(icon_0e5a2efec82ba5e9bc505c85f8da208b);
+            
+    
+                marker_227d2f6b49c4ba47e5c87dfca61711e4.setIcon(icon_5e3ca82009ce26f4e0d598ed670b416a);
+            
+    
+                marker_2164061aa904c904ce1c49dd1c191fb5.setIcon(icon_a01f474b8d27045a6881abb770007a2b);
+            
+    
+                marker_eee16e0151c55021900606a03bad0d5c.setIcon(icon_350d54173c342d69ea3aceb9c3809b25);
+            
+    
+                marker_feac403a9ad41ac8aefc05ca519d3ac7.setIcon(icon_6d3ed57c67c6fe787573e1b1777754f0);
+            
+    
+                marker_d20a3d66d7413e2b08ae9a8c32066476.setIcon(icon_264c722303484f4947ad168de02f811d);
+            
+    
+                marker_fb8265dcf1d0b42ff011e576509b5c81.setIcon(icon_5379eb4710ca594d0d5c98353615b126);
+            
+    
+                marker_dd354680259394aa8dd867ba16b2475a.setIcon(icon_1a1271906ee0fbefcbc1f2d2a5974506);
+            
+    
+                marker_384d4a7239a9a2236fa0998cb9c667d6.setIcon(icon_604e7c125843a04880c81760136ed216);
+            
+    
+                marker_b53fd791293e106222fbb451d16a68c8.setIcon(icon_62c75d8964bba45908f30f44a4098898);
+            
+    
+                marker_c3838c3621cba09ee4fc0241283d1355.setIcon(icon_fbad8fdee8a0967c49f3a48b8bde658f);
+            
+    
+                marker_629fbafa23845250581b5b5d9f206126.setIcon(icon_2abdd4a341a716b0950892e5c1d3c68e);
+            
+    
+                marker_8cab879a33d21be086e60515c26fb86b.setIcon(icon_a416e3eb45dc100ee6dbc3b614615872);
+            
+    
+            marker_cluster_f20741cafd39ff7fd3cc4cde537a8e9f.addTo(map_ee1e92fc93dce1a67016759d4f75661b);
+        
+</script>
+</html>
